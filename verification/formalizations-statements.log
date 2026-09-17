@@ -4,3 +4,16 @@
 'InfinitaryCombinatorics.Formalizations.R0.nonFinIntersectingNumber_eq_splittingNumber' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'InfinitaryCombinatorics.Formalizations.A1.typeGuessing_implies_K_thin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.A1.antiColoring_on_omegaOne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.A1.BDTG_implies_KA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'InfinitaryCombinatorics.Formalizations.A1.Diamond_implies_ClubGuessing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.A1.KA_implies_KAomegaOne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

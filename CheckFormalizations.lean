@@ -29,3 +29,20 @@ example : nonFinIntersectingNumber = splittingNumber :=
 
 #print axioms InfinitaryCombinatorics.Formalizations.R0.exists_counterexample_of_size_s
 #print axioms InfinitaryCombinatorics.Formalizations.R0.nonFinIntersectingNumber_eq_splittingNumber
+
+namespace A1Acceptance
+open InfinitaryCombinatorics InfinitaryCombinatorics.Formalizations.A1
+
+example (C : LadderSystem) (h : TypeGuessingOnPoints C widthSeq typeSeqW) :
+    ∀ D : Set Point, IsClub D → ∃ β : LimitBelow omegaOne, ∀ m ≥ 1,
+      ∃ x ∈ D, (C β).seq (3 * m) ≤ x.val ∧ x.val < (C β).seq (3 * m + 3) := by
+  intro D hD
+  simpa only [Hits, thin_seq, Nat.mul_add, Nat.mul_one] using
+    typeGuessing_implies_hits_thin C ((typeGuessing_iff_allPoints C widthSeq typeSeqW).mpr h) D hD
+
+#print axioms typeGuessing_implies_K_thin
+#print axioms antiColoring_on_omegaOne
+#print axioms BDTG_implies_KA
+#print axioms Diamond_implies_ClubGuessing
+#print axioms KA_implies_KAomegaOne
+end A1Acceptance

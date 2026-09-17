@@ -62,11 +62,6 @@ Windows 的 `./verify.ps1` 会完成构建、使用示例、主定理陈述检�
 
 ## 本次验收
 
-2026-09-17 的本地验收覆盖 24 个模块、365 个声明和 212 个定理常量（含 Lean 自动生成项）。完整构建、公共接口示例、主定理陈述检查、全声明公理审计及缺口扫描全部通过；仅依赖 `propext`、`Classical.choice`、`Quot.sound`。精确时间、源哈希和日志见 [验收清单](verification/manifest.json)。
+统一验收检查完整构建、公共接口示例、主定理陈述、全声明公理依赖及源码缺口；允许的公理仅为 `propext`、`Classical.choice`、`Quot.sound`。当前覆盖范围、声明数量、精确时间、源哈希和日志见 [验收清单](verification/manifest.json)。
 
 定义和定理的适用条件见 [语义审查](docs/SEMANTIC_REVIEW.md)，模块入口见 [工具导航](docs/ROADMAP.md)。[Examples.lean](Examples.lean) 提供实际编译的使用示例；各问题的成果说明见 [Formalizations/](Formalizations/README.md)。
-
-
-
-
-

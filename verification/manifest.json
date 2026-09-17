@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-09-17T04:39:39.0895773Z",
+  "checked_at_utc": "2026-09-17T11:34:59.3670570Z",
   "lean_toolchain": "leanprover/lean4:v4.30.0",
   "mathlib_revision": "c5ea00351c28e24afc9f0f84379aa41082b1188f",
   "build": "passed",
@@ -7,9 +7,9 @@
   "unfolded_R0_statements": "passed",
   "formalization_statements": "passed",
   "axiom_audit": "passed",
-  "declarations": 365,
-  "theorem_constants": 212,
-  "library_modules": 24,
+  "declarations": 577,
+  "theorem_constants": 381,
+  "library_modules": 33,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
@@ -21,11 +21,11 @@
   "R0_snapshot_hashes": "unchanged",
   "source_hashes": [
     {
-      "sha256": "fa59998eecc6c446711c3526d8c167576ba91554f1c7b71687398b8696a98958",
+      "sha256": "fcfe97c27f084725997aecba609748bf9d65001c2cc524582557210d574a547a",
       "path": "Audit.lean"
     },
     {
-      "sha256": "5d331f764126ac3b355d1f89cbb2c2437cd8860d7579ab78ef4c300638b2eaba",
+      "sha256": "f42a4932e7de1f1e0c5caa8ff7f9873a19bb61b19ff6a3d4ac93508a418bb8f1",
       "path": "CheckFormalizations.lean"
     },
     {
@@ -37,8 +37,44 @@
       "path": "Examples.lean"
     },
     {
-      "sha256": "e65775d6354eba62b3b778e09b3a540a3d1beb8c2734ce2cc32b911e5b71305e",
+      "sha256": "da7e142ec893596e23f4d55d6d950a54672e7c0c57f17201649a038e03546057",
       "path": "Formalizations.lean"
+    },
+    {
+      "sha256": "a578e36dac2eec815727b8927eea07e815f0da406a2d8ad47a3217587da7f838",
+      "path": "Formalizations/A1/CantorPairing.lean"
+    },
+    {
+      "sha256": "8403a7fa42a80b904fac3df01287ebd60d72d92a83af53591ea460c807385d86",
+      "path": "Formalizations/A1/Check.lean"
+    },
+    {
+      "sha256": "404d47f0cdaa1a3c2b34a3d1d48ef3976066d5679cf8abe63e43881e511f8780",
+      "path": "Formalizations/A1/Diamond.lean"
+    },
+    {
+      "sha256": "8a83163cfa3e24fb77296507e613bf4eece03ab58e77d39d96220c06392052a0",
+      "path": "Formalizations/A1/FamilyPrinciple.lean"
+    },
+    {
+      "sha256": "b86b7965e9dedc7143b8c6d2a5ccac2e3f5006b2d0fc1120fdce8a431154cef9",
+      "path": "Formalizations/A1/LocalNumbering.lean"
+    },
+    {
+      "sha256": "711ce249687842873db8903c844829eebc5462563c92a0a492cb24188cce33e4",
+      "path": "Formalizations/A1/Main.lean"
+    },
+    {
+      "sha256": "6b56f4800e645a5f8e5c20d382acc87df69b3a1d41d45fb75948ad1198992b16",
+      "path": "Formalizations/A1/Partition.lean"
+    },
+    {
+      "sha256": "14ed1f097c8430c986a4d50394d96fc8a7bd9d891465a9a28984776a0a66c68c",
+      "path": "Formalizations/A1/Principles.lean"
+    },
+    {
+      "sha256": "0cd9ae0b9f2b80d6ff07dd50de06c7314b1c4890475c019fece4b301e096b431",
+      "path": "Formalizations/A1/TypeSequence.lean"
     },
     {
       "sha256": "bad56d9f9f8c51280eb3de709591b608f3f2829ad6b7647ebef7604dde56dc07",

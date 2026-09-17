@@ -15,13 +15,12 @@ foreach ($icSource in (Get-ChildItem -LiteralPath (Join-Path $PSScriptRoot 'Infi
   if (-not $icChecked.Contains($icRelative)) { throw "New unaudited module: $icRelative" }
 }
 $icPaths = @($icReport.source_hashes.path) + @(
-  'README.md','AGENTS.md','.gitignore','lean-toolchain','lakefile.toml','lake-manifest.json',
+  'README.md','AGENTS.md','.gitignore','.gitattributes','lean-toolchain','lakefile.toml','lake-manifest.json',
   'verify.ps1','package.ps1','verification/manifest.json','verification/build.log',
   'verification/examples.log','verification/r0-statements.log','verification/axiom-audit.log',
   'verification/formalizations-statements.log',
   'docs/PROVENANCE.md','docs/ROADMAP.md','docs/SEMANTIC_REVIEW.md','docs/r0-source-hashes.json')
-$icPaths += @(Get-ChildItem -LiteralPath (Join-Path $PSScriptRoot 'Formalizations') -Filter '*.md' -File -Recurse |
-  ForEach-Object { $_.FullName.Substring($PSScriptRoot.Length + 1).Replace('\','/') })
+$icPaths += @('Formalizations/README.md','Formalizations/R0/README.md','Formalizations/A1/README.md')
 $icPaths = @($icPaths | Sort-Object -Unique)
 Add-Type -AssemblyName System.IO.Compression
 Add-Type -AssemblyName System.IO.Compression.FileSystem
