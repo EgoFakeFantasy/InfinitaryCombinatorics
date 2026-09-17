@@ -1,0 +1,30 @@
+[
+  {
+    "path": "R0.lean",
+    "sha256": "33a46c462dc5c4dd2bec47efaf975f0ce8dd387ddc694f9b3f5f960afea31ef5"
+  },
+  {
+    "path": "R0/Basic.lean",
+    "sha256": "4fcbcdd6d672efaf4886fec72309f2981454d4d7ab10919c6faa08b68a28557c"
+  },
+  {
+    "path": "R0/LowerBound.lean",
+    "sha256": "c4aa12d68ed1787e6cbf2f82ad99937cc8283b80c8ff3d8f7a1e929ba5f7c77e"
+  },
+  {
+    "path": "R0/Main.lean",
+    "sha256": "bbb4f5c85cab201c8c8783483c53a8b9ec505394fe9831be7aeb830928cd8143"
+  },
+  {
+    "path": "R0/SplittingNumber.lean",
+    "sha256": "32f278d128997fb217a39a2831a8f09c959799216c7488ae2a728147a97ea34f"
+  },
+  {
+    "path": "R0/Transport.lean",
+    "sha256": "5af6cedc2f76253cb9b2de643ddaacf8f4467254f05e5147686695ddcd9b44ee"
+  },
+  {
+    "path": "R0/TreeConstruction.lean",
+    "sha256": "0e25aea41dff983ba7fb796f33bc16ac03ca5ee309fd420c44dfaf8401dd1208"
+  }
+]
