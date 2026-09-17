@@ -40,10 +40,12 @@ lake env lean CheckFormalizations.lean
 lake env lean Audit.lean
 ```
 
-没有规定规模的 MAD 扩张结论，也没有将登记表中的 A7、A8 等后续问题宣布为已解决。
+上述结论不包含保持指定基数的 MAD 扩张定理。
 
 ## 来源与贡献说明
 
-数学问题和定义来自 Corral–Rodrigues, *Fin-intersecting MAD families*, Filomat 38(7) (2024), 2563–2578，尤其 Definition 2.3、Theorem 3.1、Proposition 4.8 与 Question 4.9。对应登记条目见 [问题登记表中的 R0](../../docs/problem-register.md#r0对非-fi-最小规模问题的直接证明)。
+数学问题和定义来自 Corral–Rodrigues, *Fin-intersecting MAD families*, Filomat 38(7) (2024), 2563–2578，尤其 Definition 2.3、Theorem 3.1、Proposition 4.8 与 Question 4.9。
 
-原始本地 R0 论证与 Lean 形式化由 GPT-6 Astra 生成，用户提供研究问题；Codex 完成本库接入与验收。原证明历史上先于基础库完成，其定义及中间引理已被基础库复用；本目录将它作为首个收录项目呈现。该记录不主张结果的历史首次性，也不等同于独立人类同行审稿。完整数学边界和来源见 [来源说明](../../docs/PROVENANCE.md) 与 [语义审查](../../docs/SEMANTIC_REVIEW.md)。
+原始 R0 论证与 Lean 形式化由 GPT-6 Astra 生成，用户提供研究问题；Codex 完成本库接入与验收。原证明先于基础库完成，其定义及中间引理已被基础库复用；本目录将它作为首个收录项目呈现。`R0.lean` 与 `R0/*.lean` 保留原始源码，并由快照哈希检查其一致性。
+
+该记录不主张结果的历史首次性，也不等同于独立人类同行审稿。主陈述经过重新编译和展开检查；Lean 内核验证证明项，不认证文献优先权或问题的最新研究状态。基础库的定义说明见 [语义审查](../../docs/SEMANTIC_REVIEW.md)。
