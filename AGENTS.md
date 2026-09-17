@@ -1,5 +1,8 @@
 # 本库的后续维护约定
 
+- 公开文档只介绍基础库和已授权收录的形式化项目。用户提供的本地题目集、题号映射、研究优先级和内部计划不得自动进入公开文档或源码包。
+- 根 README 只保留基础库说明及 `Formalizations/` 总入口；具体项目的结论、来源和证明导航放在该项目子目录。文档打包使用明确文件清单，新增公开文档时逐项审查。
+
 - 使用 Lean 4.30.0 与本库锁定的 mathlib；常规任务不自动升级工具链。
 - 基础工具使用 `InfinitaryCombinatorics` namespace 并加入 `InfinitaryCombinatorics.lean`；问题形式化放入 `Formalizations/<项目名>/`，使用 `InfinitaryCombinatorics.Formalizations.<项目名>` namespace 并加入 `Formalizations.lean`。基础库不反向导入应用层。
 - `R0/` 为有来源哈希的兼容快照。常规扩展写新模块；需要改变旧定义时先给出明确的迁移/等价说明。
