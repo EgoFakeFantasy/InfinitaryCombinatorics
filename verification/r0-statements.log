@@ -1,0 +1,2 @@
+'R0.exists_non_finIntersecting_ad_of_size_splittingNumber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R0.nonFinIntersectingNumber_eq_splittingNumber' depends on axioms: [propext, Classical.choice, Quot.sound]

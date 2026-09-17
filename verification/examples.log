@@ -1,0 +1,8 @@
+InfinitaryCombinatorics.Pr1Witness.{u, v, w} {V : Type u} [LinearOrder V] {P : Type v} {K : Type w} (κ χ : Cardinal.{u})
+  (p : PairColoring V P) (c : PairColoring V K) : Prop
+InfinitaryCombinatorics.TypeGuessing.{u} {κ : Ordinal.{u}} (C : CSequence κ) (width : ℕ → ℕ)
+  (t : (k : ℕ) → DisjointType (width k + 1)) : Prop
+InfinitaryCombinatorics.DeltaRegressive.{u} (κ : Ordinal.{u}) (c : PairColoring (Branch κ) ↑(Iio κ)) : Prop
+InfinitaryCombinatorics.HasChromaticNumber.{u} {V : Type u} (G : SimpleGraph V) (κ : Cardinal.{u}) : Prop
+InfinitaryCombinatorics.Directed.HasDichromaticNumber.{u} {V : Type u} (D : Digraph V) (κ : Cardinal.{u}) : Prop
+R0.nonFinIntersectingNumber_eq_splittingNumber : R0.nonFinIntersectingNumber = R0.splittingNumber
