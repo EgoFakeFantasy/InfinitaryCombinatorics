@@ -1,12 +1,15 @@
 name = "infinitaryCombinatorics"
 version = "0.1.0"
-defaultTargets = ["InfinitaryCombinatorics"]
+defaultTargets = ["InfinitaryCombinatorics", "Formalizations"]
 
 [[lean_lib]]
 name = "InfinitaryCombinatorics"
 
 [[lean_lib]]
 name = "R0"
+
+[[lean_lib]]
+name = "Formalizations"
 
 [[require]]
 name = "mathlib"

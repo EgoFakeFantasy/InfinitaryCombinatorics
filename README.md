@@ -2,6 +2,18 @@
 
 这是面向所附问题登记表的第一版可复用工具库。数学基础采用经典 Lean 4 + mathlib；各模块中的 theorem/lemma 均提供完整证明。研究问题本身不作为公理加入，也不以定义包装为已解决结果。
 
+## 问题形式化项目
+
+[Formalizations/](Formalizations/README.md) 专门收录基于本仓库基础工具完成的无穷组合相关问题形式化，按问题分别提供证明入口、来源和验收说明。
+
+首个收录项目为 [R0：非 FI AD 族的最小规模等于分裂数](Formalizations/R0/README.md)。该目录的 [Main.lean](Formalizations/R0/Main.lean) 复用本库内已有的完整 R0 证明；原 `R0.*` 接口保持不变。其原始本地证明先于本库完成，本次接入不主张新数学结果。
+
+```lean
+import Formalizations.R0.Main
+```
+
+`lake build` 同时构建基础库与已收录项目。基础库使用者仍可只导入 `InfinitaryCombinatorics`；应用层的展开陈述由 `CheckFormalizations.lean` 检查，并纳入统一公理审计。
+
 ## 使用
 
 Lean `4.30.0`，mathlib `v4.30.0`；精确依赖见 `lean-toolchain` 与 `lake-manifest.json`。
@@ -29,6 +41,7 @@ path = "../infinitary-combinatorics"
 lake build
 lake env lean Examples.lean
 lake env lean CheckR0.lean
+lake env lean CheckFormalizations.lean
 lake env lean Audit.lean
 ```
 
@@ -58,7 +71,7 @@ Windows 的 `./verify.ps1` 会完成构建、消费端示例、展开后的 R0 �
 
 ## 本次验收
 
-2026-09-17 的本地验收覆盖 22 个库模块、361 个声明和 208 个定理常量（含 Lean 自动生成项）。完整构建、公共接口示例、R0 展开陈述、全声明公理审计及缺口扫描全部通过；仅依赖 `propext`、`Classical.choice`、`Quot.sound`。精确时间、源哈希和日志以 `verification/manifest.json` 为准。
+2026-09-17 的本地验收覆盖 24 个模块（22 个基础库模块及 2 个应用模块）、365 个声明和 212 个定理常量（含 Lean 自动生成项）。完整构建、公共接口示例、R0 与应用入口的展开陈述、全声明公理审计及缺口扫描全部通过；仅依赖 `propext`、`Classical.choice`、`Quot.sound`。精确时间、源哈希和日志以 `verification/manifest.json` 为准。
 
 WorkBuddy 通过 Agent 广场 task 16 完成 `CountableSplitting.lean`；Codex 复核、接入推论并完成整库验收。新增库保留原有 R0 工程的源文件与接口。
 

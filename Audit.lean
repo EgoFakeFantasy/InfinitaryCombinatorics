@@ -1,4 +1,4 @@
-import InfinitaryCombinatorics
+import Formalizations
 import Lean
 
 open Lean Elab Command in
@@ -15,7 +15,11 @@ run_elab do
     `InfinitaryCombinatorics.exists_boundedDepth_unboundedWidth,
     `InfinitaryCombinatorics.Directed.isDicoloring_iff_fibers,
     `InfinitaryCombinatorics.pr1Witness_recolor,
-    `R0.nonFinIntersectingNumber_eq_splittingNumber]
+    `R0.nonFinIntersectingNumber_eq_splittingNumber,
+    `InfinitaryCombinatorics.Formalizations.R0.small_families_are_finIntersecting,
+    `InfinitaryCombinatorics.Formalizations.R0.exists_counterexample_of_size_s,
+    `InfinitaryCombinatorics.Formalizations.R0.least_counterexample_cardinal,
+    `InfinitaryCombinatorics.Formalizations.R0.nonFinIntersectingNumber_eq_splittingNumber]
   for name in required do
     unless env.contains name do
       throwError "Required declaration missing: {name}"

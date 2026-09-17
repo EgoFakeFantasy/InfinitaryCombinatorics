@@ -3,10 +3,10 @@ $icOriginalLocation = Get-Location
 try {
   Set-Location -LiteralPath $PSScriptRoot
   New-Item -ItemType Directory -Path 'verification' -Force | Out-Null
-  $icLibraryFiles = @('InfinitaryCombinatorics.lean', 'R0.lean') +
-    @(Get-ChildItem -LiteralPath 'InfinitaryCombinatorics','R0' -Filter '*.lean' -Recurse |
+  $icLibraryFiles = @('InfinitaryCombinatorics.lean', 'R0.lean', 'Formalizations.lean') +
+    @(Get-ChildItem -LiteralPath 'InfinitaryCombinatorics','R0','Formalizations' -Filter '*.lean' -Recurse |
       ForEach-Object { $_.FullName.Substring($PSScriptRoot.Length + 1).Replace('\','/') })
-  $icFiles = $icLibraryFiles + @('Examples.lean','CheckR0.lean','Audit.lean')
+  $icFiles = $icLibraryFiles + @('Examples.lean','CheckR0.lean','CheckFormalizations.lean','Audit.lean')
   $icForbidden = '\b(sorry|admit|sorryAx|native_decide|unsafe)\b|(?m)^\s*(axiom|constant)\s'
   foreach ($icFile in $icFiles) {
     $icText = Get-Content -LiteralPath $icFile -Raw -Encoding utf8
@@ -27,6 +27,7 @@ try {
   $icQueue = [Collections.Generic.Queue[string]]::new()
   $icSeen = [Collections.Generic.HashSet[string]]::new()
   $icQueue.Enqueue('InfinitaryCombinatorics')
+  $icQueue.Enqueue('Formalizations')
   while ($icQueue.Count -gt 0) {
     $icModule = $icQueue.Dequeue()
     if (-not $icSeen.Add($icModule)) { continue }
@@ -50,6 +51,8 @@ try {
   if ($LASTEXITCODE -ne 0) { throw 'Consumer examples failed' }
   & lake env lean CheckR0.lean 2>&1 | Tee-Object -FilePath 'verification/r0-statements.log'
   if ($LASTEXITCODE -ne 0) { throw 'Unfolded R0 statements failed' }
+  & lake env lean CheckFormalizations.lean 2>&1 | Tee-Object -FilePath 'verification/formalizations-statements.log'
+  if ($LASTEXITCODE -ne 0) { throw 'Formalization statement checks failed' }
   & lake env lean Audit.lean 2>&1 | Tee-Object -FilePath 'verification/axiom-audit.log'
   if ($LASTEXITCODE -ne 0) { throw 'Axiom audit failed' }
   $icAudit = Get-Content -LiteralPath 'verification/axiom-audit.log' -Raw
@@ -64,7 +67,7 @@ try {
       throw "Source changed during verification; rerun: $icFile"
     }
   }
-  $icFinalLibraryCount = 2 + @(Get-ChildItem -LiteralPath 'InfinitaryCombinatorics','R0' -Filter '*.lean' -Recurse).Count
+  $icFinalLibraryCount = 3 + @(Get-ChildItem -LiteralPath 'InfinitaryCombinatorics','R0','Formalizations' -Filter '*.lean' -Recurse).Count
   if ($icFinalLibraryCount -ne $icLibraryFiles.Count) { throw 'Module set changed during verification' }
   $icReport = [ordered]@{
     checked_at_utc = [DateTime]::UtcNow.ToString('o')
@@ -73,6 +76,7 @@ try {
     build = 'passed'
     consumer_examples = 'passed'
     unfolded_R0_statements = 'passed'
+    formalization_statements = 'passed'
     axiom_audit = 'passed'
     declarations = $icDeclarations
     theorem_constants = $icTheorems
