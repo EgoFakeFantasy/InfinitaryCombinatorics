@@ -22,7 +22,7 @@ theorem almostStronglySeparable_implies_SS {A : Set (Set X)}
   obtain ⟨a, ha, hFa⟩ := h F hF
   exact ⟨a, inIdeal_of_mem ha, hFa⟩
 
-/-- A8's extension obstacle remains an explicit hypothesis in this reuse theorem. -/
+/-- The required MAD extension remains an explicit hypothesis in this reuse theorem. -/
 theorem nonFI_mad_extension {A B : Set (Set X)} (hA : ¬ R0.FinIntersecting A)
     (hAB : A ⊆ B) (hB : MAD B) : MAD B ∧ ¬ R0.FinIntersecting B :=
   ⟨hB, not_finIntersecting_of_subset hA hAB⟩

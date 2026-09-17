@@ -72,7 +72,7 @@ theorem boundedDepth_of_boundedWidth {width : ℕ → ℕ}
   obtain ⟨n, hn⟩ := h
   exact ⟨n, fun k => (Nat.le_of_lt (t k).depth_spec.choose).trans (hn k)⟩
 
-/-- A checked example separates the two hypotheses in A1. -/
+/-- A checked example separates bounded depth from bounded width. -/
 theorem exists_boundedDepth_unboundedWidth :
     ∃ (width : ℕ → ℕ) (t : ∀ k, DisjointType (width k + 1)),
       BoundedTypeDepth width t ∧ ¬ BoundedTypeWidth width := by
