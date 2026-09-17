@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-09-17T04:18:23.4455133Z",
+  "checked_at_utc": "2026-09-17T04:39:39.0895773Z",
   "lean_toolchain": "leanprover/lean4:v4.30.0",
   "mathlib_revision": "c5ea00351c28e24afc9f0f84379aa41082b1188f",
   "build": "passed",
@@ -21,116 +21,116 @@
   "R0_snapshot_hashes": "unchanged",
   "source_hashes": [
     {
-      "path": "Audit.lean",
-      "sha256": "fa59998eecc6c446711c3526d8c167576ba91554f1c7b71687398b8696a98958"
+      "sha256": "fa59998eecc6c446711c3526d8c167576ba91554f1c7b71687398b8696a98958",
+      "path": "Audit.lean"
     },
     {
-      "path": "CheckFormalizations.lean",
-      "sha256": "5d331f764126ac3b355d1f89cbb2c2437cd8860d7579ab78ef4c300638b2eaba"
+      "sha256": "5d331f764126ac3b355d1f89cbb2c2437cd8860d7579ab78ef4c300638b2eaba",
+      "path": "CheckFormalizations.lean"
     },
     {
-      "path": "CheckR0.lean",
-      "sha256": "7e1b5ed44fbc01e122c2ebc9c77f2ae4f6c7671ab7c26c244903993c094eae3f"
+      "sha256": "7e1b5ed44fbc01e122c2ebc9c77f2ae4f6c7671ab7c26c244903993c094eae3f",
+      "path": "CheckR0.lean"
     },
     {
-      "path": "Examples.lean",
-      "sha256": "4012fd10c184015408ded568751467d1737e31cebe87a55d001ef43b1e0b711d"
+      "sha256": "4012fd10c184015408ded568751467d1737e31cebe87a55d001ef43b1e0b711d",
+      "path": "Examples.lean"
     },
     {
-      "path": "Formalizations.lean",
-      "sha256": "e65775d6354eba62b3b778e09b3a540a3d1beb8c2734ce2cc32b911e5b71305e"
+      "sha256": "e65775d6354eba62b3b778e09b3a540a3d1beb8c2734ce2cc32b911e5b71305e",
+      "path": "Formalizations.lean"
     },
     {
-      "path": "Formalizations/R0/Main.lean",
-      "sha256": "bad56d9f9f8c51280eb3de709591b608f3f2829ad6b7647ebef7604dde56dc07"
+      "sha256": "bad56d9f9f8c51280eb3de709591b608f3f2829ad6b7647ebef7604dde56dc07",
+      "path": "Formalizations/R0/Main.lean"
     },
     {
-      "path": "InfinitaryCombinatorics.lean",
-      "sha256": "fe9ab0fc2920a02f7e72de6dd402579b88ceadbacfb96034491e7aef28daa3a9"
+      "sha256": "fe9ab0fc2920a02f7e72de6dd402579b88ceadbacfb96034491e7aef28daa3a9",
+      "path": "InfinitaryCombinatorics.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/AlmostContainment.lean",
-      "sha256": "e1b65c9c24f0d76536080197fe3556a382b52fd401847471c5057c3238eee654"
+      "sha256": "e1b65c9c24f0d76536080197fe3556a382b52fd401847471c5057c3238eee654",
+      "path": "InfinitaryCombinatorics/AlmostContainment.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/Characteristics.lean",
-      "sha256": "f1c1ae23db01985a81e7dc8094dc75cbef1e8000df6b419525ff7c8a4b34167a"
+      "sha256": "f1c1ae23db01985a81e7dc8094dc75cbef1e8000df6b419525ff7c8a4b34167a",
+      "path": "InfinitaryCombinatorics/Characteristics.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/CountableSplitting.lean",
-      "sha256": "473b20fafbd6e9e92ed5e724e58c622b9fa511f30a0e4130a476f69fb956ba92"
+      "sha256": "473b20fafbd6e9e92ed5e724e58c622b9fa511f30a0e4130a476f69fb956ba92",
+      "path": "InfinitaryCombinatorics/CountableSplitting.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/Delta.lean",
-      "sha256": "02c5be17319dfd095bf02caa1491d19ea5afaff88880282201260e6414fe36a3"
+      "sha256": "02c5be17319dfd095bf02caa1491d19ea5afaff88880282201260e6414fe36a3",
+      "path": "InfinitaryCombinatorics/Delta.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/Directed.lean",
-      "sha256": "6bc2ab15bc504031afcb817044556971e17f5ec8fd839708343d3568b790810d"
+      "sha256": "6bc2ab15bc504031afcb817044556971e17f5ec8fd839708343d3568b790810d",
+      "path": "InfinitaryCombinatorics/Directed.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/DisjointType.lean",
-      "sha256": "9085c93870433bf55e4009b949a5a6ef50be276242f58bda993ecc03a9b7e825"
+      "sha256": "9085c93870433bf55e4009b949a5a6ef50be276242f58bda993ecc03a9b7e825",
+      "path": "InfinitaryCombinatorics/DisjointType.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/FinIntersection.lean",
-      "sha256": "bef23210b0fd14af2d56164af0a022a46093bf8769042e93ec75e3f7d53bdd7f"
+      "sha256": "bef23210b0fd14af2d56164af0a022a46093bf8769042e93ec75e3f7d53bdd7f",
+      "path": "InfinitaryCombinatorics/FinIntersection.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/Ideal.lean",
-      "sha256": "856b9399f6873dc1e1ec33b840280eb29c4005021f6f2c027c7d887f7e1227c3"
+      "sha256": "856b9399f6873dc1e1ec33b840280eb29c4005021f6f2c027c7d887f7e1227c3",
+      "path": "InfinitaryCombinatorics/Ideal.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/OrdinalFramework.lean",
-      "sha256": "6bfaa05ae4c33dae71b38a92a9632dfb555a7aeada1ad960c5651bfbe664105e"
+      "sha256": "2b09da09b1faa0bd973eb814987967573c4f57fdca83e72faf818d26d65def3f",
+      "path": "InfinitaryCombinatorics/OrdinalFramework.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/PairColoring.lean",
-      "sha256": "c74971acf19c7b47bb4c4c5028bc1f4447df94911199d5c515ffe82fa1f87184"
+      "sha256": "c74971acf19c7b47bb4c4c5028bc1f4447df94911199d5c515ffe82fa1f87184",
+      "path": "InfinitaryCombinatorics/PairColoring.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/Partition.lean",
-      "sha256": "08b64ce4847adb42b9edd278020b0359afee7b601664e550de520f881537844d"
+      "sha256": "08b64ce4847adb42b9edd278020b0359afee7b601664e550de520f881537844d",
+      "path": "InfinitaryCombinatorics/Partition.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/Separability.lean",
-      "sha256": "fb717c0b28dcebe0b0c0d7ee7b4001d9b5a16f16ee8d05eaddaba5bb5d8c4124"
+      "sha256": "f8bd79a5a454089325a0e8cf594aaa03ae53ed2f196f47d04304138e95f1ed9d",
+      "path": "InfinitaryCombinatorics/Separability.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/StrongColoring.lean",
-      "sha256": "1553361e37bdc9206f1792c1d7b177814e431ab02f2aa881c7a8220e790ef221"
+      "sha256": "1553361e37bdc9206f1792c1d7b177814e431ab02f2aa881c7a8220e790ef221",
+      "path": "InfinitaryCombinatorics/StrongColoring.lean"
     },
     {
-      "path": "InfinitaryCombinatorics/Transport.lean",
-      "sha256": "5b9bbdaec256ef8577ca790620ad4aa083dfbc96674d5855a8bcce41e0dc28e9"
+      "sha256": "5b9bbdaec256ef8577ca790620ad4aa083dfbc96674d5855a8bcce41e0dc28e9",
+      "path": "InfinitaryCombinatorics/Transport.lean"
     },
     {
-      "path": "R0.lean",
-      "sha256": "33a46c462dc5c4dd2bec47efaf975f0ce8dd387ddc694f9b3f5f960afea31ef5"
+      "sha256": "33a46c462dc5c4dd2bec47efaf975f0ce8dd387ddc694f9b3f5f960afea31ef5",
+      "path": "R0.lean"
     },
     {
-      "path": "R0/Basic.lean",
-      "sha256": "4fcbcdd6d672efaf4886fec72309f2981454d4d7ab10919c6faa08b68a28557c"
+      "sha256": "4fcbcdd6d672efaf4886fec72309f2981454d4d7ab10919c6faa08b68a28557c",
+      "path": "R0/Basic.lean"
     },
     {
-      "path": "R0/LowerBound.lean",
-      "sha256": "c4aa12d68ed1787e6cbf2f82ad99937cc8283b80c8ff3d8f7a1e929ba5f7c77e"
+      "sha256": "c4aa12d68ed1787e6cbf2f82ad99937cc8283b80c8ff3d8f7a1e929ba5f7c77e",
+      "path": "R0/LowerBound.lean"
     },
     {
-      "path": "R0/Main.lean",
-      "sha256": "bbb4f5c85cab201c8c8783483c53a8b9ec505394fe9831be7aeb830928cd8143"
+      "sha256": "bbb4f5c85cab201c8c8783483c53a8b9ec505394fe9831be7aeb830928cd8143",
+      "path": "R0/Main.lean"
     },
     {
-      "path": "R0/SplittingNumber.lean",
-      "sha256": "32f278d128997fb217a39a2831a8f09c959799216c7488ae2a728147a97ea34f"
+      "sha256": "32f278d128997fb217a39a2831a8f09c959799216c7488ae2a728147a97ea34f",
+      "path": "R0/SplittingNumber.lean"
     },
     {
-      "path": "R0/Transport.lean",
-      "sha256": "5af6cedc2f76253cb9b2de643ddaacf8f4467254f05e5147686695ddcd9b44ee"
+      "sha256": "5af6cedc2f76253cb9b2de643ddaacf8f4467254f05e5147686695ddcd9b44ee",
+      "path": "R0/Transport.lean"
     },
     {
-      "path": "R0/TreeConstruction.lean",
-      "sha256": "0e25aea41dff983ba7fb796f33bc16ac03ca5ee309fd420c44dfaf8401dd1208"
+      "sha256": "0e25aea41dff983ba7fb796f33bc16ac03ca5ee309fd420c44dfaf8401dd1208",
+      "path": "R0/TreeConstruction.lean"
     }
   ]
 }
