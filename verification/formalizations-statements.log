@@ -1,0 +1,6 @@
+'InfinitaryCombinatorics.Formalizations.R0.exists_counterexample_of_size_s' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.nonFinIntersectingNumber_eq_splittingNumber' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
