@@ -17,3 +17,25 @@
 'InfinitaryCombinatorics.Formalizations.A1.KA_implies_KAomegaOne' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.exact_trace_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.uniform_nonFinIntersecting_mad' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.countable_completion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.local_to_global_extension_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.nonFinIntersecting_countable_incidence_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.placement_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.trace_splitting_replacement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.triangle_counterexample' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

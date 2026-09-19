@@ -6,7 +6,7 @@
 
 | 项目 | 数学内容 | Lean 入口 | 状态 |
 | --- | --- | --- | --- |
-| [R0](R0/README.md) | 非 fin-intersecting 无限 AD 族的最小规模等于分裂数 s，且在自然数上达到 | [Formalizations.R0.Main](R0/Main.lean) | 完整证明；复用本库保留的 R0 实现；纳入统一构建与公理审计 |
+| [R0](R0/README.md) | 最小规模 s、完整规模谱、统一 MAD 构造、迹集实现、替换及条件转移 | [Formalizations.R0.Paper](R0/Paper.lean) | 完整论文数学结果；保留原 R0 快照；Q4.10 仍未解决 |
 | [A1](A1/README.md) | 固定深度一类型猜测推出 KA；显式三倍抽稀及逐梯反染色；两个内部附录引理 | [Formalizations.A1.Main](A1/Main.lean) | 内部组合证明完成；外部相容性结果不在形式化范围内 |
 
 R0 的原始本地证明先于基础库完成，其定义和引理随后纳入本库。本条目是该证明在本库中的应用入口，不表示重新证明了一个新的数学结果。
@@ -14,7 +14,7 @@ R0 的原始本地证明先于基础库完成，其定义和引理随后纳入�
 ## 使用与验证
 
 ```lean
-import Formalizations.R0.Main
+import Formalizations.R0.Paper
 -- 导入全部已收录项目时可使用 import Formalizations
 open InfinitaryCombinatorics.Formalizations.R0
 ```

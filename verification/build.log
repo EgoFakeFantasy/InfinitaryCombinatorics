@@ -1,9 +1,4 @@
-✔ [1037/1047] Built Formalizations.A1.CantorPairing (6.0s)
-✔ [1039/1047] Built Formalizations.A1.Principles (14s)
-✔ [1040/1047] Built Formalizations.A1.LocalNumbering (14s)
-✔ [1042/1047] Built Formalizations.A1.Main (14s)
-✔ [1044/1047] Built Formalizations.A1.Diamond (14s)
-ℹ [1045/1047] Built Formalizations.A1.Check (14s)
+ℹ [1050/1064] Replayed Formalizations.A1.Check
 info: Formalizations/A1/Check.lean:91:0: 'InfinitaryCombinatorics.Formalizations.A1.cantorPair_closedForm' depends on axioms: [propext, Quot.sound]
 info: Formalizations/A1/Check.lean:92:0: 'InfinitaryCombinatorics.Formalizations.A1.countable_convex_partition' depends on axioms: [propext,
  Classical.choice,
@@ -24,5 +19,12 @@ info: Formalizations/A1/Check.lean:97:0: 'InfinitaryCombinatorics.Formalizations
 info: Formalizations/A1/Check.lean:98:0: 'InfinitaryCombinatorics.Formalizations.A1.KA_implies_KAomegaOne' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
-✔ [1046/1047] Built Formalizations (14s)
-Build completed successfully (1047 jobs).
+✔ [1056/1064] Built Formalizations.R0.Spectrum (15s)
+✔ [1057/1064] Built Formalizations.R0.BinaryCoding (16s)
+✔ [1058/1064] Built Formalizations.R0.Selectors (14s)
+✔ [1059/1064] Built Formalizations.R0.TraceRealization (15s)
+✔ [1060/1064] Built Formalizations.R0.Triangle (15s)
+✔ [1061/1064] Built Formalizations.R0.Consequences (14s)
+✔ [1062/1064] Built Formalizations.R0.Paper (14s)
+✔ [1063/1064] Built Formalizations (14s)
+Build completed successfully (1064 jobs).

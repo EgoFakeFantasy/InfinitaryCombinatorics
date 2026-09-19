@@ -1,51 +1,56 @@
-# R0：非 fin-intersecting AD 族的最小规模
+# R0：迹集、替换与非 fin-intersecting AD / MAD 族
 
-本项目将本地已经完成的 R0 证明接入本仓库的 [问题形式化目录](../README.md)。数学结论为：非 fin-intersecting 的无限 almost disjoint 族的最小规模等于分裂数 s，并且存在底集为自然数、规模恰为 s 的见证。
+本目录形式化论文 *Traces and replacements in non-fin-intersecting almost disjoint families*（Haoxuan Ye，2026-09-19）的数学结果。完整入口为 [Paper.lean](Paper.lean)；旧最小规模接口保留在 [Main.lean](Main.lean)。
 
-## 主定理与实际证明
+- 非 FI 的无限 AD 族在自然数上的最小规模为分裂数 s；可实现的规模恰为闭区间 [s,c]。
+- 统一构造自然数上规模恰为连续统 c 的非 FI MAD 族，对应原 Question 4.6 的不分基数情形的构造要求；最小规模结果对应 Question 4.9。
+- 证明精确迹集实现、局部替换、正交类及扩张费用不变性、可数 AD 完备化、局部到整体费用界、可数交叠转移、放置公式与迹集分裂替换。
+- 验证显式二进制编码及三角形附录。
 
-[Main.lean](Main.lean) 导入本仓库的 `InfinitaryCombinatorics`，在 `InfinitaryCombinatorics.Formalizations.R0` 中提供四个经内核检查的入口：
+**Question 4.10 仍未解决。** 规模为 a 的非 FI MAD 扩张需要文中明确列出的可数交叠或费用条件；迹集分裂替换需要一个预先固定、对所有无限指标集有效的赋值。仓库没有把这些条件加入为公理。
 
-| 声明 | 结论 |
+## 证明导航
+
+见 [论文—定理对应表及语义审查](PAPER_COVERAGE.md)，其中列出每条数学结论、入口及实现差异。
+
+| 模块 | 内容 |
 | --- | --- |
-| `small_families_are_finIntersecting` | 规模小于 s 的任意集合族都是 FI；不需要 AD 假设 |
-| `exists_counterexample_of_size_s` | 自然数上存在无限 AD 族，非 FI 且规模恰为 s |
-| `least_counterexample_cardinal` | s 属于反例规模集合，并且是其最小元 |
-| `nonFinIntersectingNumber_eq_splittingNumber` | 非 FI AD 族的最小规模等于 s |
+| [Main](Main.lean) | 原 R0 下界、最小值达到及最小元 |
+| [BinaryCoding](BinaryCoding.lean)、[Selectors](Selectors.lean)、[TraceRealization](TraceRealization.lean) | 显式大端二进制编码、逐块选择、精确迹集实现 |
+| [Spectrum](Spectrum.lean) | 规模谱 [s,c] |
+| [Local](Local.lean)、[BinarySplitting](BinarySplitting.lean) | Zorn 扩张、局部替换、有限分裂、迹集判据及障碍 |
+| [Remainder](Remainder.lean)、[BranchComparison](BranchComparison.lean) | 实际最小扩张余族、费用及分支比较 |
+| [UniformMAD](UniformMAD.lean) | 规模 c 的统一非 FI MAD 构造 |
+| [CountableParts](CountableParts.lean)、[CountableCompletion](CountableCompletion.lean) | 有限差异配对、实际基数 a、可数族完备化 |
+| [LocalGlobal](LocalGlobal.lean)、[CountableTransfer](CountableTransfer.lean)、[Placement](Placement.lean) | 费用界、保持原集合的转移、精确放置公式 |
+| [Triangle](Triangle.lean)、[Consequences](Consequences.lean) | 三角形显式构造、首个不同位阈值、单点块障碍 |
 
-这些入口直接使用已有完整证明，没有重新定义 AD、FI、分裂数或改变结论。原本的 `R0.*` 接口及七个快照源文件保持不变，以便基础库继续复用相关引理。
+`R0.lean` 与 `R0/*.lean` 是原始兼容快照，由 [源哈希清单](../../docs/r0-source-hashes.json) 固定，全部保持原字节不变。扩展全部写入本目录；基础库不反向依赖应用。
 
-## 完整证明导航
+## 验证
 
-| 共享源码 | 作用 |
-| --- | --- |
-| [R0/Basic.lean](../../R0/Basic.lean) | 分裂、AD、有限块、迹、中心性与 FI 的定义 |
-| [R0/LowerBound.lean](../../R0/LowerBound.lean) | 不分裂的迹族产生中心化限制 |
-| [R0/SplittingNumber.lean](../../R0/SplittingNumber.lean) | 分裂数的最小值实现与 FI 下界 |
-| [R0/TreeConstruction.lean](../../R0/TreeConstruction.lean) | 二叉树构造、AD 性及非 FI 阻碍 |
-| [R0/Transport.lean](../../R0/Transport.lean) | 将构造保真搬运到自然数 |
-| [R0/Main.lean](../../R0/Main.lean) | 基数计算、最小值及最终等式 |
-
-主入口为本库的复用示例；上表链接通向实际构造与证明体，不是未完成的外部依赖。六个模块及 `R0.lean` 的原始内容哈希由 [快照清单](../../docs/r0-source-hashes.json) 固定。
-
-## 语义与验收
-
-`AlmostDisjoint A` 同时要求族 A 无限、每个成员无限、不同成员相交有限。FI 先去掉有限的限制迹，再对所有非空有限子族检查无限交。最终见证确实位于自然数上，且最小规模被达到。
-
-[CheckFormalizations.lean](../../CheckFormalizations.lean) 对新入口检查展开后的存在性、下界、最小元和等式；[CheckR0.lean](../../CheckR0.lean) 保留原接口检查。统一公理审计同时遍历基础库、旧 R0 与新应用声明，拒绝标准经典 Lean 公理之外的依赖。
+工具链为 `leanprover/lean4:v4.30.0`，mathlib 锁定于 `c5ea00351c28e24afc9f0f84379aa41082b1188f`。运行：
 
 ```text
-lake build
-lake env lean CheckFormalizations.lean
-lake env lean Audit.lean
+lake exe cache get
+pwsh -File verify.ps1
 ```
 
-上述结论不包含保持指定基数的 MAD 扩张定理。
+`verify.ps1` 执行完整构建、使用示例、展开的主陈述检查、所有模块的入口覆盖、原 R0 快照哈希、禁止构造及空白检查，并审计全部项目声明的传递公理依赖。只允许 `propext`、`Classical.choice`、`Quot.sound`。
 
-## 来源与贡献说明
+- [GitHub 自动验证](https://github.com/EgoFakeFantasy/InfinitaryCombinatorics/actions/workflows/lean.yml)
+- [当前本地验收清单与源哈希](../../verification/manifest.json)
+- [展开陈述检查](../../CheckFormalizations.lean)
+- [全声明公理审计](../../Audit.lean)及[日志](../../verification/axiom-audit.log)
 
-数学问题和定义来自 Corral–Rodrigues, *Fin-intersecting MAD families*, Filomat 38(7) (2024), 2563–2578，尤其 Definition 2.3、Theorem 3.1、Proposition 4.8 与 Question 4.9。
+CI 对推送版本重新运行相同验收并保存证据附件。验证链接须与具体提交对应；浮动分支页面本身不是成功验证的证据。
 
-原始 R0 论证与 Lean 形式化由 GPT-6 Astra 生成，用户提供研究问题；Codex 完成本库接入与验收。原证明先于基础库完成，其定义及中间引理已被基础库复用；本目录将它作为首个收录项目呈现。`R0.lean` 与 `R0/*.lean` 保留原始源码，并由快照哈希检查其一致性。
+## 语义及来源
 
-该记录不主张结果的历史首次性，也不等同于独立人类同行审稿。主陈述经过重新编译和展开检查；Lean 内核验证证明项，不认证文献优先权或问题的最新研究状态。基础库的定义说明见 [语义审查](../../docs/SEMANTIC_REVIEW.md)。
+`ADFamily` 允许有限或空的局部族；`R0.AlmostDisjoint` 与 `MAD` 要求无限的族。所有 AD 成员均无限。`MaximalOn` 允许有限局部极大家族。正交类包括有限集合，扩张费用允许零及有限值，并证明最小值实际达到。FI 删除有限的限制迹后，对每个非空有限子族要求无限交。
+
+论文的文献来源为 Corral–Rodrigues, *Fin-intersecting MAD families*, Filomat 38(7) (2024), 2563–2578，DOI [10.2298/FIL2407563C](https://doi.org/10.2298/FIL2407563C)。相对余族观点参考 Fuchino–Geschke–Guzmán–Soukup, *How to drive our families mad*。
+
+Rodrigues 于 2026 年 9 月告知作者，他此前已借助 GPT-5.6-Sol 获得相同最小规模结论及相近的未发表证明；本项目不主张优先于该观察，其沟通不构成对本文或扩展结果的核验或背书。
+
+核心论证及初始 Lean 证明由 GPT-6 Astra 生成；本次扩展由 Codex 根据完整论文生成并通过 Lean 内核验收。Haoxuan Ye 提出问题、协调研究并承担论文责任。自动形式验证不等同于独立人类同行审稿，也不认证文献优先权。
