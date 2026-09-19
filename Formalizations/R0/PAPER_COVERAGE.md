@@ -4,8 +4,8 @@ Specification: Haoxuan Ye, *Traces and replacements in non-fin-intersecting almo
 
 | Paper statement | Checked declaration(s) | Source |
 | --- | --- | --- |
-| Lemma 2.1: transport and inheritance | shared `almostDisjoint_equiv`, `finIntersecting_equiv`, `not_finIntersecting_of_subset`; `mad_image`; `Cardinal.mk_image_eq` | shared library; UniformMAD |
-| Proposition 2.2: lower bound | `small_families_are_finIntersecting` | Main |
+| Lemma 2.2: transport and inheritance | shared `almostDisjoint_equiv`, `finIntersecting_equiv`, `not_finIntersecting_of_subset`; `mad_image`; `Cardinal.mk_image_eq` | shared library; UniformMAD |
+| Proposition 2.3: lower bound | `small_families_are_finIntersecting` | Main |
 | Theorem 3.1: attained minimum s | `exists_counterexample_of_size_s`, `least_counterexample_cardinal`, `nonFinIntersectingNumber_eq_splittingNumber` | Main; original R0 snapshot |
 | Remark 3.2: explicit interval coding | `binaryWordCode_interval`, `binaryWordCode_injective`, `binaryWordCode_surjective`, `binaryWordEquivNat` | BinaryCoding |
 | Lemma 3.3: exact realization | `exact_trace_realization` | TraceRealization; Selectors |
