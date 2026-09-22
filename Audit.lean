@@ -65,7 +65,24 @@ run_elab do
     `InfinitaryCombinatorics.Formalizations.A1.not_G_of_not_KA,
     `InfinitaryCombinatorics.Formalizations.A1.antiColoring_on_omegaOne,
     `InfinitaryCombinatorics.Formalizations.A1.Diamond_implies_ClubGuessing,
-    `InfinitaryCombinatorics.Formalizations.A1.KA_implies_KAomegaOne]
+    `InfinitaryCombinatorics.Formalizations.A1.KA_implies_KAomegaOne,
+    `InfinitaryCombinatorics.Formalizations.A2.theorem_2_2,
+    `InfinitaryCombinatorics.Formalizations.A2.theorem_2_3,
+    `InfinitaryCombinatorics.Formalizations.A2.fourEmbedding_colour_zero,
+    `InfinitaryCombinatorics.Formalizations.A2.theorem_2_4,
+    `InfinitaryCombinatorics.Formalizations.A2.corollary_3_2,
+    `InfinitaryCombinatorics.Formalizations.A2.binary_fusion,
+    `InfinitaryCombinatorics.Formalizations.A2.delta_maximal,
+    `InfinitaryCombinatorics.Formalizations.A2.rigid_on_zero_cone,
+    `InfinitaryCombinatorics.Formalizations.A2.proposition_5_3,
+    `InfinitaryCombinatorics.Formalizations.A2.observation_counterexample,
+    `InfinitaryCombinatorics.Formalizations.A2.canonical_range,
+    `InfinitaryCombinatorics.Formalizations.A2.canonicalColoring_regressive,
+    `InfinitaryCombinatorics.Formalizations.A2.canonicalColoring_no_five_on_copy,
+    `InfinitaryCombinatorics.Formalizations.A2.sharpness_finite_terminal_variation,
+    `InfinitaryCombinatorics.Formalizations.A2.normalizedPullback_regressive,
+    `InfinitaryCombinatorics.Formalizations.A2.normalizedPullback_at_zero,
+    `InfinitaryCombinatorics.Formalizations.A2.normalizedPullback_on_zero_cone]
   for name in required do
     unless env.contains name do
       throwError "Required declaration missing: {name}"

@@ -39,3 +39,14 @@
 'InfinitaryCombinatorics.Formalizations.R0.triangle_counterexample' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'InfinitaryCombinatorics.Formalizations.A2.theorem_2_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'InfinitaryCombinatorics.Formalizations.A2.theorem_2_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'InfinitaryCombinatorics.Formalizations.A2.theorem_2_4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'InfinitaryCombinatorics.Formalizations.A2.delta_maximal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'InfinitaryCombinatorics.Formalizations.A2.proposition_5_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'InfinitaryCombinatorics.Formalizations.A2.normalizedPullback_on_zero_cone' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.A2.observation_counterexample' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

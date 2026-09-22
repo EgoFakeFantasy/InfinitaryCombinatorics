@@ -113,3 +113,68 @@ example {F : Set (Set ℕ)} (hF : MaximalOn F Set.univ) :
 #print axioms trace_splitting_replacement
 #print axioms triangle_counterexample
 end R0PaperAcceptance
+
+namespace A2PaperAcceptance
+open InfinitaryCombinatorics
+open InfinitaryCombinatorics.Formalizations.A2
+universe u
+
+-- Arbitrary ordinal length: the colour is finite, and all four points lie in the zero cone.
+example (κ : Ordinal.{u}) (hκ : Ordinal.omega0 < κ)
+    (c : PairColoring (Set.Iio κ → Bool) (Set.Iio κ))
+    (hc : ∀ x y (hxy : x ≠ y), 0 < (delta x y hxy).val →
+      (c.color x y).val < (delta x y hxy).val) :
+    ∃ k : Set.Iio κ, k.val < Ordinal.omega0 ∧ ∃ e : Fin 4 ↪ (Set.Iio κ → Bool),
+      (∀ i, e i ⟨0, zero_lt_of_omega_lt hκ⟩ = false) ∧
+      ∀ i j, i ≠ j → c.color (e i) (e j) = k := theorem_2_2 κ hκ c hc
+
+-- The sharp example lives on omega + 1 and has exactly the advertised clique bounds.
+example : ∃ c : PairColoring (Set.Iio (Ordinal.omega0.{u} + 1) → Bool)
+    (Set.Iio (Ordinal.omega0.{u} + 1)),
+    (∀ x y (hxy : x ≠ y), 0 < (delta x y hxy).val →
+      (c.color x y).val < (delta x y hxy).val) ∧
+    (¬ ∃ e : Fin 5 ↪ (Set.Iio (Ordinal.omega0.{u} + 1) → Bool),
+      ∃ k, ∀ i j, i ≠ j → c.color (e i) (e j) = k) ∧
+    (∃ e : Fin 4 ↪ (Set.Iio (Ordinal.omega0.{u} + 1) → Bool),
+      ∃ k, ∀ i j, i ≠ j → c.color (e i) (e j) = k) := theorem_2_3
+
+-- The advertised explicit four-clique has colour zero, not only an unspecified colour.
+example (i j : Fin 4) (hij : i ≠ j) :
+    (sharpColoringC : PairColoring (Branch (Ordinal.omega0.{u} + 1))
+      (Set.Iio (Ordinal.omega0.{u} + 1))).color (fourEmbedding i) (fourEmbedding j) =
+        ⟨0, zero_lt_omega_add_one⟩ := fourEmbedding_colour_zero i j hij
+
+-- The triangle conclusion retains the original ordinal domain and colour set.
+example (c : PairColoring (Set.Iio Ordinal.omega0.{u} → Bool) (Set.Iio Ordinal.omega0.{u}))
+    (hc : ∀ x y (hxy : x ≠ y), 0 < (delta x y hxy).val →
+      (c.color x y).val < (delta x y hxy).val) :
+    ∃ e : Fin 3 ↪ (Set.Iio Ordinal.omega0.{u} → Bool),
+      ∃ k, ∀ i j, i ≠ j → c.color (e i) (e j) = k := theorem_2_4 c hc
+
+-- The maximality lemma is a conclusion, not a premise of the triangle theorem.
+example (d : (ℕ → Bool) → ℕ) :
+    ∃ x y : ℕ → Bool, ∃ hxy : x ≠ y,
+      d x = delta x y hxy ∧ d y = delta x y hxy := delta_maximal d
+
+-- Adding one colour changes the conclusion; the domain remains omega.
+example : ∃ c : PairColoring (Set.Iio Ordinal.omega0.{u} → Bool)
+    (Set.Iio (Ordinal.omega0.{u} + 1)),
+    (∀ x y (hxy : x ≠ y), 0 < (delta x y hxy).val →
+      (c.color x y).val < (delta x y hxy).val) ∧
+    ¬ (∃ e : Fin 3 ↪ (Set.Iio Ordinal.omega0.{u} → Bool),
+      ∃ k, ∀ i j, i ≠ j → c.color (e i) (e j) = k) := proposition_5_3
+
+-- Proposition 4.2 concerns the canonical copy, not the whole longer space.
+example {κ : Ordinal.{u}} (hκ : Ordinal.omega0 + 1 ≤ κ) :
+    DeltaRegressive κ (canonicalColoring hκ) ∧
+    ¬ ((canonicalColoring hκ).pullback (zeroExtend hκ)).HasClique 5 :=
+  ⟨canonicalColoring_regressive hκ, canonicalColoring_no_five_on_copy hκ⟩
+
+#print axioms theorem_2_2
+#print axioms theorem_2_3
+#print axioms theorem_2_4
+#print axioms delta_maximal
+#print axioms proposition_5_3
+#print axioms normalizedPullback_on_zero_cone
+#print axioms observation_counterexample
+end A2PaperAcceptance

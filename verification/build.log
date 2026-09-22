@@ -1,4 +1,4 @@
-ℹ [1050/1064] Replayed Formalizations.A1.Check
+ℹ [1045/1081] Replayed Formalizations.A1.Check
 info: Formalizations/A1/Check.lean:91:0: 'InfinitaryCombinatorics.Formalizations.A1.cantorPair_closedForm' depends on axioms: [propext, Quot.sound]
 info: Formalizations/A1/Check.lean:92:0: 'InfinitaryCombinatorics.Formalizations.A1.countable_convex_partition' depends on axioms: [propext,
  Classical.choice,
@@ -19,12 +19,11 @@ info: Formalizations/A1/Check.lean:97:0: 'InfinitaryCombinatorics.Formalizations
 info: Formalizations/A1/Check.lean:98:0: 'InfinitaryCombinatorics.Formalizations.A1.KA_implies_KAomegaOne' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
-✔ [1056/1064] Built Formalizations.R0.Spectrum (15s)
-✔ [1057/1064] Built Formalizations.R0.BinaryCoding (16s)
-✔ [1058/1064] Built Formalizations.R0.Selectors (14s)
-✔ [1059/1064] Built Formalizations.R0.TraceRealization (15s)
-✔ [1060/1064] Built Formalizations.R0.Triangle (15s)
-✔ [1061/1064] Built Formalizations.R0.Consequences (14s)
-✔ [1062/1064] Built Formalizations.R0.Paper (14s)
-✔ [1063/1064] Built Formalizations (14s)
-Build completed successfully (1064 jobs).
+✔ [1074/1081] Built Formalizations.A2.Theorem23 (16s)
+✔ [1075/1081] Built Formalizations.A2.SharpnessVariants (16s)
+✔ [1076/1081] Built Formalizations.A2.Transfer (17s)
+✔ [1077/1081] Built Formalizations.A2.Normalization (15s)
+✔ [1078/1081] Built Formalizations.A2.Check (16s)
+✔ [1079/1081] Built Formalizations.A2.Paper (20s)
+✔ [1080/1081] Built Formalizations (16s)
+Build completed successfully (1081 jobs).

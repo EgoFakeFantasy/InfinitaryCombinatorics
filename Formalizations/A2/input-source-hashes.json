@@ -1,0 +1,33 @@
+{
+  "description": "User-supplied WorkBuddy A2 input reviewed before completion",
+  "files": [
+    {
+      "path": "Basic.lean",
+      "sha256": "d0c1cfd1f416c9ce9eaf979b2d3ccca473dbfe614fd3931152383724953bc369"
+    },
+    {
+      "path": "Statements.lean",
+      "sha256": "c11bf20440c59d89ac97e626c6a093610476197b67de323a926805c4f5dc5596"
+    },
+    {
+      "path": "Sharpness.lean",
+      "sha256": "7a9ff8b2e174e64894cfa7f5f001988a20980f8f4fd91a211684e0a2f97aeac5"
+    },
+    {
+      "path": "Coloring.lean",
+      "sha256": "291a09655fdeaf78b11e5cdbcf9cec88616102b404093987f7c578c60d976bf8"
+    },
+    {
+      "path": "Theorem23.lean",
+      "sha256": "00083d72a7d92a34c77f1b6e48157954916c34605f60e42366eb3acebd927308"
+    },
+    {
+      "path": "Check.lean",
+      "sha256": "c37d3a112fd6603373f61a7c3de58dc00309cba1fde2d3a2fc6151108e313ebd"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a55f472518727015f3723252d7e3ffcbeb812717390dacb9ec55016f090f41ef"
+    }
+  ]
+}
