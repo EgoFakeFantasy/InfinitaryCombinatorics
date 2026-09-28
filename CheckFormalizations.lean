@@ -178,3 +178,29 @@ example {κ : Ordinal.{u}} (hκ : Ordinal.omega0 + 1 ≤ κ) :
 #print axioms normalizedPullback_on_zero_cone
 #print axioms observation_counterexample
 end A2PaperAcceptance
+
+namespace Q410PaperAcceptance
+open Set Cardinal InfinitaryCombinatorics InfinitaryCombinatorics.Formalizations.R0
+
+-- The target is an infinite ordinary MAD family on all natural numbers, of exact size a.
+-- Non-FI has the original universal fin-sequence definition, without an added oracle.
+example (h : _root_.R0.splittingNumber ≤ almostDisjointnessNumber) :
+    ∃ M : Set (Set ℕ),
+      (M.Infinite ∧ (∀ a ∈ M, a.Infinite) ∧
+        ∀ a ∈ M, ∀ b ∈ M, a ≠ b → (a ∩ b).Finite) ∧
+      (∀ Y : Set ℕ, Y.Infinite → ∃ a ∈ M, (Y ∩ a).Infinite) ∧
+      #M = almostDisjointnessNumber ∧
+      ¬ (∀ C : _root_.R0.FinSequence ℕ, ∃ I : Set ℕ, I.Infinite ∧
+        _root_.R0.Centered (_root_.R0.retainedTraces C M I)) := by
+  simpa only [MAD, _root_.R0.AlmostDisjoint, _root_.R0.FinIntersecting, and_assoc] using
+    exists_nonFinIntersecting_mad_size_a h
+
+example : (∃ M : Set (Set ℕ), MAD M ∧ #M = almostDisjointnessNumber ∧
+    ¬ _root_.R0.FinIntersecting M) ↔ _root_.R0.splittingNumber ≤ almostDisjointnessNumber :=
+  nonFinIntersecting_mad_size_a_iff
+
+#print axioms cell_finite_relative_completion
+#print axioms predecessor_completion_triangle
+#print axioms exists_nonFinIntersecting_mad_size_a
+#print axioms nonFinIntersecting_mad_size_a_iff
+end Q410PaperAcceptance

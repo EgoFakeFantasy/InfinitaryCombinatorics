@@ -1,6 +1,6 @@
 # Paper coverage and semantic review
 
-Specification: Haoxuan Ye, *Traces and replacements in non-fin-intersecting almost disjoint families*, 19 September 2026. The table concerns mathematical statements and their proofs, not historical attribution or the unresolved Question 4.10. New names below are in `InfinitaryCombinatorics.Formalizations.R0` unless specified otherwise.
+Specification: Haoxuan Ye, *Replacement, traces and extensions in non-fin-intersecting almost disjoint families*, revised 28 September 2026, [Zenodo v3](https://doi.org/10.5281/zenodo.22998055). The table covers all mathematical statements, including Section 8. Formalization does not establish historical attribution. New names below are in `InfinitaryCombinatorics.Formalizations.R0` unless specified otherwise.
 
 | Paper statement | Checked declaration(s) | Source |
 | --- | --- | --- |
@@ -23,6 +23,11 @@ Specification: Haoxuan Ye, *Traces and replacements in non-fin-intersecting almo
 | Proposition 7.2: hitting / obstruction | `mad_trace_hitting`, `no_trace_splitting_of_pairwise_finite` | BinarySplitting |
 | Singleton-block consequence | `singleton_trace`, `singleton_blocks_obstruction` | Consequences |
 | Appendix A: explicit triangle | `triangleValue_le`, `triangleValue_ne_of_bit`, `triangleHalf_trace`, `triangleHalf_inter_same`, `triangleHalf_inter_ne`, `triangleFamily_card`, `triangle_counterexample` | Triangle; Consequences |
+| Section 8 preliminary fact: a is uncountable | `mad_not_countable`, `aleph0_lt_almostDisjointnessNumber` | CellFinite |
+| Lemma 8.1: cell-finite relative completion of exact size a | `cell_finite_relative_completion` | CellFinite |
+| Lemma 8.2: predecessor completion on the exact triangle | `predecessor_completion_triangle`, `predecessor_row_singleton` | Predecessor |
+| Theorem 8.3: size-a non-FI MAD from s <= a | `exists_nonFinIntersecting_mad_size_a` | Predecessor |
+| Corollary 8.4: necessary and sufficient condition | `nonFinIntersecting_mad_size_a_iff` | Predecessor |
 
 ## Representation and proof-method differences
 
@@ -34,7 +39,10 @@ Specification: Haoxuan Ye, *Traces and replacements in non-fin-intersecting almo
 6. `Orthogonal` includes finite sets. `Remainder` is supported on its specified ground set; it is AD, orthogonal to the old family and maximal among infinite orthogonal sets. `extensionCost` is its attained minimum cardinality, including zero and finite values. On AD families this is proved equivalent to the paper's completion definition.
 7. `almostDisjointnessNumber` is the attained least size of an infinite MAD family on Nat. Transport proves its usual meaning on every countably infinite ground set; it is not an external constant or axiom. The transfer and placement theorems retain countability of the ground set and infinitude of the seed.
 8. The trace condition fixes `S : Set X → Set Nat` before all infinite `I`. Extending an assignment on a subfamily to this total function is harmless because only members of that subfamily are used. Finite pieces are removed by `binaryParts`; blocks need not cover the ground set. The obstruction requires pairwise finite traces for distinct indexed members, even if two trace values coincide.
-9. Question 4.10 and any new inequality involving the invariant ie are not theorems of this development. No existence of the missing trace assignment or small extension remainder is postulated.
+9. Section 8 is now proved. `cell_finite_relative_completion` reuses the paper's explicitly noted alternative via countable completion and deletion of the cells; the diagonal proof establishes that a is uncountable. `predecessor_completion` first works on Nat x Nat, with full infinite columns catching the points outside the triangle too. Restriction yields `predecessor_completion_triangle` on exactly {(m,n) | m<n}, with the actual predecessor graphs and truncated columns, ordinary relative maximality, and exact cardinality a. `predGraph` specifies the greatest element below n relationally; row existence and uniqueness are proved.
+10. For the final splitting step, an embedding of a minimum splitting family into a minimum MAD family selects enough graphs. The inverse of this injective graph assignment is fixed before all infinite index sets. This is equivalent for the theorem to the paper's surjective labelling of every graph. Cofinite traces preserve both infinite halves; the already verified `trace_splitting_replacement` supplies non-FI and exact cardinality. No continuum, regularity, or auxiliary existence assumption is introduced. No inequality concerning ie or assertion about existence of FI MAD families is claimed.
+
+Manuscript source SHA-256 (v3): `e5d9a7b1037dafff0f974a9bbd4ab04232c46fb4b747e833ddebcf53bb089c2b`.
 
 ## Verification evidence
 

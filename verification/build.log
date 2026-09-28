@@ -1,4 +1,4 @@
-ℹ [1045/1081] Replayed Formalizations.A1.Check
+ℹ [1064/1083] Replayed Formalizations.A1.Check
 info: Formalizations/A1/Check.lean:91:0: 'InfinitaryCombinatorics.Formalizations.A1.cantorPair_closedForm' depends on axioms: [propext, Quot.sound]
 info: Formalizations/A1/Check.lean:92:0: 'InfinitaryCombinatorics.Formalizations.A1.countable_convex_partition' depends on axioms: [propext,
  Classical.choice,
@@ -19,11 +19,21 @@ info: Formalizations/A1/Check.lean:97:0: 'InfinitaryCombinatorics.Formalizations
 info: Formalizations/A1/Check.lean:98:0: 'InfinitaryCombinatorics.Formalizations.A1.KA_implies_KAomegaOne' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
-✔ [1074/1081] Built Formalizations.A2.Theorem23 (16s)
-✔ [1075/1081] Built Formalizations.A2.SharpnessVariants (16s)
-✔ [1076/1081] Built Formalizations.A2.Transfer (17s)
-✔ [1077/1081] Built Formalizations.A2.Normalization (15s)
-✔ [1078/1081] Built Formalizations.A2.Check (16s)
-✔ [1079/1081] Built Formalizations.A2.Paper (20s)
-✔ [1080/1081] Built Formalizations (16s)
-Build completed successfully (1081 jobs).
+✔ [1066/1083] Built Formalizations.A2.Basic (15s)
+✔ [1067/1083] Built Formalizations.A2.Fusion (15s)
+✔ [1068/1083] Built Formalizations.A2.Sharpness (16s)
+✔ [1069/1083] Built Formalizations.A2.Coordinates (16s)
+✔ [1070/1083] Built Formalizations.A2.Statements (24s)
+✔ [1071/1083] Built Formalizations.A2.Coloring (24s)
+✔ [1072/1083] Built Formalizations.A2.Cliques (24s)
+✔ [1073/1083] Built Formalizations.A2.Triangle (15s)
+✔ [1074/1083] Built Formalizations.A2.Theorem23 (15s)
+✔ [1075/1083] Built Formalizations.A2.Four (15s)
+✔ [1076/1083] Built Formalizations.A2.Boundary (14s)
+✔ [1077/1083] Built Formalizations.A2.SharpnessVariants (14s)
+✔ [1078/1083] Built Formalizations.A2.Transfer (15s)
+✔ [1079/1083] Built Formalizations.A2.Normalization (13s)
+✔ [1080/1083] Built Formalizations.A2.Check (13s)
+✔ [1081/1083] Built Formalizations.A2.Paper (13s)
+✔ [1082/1083] Built Formalizations (13s)
+Build completed successfully (1083 jobs).

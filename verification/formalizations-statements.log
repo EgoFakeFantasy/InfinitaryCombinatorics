@@ -50,3 +50,15 @@
 'InfinitaryCombinatorics.Formalizations.A2.observation_counterexample' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.cell_finite_relative_completion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.predecessor_completion_triangle' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.exists_nonFinIntersecting_mad_size_a' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.R0.nonFinIntersecting_mad_size_a_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

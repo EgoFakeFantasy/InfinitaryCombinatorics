@@ -1,13 +1,13 @@
 # R0：迹集、替换与非 fin-intersecting AD / MAD 族
 
-本目录形式化论文 *Traces and replacements in non-fin-intersecting almost disjoint families*（Haoxuan Ye，2026-09-19）的数学结果。完整入口为 [Paper.lean](Paper.lean)；旧最小规模接口保留在 [Main.lean](Main.lean)。
+本目录形式化论文 *Replacement, traces and extensions in non-fin-intersecting almost disjoint families*（Haoxuan Ye，2026-09-28，[Zenodo v3](https://doi.org/10.5281/zenodo.22998055)）的数学结果。完整入口为 [Paper.lean](Paper.lean)；旧最小规模接口保留在 [Main.lean](Main.lean)。
 
 - 非 FI 的无限 AD 族在自然数上的最小规模为分裂数 s；可实现的规模恰为闭区间 [s,c]。
 - 统一构造自然数上规模恰为连续统 c 的非 FI MAD 族，对应原 Question 4.6 的不分基数情形的构造要求；最小规模结果对应 Question 4.9。
 - 证明精确迹集实现、局部替换、正交类及扩张费用不变性、可数 AD 完备化、局部到整体费用界、可数交叠转移、放置公式与迹集分裂替换。
 - 验证显式二进制编码及三角形附录。
 
-**Question 4.10 仍未解决。** 规模为 a 的非 FI MAD 扩张需要文中明确列出的可数交叠或费用条件；迹集分裂替换需要一个预先固定、对所有无限指标集有效的赋值。仓库没有把这些条件加入为公理。
+**Question 4.10 已形式化。** 仅假设 s ≤ a，即存在自然数上大小恰为 a 的非 FI 无限 MAD 族；并证明此条件必要且充分。新增 [CellFinite](CellFinite.lean) 和 [Predecessor](Predecessor.lean) 复用已有可数补全与迹集分裂替换，未改动旧 R0 快照，也未加入额外公理。
 
 ## 证明导航
 
@@ -53,4 +53,4 @@ CI 对推送版本重新运行相同验收并保存证据附件。验证链接�
 
 Rodrigues 于 2026 年 9 月告知作者，他此前已借助 GPT-5.6-Sol 获得相同最小规模结论及相近的未发表证明；本项目不主张优先于该观察，其沟通不构成对本文或扩展结果的核验或背书。
 
-核心论证及初始 Lean 证明由 GPT-6 Astra 生成；本次扩展由 Codex 根据完整论文生成并通过 Lean 内核验收。Haoxuan Ye 提出问题、协调研究并承担论文责任。自动形式验证不等同于独立人类同行审稿，也不认证文献优先权。
+核心论证及初始 Lean 证明由 GPT-6 Astra 生成；本次扩展由 Codex 根据完整论文生成并通过 Lean 内核验收。Haoxuan Ye 已人工核验除 Q4.10 新证明外的论文证明，并提出问题、协调研究、承担论文责任。本次更新将 Q4.10 也补入 Lean 形式化。自动形式验证不等同于独立人类同行审稿，也不认证文献优先权。

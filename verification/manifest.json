@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-09-22T06:26:37.0216875Z",
+  "checked_at_utc": "2026-09-28T03:06:41.7384707Z",
   "lean_toolchain": "leanprover/lean4:v4.30.0",
   "mathlib_revision": "c5ea00351c28e24afc9f0f84379aa41082b1188f",
   "build": "passed",
@@ -7,9 +7,9 @@
   "unfolded_R0_statements": "passed",
   "formalization_statements": "passed",
   "axiom_audit": "passed",
-  "declarations": 1007,
-  "theorem_constants": 731,
-  "library_modules": 66,
+  "declarations": 1057,
+  "theorem_constants": 776,
+  "library_modules": 68,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
@@ -21,11 +21,11 @@
   "R0_snapshot_hashes": "unchanged",
   "source_hashes": [
     {
-      "sha256": "ea2abae6ac65f5bc23db8fca3ac70b297b6ef84b338f9d7cc59dd660d9321aef",
+      "sha256": "1e252e6af9db4f776c3f696d0c0c3845ee5e6e37b8c2396925805e63b41ec6e0",
       "path": "Audit.lean"
     },
     {
-      "sha256": "8490a5d07ee6d339d69165a9ca9d67d14b195d526166eada7a45012b9de8d822",
+      "sha256": "5ebb69849d227ad41d1495750bc0bfa57104ee0af51b66d7c0e3096fa0ce9e9c",
       "path": "CheckFormalizations.lean"
     },
     {
@@ -153,6 +153,10 @@
       "path": "Formalizations/R0/BranchComparison.lean"
     },
     {
+      "sha256": "166cefae61d7544c679896c3bd4dfd7558f47527c8857b2ed294879279162d14",
+      "path": "Formalizations/R0/CellFinite.lean"
+    },
+    {
       "sha256": "754eef53c8910d61c2d963eaeb4cecdf72c7d50a1fe836da19bc1982bfbfac83",
       "path": "Formalizations/R0/Consequences.lean"
     },
@@ -181,12 +185,16 @@
       "path": "Formalizations/R0/Main.lean"
     },
     {
-      "sha256": "9029c3fdfd33609cb4afd6d911ff7f7265e53d859db117c1f559839fba843877",
+      "sha256": "6c0bb3724178e9d9abb707bfba53bf6b89ec8a51aa1d17862c84af99b93ad096",
       "path": "Formalizations/R0/Paper.lean"
     },
     {
       "sha256": "86cf5f03729423d71a58ad1f0d516743bd2b35e2f5adc2147cd16fb7c8295d35",
       "path": "Formalizations/R0/Placement.lean"
+    },
+    {
+      "sha256": "ad450941f5be2619a6c94da1d692d313be894bf03a684a70e944282fba274aac",
+      "path": "Formalizations/R0/Predecessor.lean"
     },
     {
       "sha256": "9056a95f87d16a4725efe7cd1394aa01bf3ef9ee88eb5c0b3613980c91bd97de",

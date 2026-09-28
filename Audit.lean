@@ -5,6 +5,12 @@ open Lean Elab Command in
 run_elab do
   let env ← getEnv
   let required : Array Name := #[
+    `InfinitaryCombinatorics.Formalizations.R0.aleph0_lt_almostDisjointnessNumber,
+    `InfinitaryCombinatorics.Formalizations.R0.cell_finite_relative_completion,
+    `InfinitaryCombinatorics.Formalizations.R0.predecessor_completion_triangle,
+    `InfinitaryCombinatorics.Formalizations.R0.predecessor_row_singleton,
+    `InfinitaryCombinatorics.Formalizations.R0.exists_nonFinIntersecting_mad_size_a,
+    `InfinitaryCombinatorics.Formalizations.R0.nonFinIntersecting_mad_size_a_iff,
     `InfinitaryCombinatorics.mad_iff_maximal,
     `InfinitaryCombinatorics.exists_unsplit_of_countable,
     `InfinitaryCombinatorics.aleph0_lt_splittingNumber,
