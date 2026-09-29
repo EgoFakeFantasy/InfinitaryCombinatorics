@@ -543,8 +543,14 @@ the new typed YesMetaZFC kernel and its standard Boolean-name model.
 It verifies ZFC in that model using the upstream name constructions and
 kernel-checked closure certificates for the fixed axiom formulas.
 Thus generic ZFC satisfaction is proved, not supplied as a model assumption.
-The Boolean consistency endpoints still require top Boolean value of
-$\E$ or $\neg\E$, respectively, in a nontrivial Boolean algebra.
+The development further constructs ordinary two-valued models by taking
+quotients of Boolean names modulo a maximal proper filter. The new
+ultrafilter extension theorem supplies this filter; the maximum principle
+supplies witnesses for the quantified cases of a full truth lemma.
+Membership on the quotient, ZFC satisfaction, and extensionality are all
+proved. Consequently, a nonzero Boolean value of $\E$ produces an ordinary
+ZFC model of $\E$, and a value of $\E$ different from the top element
+produces one of $\neg\E$. These specific value hypotheses remain unproved.
 Both packages audit transitive proof dependencies and permit only Lean's
 standard propositional extensionality, classical choice, and quotient
 soundness axioms.
@@ -554,8 +560,8 @@ not yet been transported into the set-theoretic models. The BMZ forcing,
 the positive consistency argument, the topological results, and the Cohen
 preservation argument are not formalized here. In particular, the generic
 Boolean ZFC construction does not establish the required positive and
-negative truth values of $\E$. The concrete ZFC/$\E$ interfaces do not
-replace these model constructions. Accordingly,
+negative truth values of $\E$. The constructed quotients therefore do not yet give the required
+CH and BMZ instances. Accordingly,
 Theorem~\ref{thm:independence} remains a paper theorem using the named
 literature inputs. The source archive includes a statement-by-statement
 coverage record and the verification procedure.

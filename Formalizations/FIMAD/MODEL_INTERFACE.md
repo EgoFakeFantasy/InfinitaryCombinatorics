@@ -55,7 +55,7 @@ The constructible-universe library's concrete CH model is a candidate positive f
 ## New public Boolean infrastructure
 
 The isolated `model-integration/` package now uses public YesMetaZFC commit
-`51c348a593e41ef9e158d45c69b33d66c432a9b9` and Lean 4.33.1. Its
+`a4903d2054085db0b454363a5fb15f1a3e1f9eab` and Lean 4.33.1. Its
 `TypedModels.CheckedBooleanZFC.models_zfc` constructs the full ZFC certificate
 from the upstream standard Boolean-name construction; ZFC satisfaction is no
 longer supplied as a premise at this endpoint. The concrete E formula and its
@@ -68,3 +68,20 @@ satisfaction alone proves neither one. The required CH/BMZ interpretations,
 characteristic computations, and host-to-model transfer are still substantive
 mathematical formalization tasks. See the separate package README and its
 transitive axiom audit for the exact completed boundary.
+
+## Constructed Boolean quotients (30 September update)
+
+The public filter-core branch supplies Tarski ultrafilter extension. The project
+now constructs `BooleanQuotient.quotientStructure`, proves representative
+independence of membership, proves a truth lemma for every typed formula,
+and verifies ZFC and extensionality in the resulting ordinary model.
+Quantifiers use the standard-name maximum principle, not an extra completeness
+assumption on the ultrafilter.
+
+`BooleanQuotient.model_of_nonzero` constructs both the ultrafilter and the
+ordinary model for any sentence with nonzero Boolean value. In particular,
+`positive_model_of_nonzero` yields internal E from a nonzero value of E, and
+`negative_model_of_not_top` yields internal not-E when that value is not top.
+These constructions close the generic Boolean-to-ordinary-model step.
+They do not close the remaining CH/BMZ truth computations, host internalization,
+topological results, or Cohen preservation.

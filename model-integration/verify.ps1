@@ -3,7 +3,8 @@ $fmOriginalLocation = Get-Location
 try {
   Set-Location -LiteralPath $PSScriptRoot
   New-Item -ItemType Directory -Path 'verification' -Force | Out-Null
-  $fmFiles = @('FIMADModels.lean', 'FIMADModels/CheckedBooleanZFC.lean', 'Audit.lean',
+  $fmFiles = @('FIMADModels.lean', 'FIMADModels/CheckedBooleanZFC.lean', 'FIMADModels/UltrafilterTruth.lean',
+    'FIMADModels/BooleanQuotient.lean', 'Audit.lean',
     '../Formalizations/FIMAD/InternalSemantics.lean',
     '../Formalizations/FIMAD/SetTheorySentence.lean', '../Formalizations/FIMAD/CheckedZFC.lean',
     'lakefile.toml', 'lake-manifest.json', 'lean-toolchain', 'verify.ps1')
@@ -46,6 +47,8 @@ try {
     theorem_constants = $fmTheorems
     permitted_axioms = @('propext', 'Classical.choice', 'Quot.sound')
     generic_boolean_zfc_model = 'proved'
+    ordinary_quotient_truth_lemma = 'proved for all formulas and environments'
+    ordinary_model_from_nonzero_value = 'constructed using Tarski ultrafilter extension and maximum principle'
     specific_FIMAD_model_truth = 'not proved'
     formal_independence_complete = $false
     source_hashes = @($fmFiles | Sort-Object | ForEach-Object {

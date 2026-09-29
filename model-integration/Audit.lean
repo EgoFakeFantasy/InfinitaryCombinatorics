@@ -5,6 +5,13 @@ open Lean Elab Command in
 run_elab do
   let env ← getEnv
   let required : Array Name := #[
+    `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.truth,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.models_zfc,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.extensional,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.model_of_nonzero,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.positive_model_of_nonzero,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.negative_model_of_not_top,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.consistency_of_nonzero,
     `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.native_semantics,
     `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.value_correct,
     `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.positive_consistency,

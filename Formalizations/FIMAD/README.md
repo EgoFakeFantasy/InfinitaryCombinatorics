@@ -49,10 +49,13 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 | Positive theorem under ap = s = continuum | `exists_fi_mad_extension_of_ap_eq_s_eq_continuum`, `exists_fi_mad_of_ap_eq_s_eq_continuum` | Fully checked; extends any infinite AD family of size less than the continuum |
 | Under ap = continuum, E iff s = continuum | `exists_fi_mad_iff_s_eq_continuum_of_ap_eq_continuum` | Fully checked on host sets |
 | Typed sentence and standard Boolean ZFC model | `TypedModels.native_semantics`, `value_correct`, `CheckedBooleanZFC.models_zfc` in `model-integration/` | Separate Lean 4.33.1 build, sharing the same sentence source; generic ZFC satisfaction is proved |
-| Boolean consistency endpoints for E and its negation | `TypedModels.positive_consistency`, `negative_consistency` | Top-valued E or its negation is still an explicit input; no specialized model truth is asserted |
+| Boolean consistency endpoints for E and its negation | `TypedModels.positive_consistency`, `negative_consistency` | The original top-valued endpoints are retained; specific truth values remain unproved |
+| Ordinary quotient and full truth lemma | `TypedModels.BooleanQuotient.truth`, `models_zfc`, `extensional` | Actual quotient by Boolean equality modulo a maximal proper filter; both quantifiers checked via attained maxima |
+| Actual ordinary models from Boolean values | `TypedModels.positive_model_of_nonzero`, `negative_model_of_not_top` | The filter and model are constructed; only the specific nonzero/non-top value remains a premise |
+| Consistency from nonzero value | `TypedModels.consistency_of_nonzero` | Stronger than the original top-valued endpoint; does not compute the required CH/BMZ truth values |
 | Topological corollaries and Cohen preservation | No Lean declaration | Paper deductions with named published inputs; not machine checked |
 
-**The repository does not claim a complete formalization of the ZFC independence theorem.** The object-language encoding is now implemented, together with its semantic interpretation and a concrete ZFC/E model interface. The transfer of the host combinatorial proofs into models and the actual positive and negative model constructions remain open formalization obligations. No placeholders or new logical assumptions are introduced as declarations to bypass these obligations. See [MODEL_INTERFACE.md](MODEL_INTERFACE.md) for the precise model contracts.
+**The repository does not claim a complete formalization of the ZFC independence theorem.** The object-language encoding is now implemented, together with its semantic interpretation and a concrete ZFC/E model interface. The transfer of host combinatorial proofs into models and the CH/BMZ Boolean-value computations remain open. Ordinary ZFC models are now constructed from nonzero values, but the required specific values have not been proved. No placeholders or new logical assumptions are introduced as declarations to bypass these obligations. See [MODEL_INTERFACE.md](MODEL_INTERFACE.md) for the precise model contracts.
 
 ## Module guide
 
@@ -93,7 +96,7 @@ On Windows, `./verify.ps1` runs the complete source scan, umbrella coverage chec
 
 Pinned dependencies: Lean 4.30.0; mathlib `c5ea00351c28e24afc9f0f84379aa41082b1188f`; YesMetaZFC `bae4fcc31b07b505986b11c6c2f13965ae6cd46d`. YesMetaZFC is a Git dependency; uncommitted files in a developer's separate checkout are not used.
 
-The isolated [typed model integration](../../model-integration/README.md) pins Lean 4.33.1 and YesMetaZFC `51c348a593e41ef9e158d45c69b33d66c432a9b9`. It uses the same `InternalSemantics`, `SetTheorySentence`, and `CheckedZFC` sources and has its own `verify.ps1` and manifest. It does not change the main package pins. Both audits permit only the same three foundational axioms.
+The isolated [typed model integration](../../model-integration/README.md) pins Lean 4.33.1 and YesMetaZFC `a4903d2054085db0b454363a5fb15f1a3e1f9eab`. It uses the same `InternalSemantics`, `SetTheorySentence`, and `CheckedZFC` sources and has its own `verify.ps1` and manifest. It does not change the main package pins. Both audits permit only the same three foundational axioms.
 
 ## Sources and provenance
 
