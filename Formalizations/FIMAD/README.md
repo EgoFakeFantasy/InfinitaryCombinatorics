@@ -6,7 +6,9 @@ This project accompanies Haoxuan Ye, *Weak separation and finite-trace coding: i
 
 ## Mathematical content
 
-The new coding lemma simultaneously realizes prescribed traces modulo finite from countably many weak intersection tests on a family of size less than b. It gives a fixed blocking fin-sequence for **every** AD family of size at least s when s < ap and s < b. A diagonal proof of b <= a then excludes every infinite FI MAD family under these two inequalities.
+The coding lemma simultaneously realizes prescribed traces modulo finite from countably many weak intersection tests on a family of size less than b. A direct binary-tree proof establishes ap <= b. Consequently the exact cutoff and nonexistence theorem now require **only s < ap**, as in the paper. Neither ap <= b nor s < b is an additional input to these public theorems. The diagonal comparison b <= a is also proved.
+
+The positive direction is now proved as well: **CH implies an infinite FI MAD family of size aleph_1**. The construction uses the actual first uncountable ordinal, carries out the well-founded recursion, proves maximality against every infinite subset of Nat, and verifies FI against every fin-sequence. Its only hypothesis is the usual cardinal equation for CH. The extension and preservation lemmas are proved, not supplied as assumptions.
 
 Here ap and b are actual least cardinals of the respective witness classes, not arbitrary parameters. The nonemptiness of both classes is proved. AD families may be finite; `MAD` requires infinitely many members. Blocks are nonempty and finite with no uniform size bound. All infinite retained traces participate in centeredness.
 
@@ -17,17 +19,22 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 | Uniform finite-trace coding | `uniform_trace_coding`, `bounding_of_card_lt` | Fully checked on sets of natural numbers; each member has its own eventual threshold |
 | Nonempty witness class defining ap | `nonseparableCardinals_nonempty`, `exists_minimum_nonseparable` | Fully checked using the existing continuum-sized MAD construction and Cantor's theorem |
 | b <= a | `boundingNumber_le_almostDisjointnessNumber` | Fully checked, not assumed |
-| Arbitrary labels below ap | `arbitrary_labels_below_ap` | Explicit additional hypothesis ap <= b; empty positive fibers handled |
+| ap <= b | `almostDisjointSeparationNumber_le_boundingNumber` | Fully checked by a direct branch argument; no literature theorem assumed |
+| Arbitrary labels below ap | `arbitrary_labels_below_ap` | Fully checked under size(A) < ap; empty positive fibers handled |
 | Every large AD candidate fails FI | `not_finIntersecting_of_large` | Fully checked under s < ap and s < b |
 | Exact cutoff FI(A) iff size(A) < s | `finIntersecting_iff_card_lt` | Fully checked under both inequalities; lower bound reuses the library |
-| Main paper cutoff from s < ap | `finIntersecting_iff_card_lt_of_ap_le_b` | Explicit literature input ap <= b |
+| Main paper cutoff from s < ap | `finIntersecting_iff_card_lt_of_s_lt_ap` | Fully checked under the paper's exact hypothesis |
 | No infinite FI MAD | `no_fi_mad_of_s_lt_ap_and_b` | Fully checked under both inequalities |
-| No infinite FI MAD from s < ap | `no_fi_mad_of_s_lt_ap` | Explicit literature input ap <= b |
-| E implies ap <= s | `fi_mad_implies_ap_le_s` | Explicit literature input ap <= b |
+| No infinite FI MAD from s < ap | `no_fi_mad_of_s_lt_ap` | Fully checked under the paper's exact hypothesis |
+| E implies ap <= s | `fi_mad_implies_ap_le_s` | Fully checked, with no additional hypotheses |
+| Countable positive extension | `countable_positive_extension` | Meets every positive requirement infinitely; almost disjoint from all old members |
+| Ideal block cover | `ideal_block_cover_witness` | Produces a witness for the entire AD family |
+| CH positive recursion | `exists_fi_mad_of_CH`, `exists_fi_mad_size_aleph_one_of_CH` | Fully checked on Nat under CH, including recursion, maximality, FI, and cardinality |
 | Two consistent extensions imply syntactic independence | `Metatheory.relative_independence` | Generic YesMetaZFC proof-calculus theorem, **not instantiated for E or ZFC** |
-| CH positive recursion | No Lean declaration | Complete paper proof; not machine checked |
 | BMZ/Dow relative consistency | No Lean declaration | Cited published result; forcing not formalized |
+| Relative consistency of CH | No Lean declaration | CH as a cardinal hypothesis is not a proof of its relative consistency over ZFC |
 | Actual ZFC sentence for E and semantic bridge | No Lean declaration | Not implemented |
+| Positive theorem under ap = s = continuum | No Lean declaration | The CH theorem does not establish this stronger published result |
 | Topological corollaries and Cohen preservation | No Lean declaration | Paper deductions with named published inputs; not machine checked |
 
 **The repository does not claim a complete formalization of the ZFC independence theorem.** A conditional implication and a generic consistency schema do not discharge the missing model constructions or the object-language encoding. No placeholders or new logical assumptions are introduced as declarations to bypass these obligations.
@@ -36,10 +43,14 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 
 - `TraceCoding.lean`: eventual domination/equality and the block construction.
 - `Obstruction.lean`: cardinal definitions, weak separation, paired splitting labels, finite-error contradiction.
+- `SeparationBounding.lean`: ap <= b, including countable domination and the binary-branch proof.
 - `Nonexistence.lean`: diagonal nonmaximality, b <= a, no-FI-MAD consequences, arbitrary labels.
 - `SeparationCardinal.lean`: existence of a minimum nonseparable AD cardinal.
+- `PositiveExtension.lean`: simultaneous positive-set hitting and ideal maximality criterion.
+- `IdealCover.lean`: homogeneous thinning, ideal cover witness, and the block-to-trace step.
+- `CHConstruction.lean`: actual ordinal recursion and complete CH existence theorem.
 - `Metatheory.lean`: genuine `Derives` and `Derives.Consistent` from YesMetaZFC.
-- `Main.lean`: public entry point and paper-facing conditional cutoff.
+- `Main.lean`: public entry point and paper-facing cutoff under s < ap alone.
 
 Reused foundations: `InfinitaryCombinatorics.FinIntersection`, `InfinitaryCombinatorics.Characteristics`, and the existing R0 countable-completion and uniform-MAD modules. The protected `R0/` snapshot is unchanged.
 

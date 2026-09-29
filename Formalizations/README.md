@@ -41,4 +41,4 @@ Windows 可运行 `./verify.ps1` 完成统一验收。当前证据见 [验收清
 
 ## FI MAD trace coding
 
-[FIMAD](FIMAD/README.md), entry `Formalizations.FIMAD.Main`, proves uniform finite-trace coding and the exclusion of all infinite FI MAD families under s < ap and s < b. The paper's s < ap consequence retains ap <= b as an explicit external input. A pinned YesMetaZFC dependency checks a generic consistency-to-independence schema. The CH and forcing constructions, the object-language encoding, and the full independence theorem are not formally verified; see the coverage table.
+[FIMAD](FIMAD/README.md), entry `Formalizations.FIMAD.Main`, proves uniform finite-trace coding, ap <= b <= a, the exact FI cutoff and nonexistence under s < ap alone, and the full CH construction of an infinite FI MAD family of size aleph_1. A pinned YesMetaZFC dependency checks a generic consistency-to-independence schema. Forcing constructions, relative consistency of CH, the object-language semantic bridge, the stronger published positive result, and the full independence theorem remain unverified; see the coverage table.

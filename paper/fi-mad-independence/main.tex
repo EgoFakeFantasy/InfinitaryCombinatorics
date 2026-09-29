@@ -47,8 +47,8 @@ and Zdomskyy and the positive results of Corral and Rodrigues, this yields
 the relative independence over ZFC of the existence of an infinite
 fin-intersecting MAD family. The negative model also contains a MAD family
 with pseudocompact Vietoris hyperspace. A companion Lean development
-checks the combinatorial obstruction with its external cardinal comparison
-explicit; the model constructions and the full ZFC independence theorem
+checks the exact obstruction, the comparison $\ap\leq\bnum$, and the CH
+existence construction; the forcing models and the full ZFC independence theorem
 are not formalized there.
 \end{abstract}
 
@@ -501,17 +501,29 @@ library's pinned mathlib revision. A pinned YesMetaZFC dependency supplies
 the genuine first-order derivation and consistency notions \cite{YM}.
 
 The checked combinatorial chain proves uniform trace coding, finite-error
-trace obstruction, the diagonal bound $\bnum\leq\anum$, and the exclusion
-of all infinite FI MAD families under $\s<\ap$ and $\s<\bnum$.
-The stated $\s<\ap$ consequence is derived with the cited comparison
-$\ap\leq\bnum$ supplied as an explicit hypothesis. Arbitrary labels,
-including empty positive fibers, are also covered. The development defines
+trace obstruction, and both comparisons $\ap\leq\bnum\leq\anum$.
+The comparison $\ap\leq\bnum$ is proved directly using binary-tree branches:
+a weak separator for the eventually-zero branches and a family of infinite
+branches would eventually bound the increasing enumerations of the latter.
+The paper's exact cutoff and exclusion of all infinite FI MAD families
+therefore have only the stated hypothesis $\s<\ap$; no additional cardinal
+comparison is assumed. Arbitrary labels, including empty positive fibers,
+are also covered. The development defines
 $\ap$ by the least nonseparable AD cardinal and proves that its witness class
 is nonempty; it does not replace $\ap$ by an unspecified parameter.
 
-There are substantive remaining formalization obligations. The comparison
-$\ap\leq\bnum$, the CH recursion, the BMZ forcing construction, and the
-topological results are not derived in Lean here. Nor is the assertion
+The complete construction in Section~\ref{sec:ch} is also checked.
+Starting solely from $2^{\aleph_0}=\aleph_1$, it performs the well-founded
+recursion on the actual first uncountable ordinal, proves maximality
+against every infinite subset of $\omega$, and verifies FI against every
+fin-sequence. The output has size $\aleph_1$. The positive extension,
+finite ideal-cover, and finite-intersection preservation lemmas are
+proved within the development, rather than supplied as assumptions.
+
+There are substantive remaining formalization obligations. The BMZ forcing
+construction, the relative consistency of CH, the stronger published positive
+theorem under $\ap=\s=\cont$, and the topological results are not derived
+in Lean here. Nor is the assertion
 $\E$ encoded as a sentence of first-order set theory with its semantic
 correspondence proved. The YesMetaZFC module checks only the general
 proof-theoretic implication from consistent positive and negative

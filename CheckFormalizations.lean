@@ -209,21 +209,19 @@ namespace FIMADAcceptance
 open InfinitaryCombinatorics InfinitaryCombinatorics.Formalizations.FIMAD
 
 -- All candidate families on the actual natural numbers are quantified here.
-example (hsep : R0.splittingNumber < almostDisjointSeparationNumber)
-    (hbound : R0.splittingNumber < boundingNumber) :
+example (hsep : R0.splittingNumber < almostDisjointSeparationNumber) :
     ¬ ∃ M : Set (Set ℕ),
       (M.Infinite ∧ (∀ a ∈ M, a.Infinite) ∧
         ∀ a ∈ M, ∀ b ∈ M, a ≠ b → (a ∩ b).Finite) ∧
       (∀ Y : Set ℕ, Y.Infinite → ∃ a ∈ M, (Y ∩ a).Infinite) ∧
       R0.FinIntersecting M := by
   rintro ⟨M,hAD,hmax,hFI⟩
-  exact no_fi_mad_of_s_lt_ap_and_b hsep hbound ⟨M,⟨hAD,hmax⟩,hFI⟩
+  exact no_fi_mad_of_s_lt_ap hsep ⟨M,⟨hAD,hmax⟩,hFI⟩
 
 example {A : Set (Set ℕ)} (hA : ADFamily A)
-    (hap : almostDisjointSeparationNumber ≤ boundingNumber)
     (hs : R0.splittingNumber < almostDisjointSeparationNumber) :
     R0.FinIntersecting A ↔ #A < R0.splittingNumber :=
-  finIntersecting_iff_card_lt_of_ap_le_b hA hap hs
+  finIntersecting_iff_card_lt_of_s_lt_ap hA hs
 
 example (U : Set (Set ℕ)) (hc : #U < boundingNumber)
     (S : U → Set ℕ) (X : ℕ → Set ℕ) (hX : ∀ n, (X n).Infinite)
@@ -234,5 +232,22 @@ example (U : Set (Set ℕ)) (hc : #U < boundingNumber)
 
 #print axioms uniform_trace_coding
 #print axioms no_fi_mad_of_s_lt_ap_and_b
+#print axioms almostDisjointSeparationNumber_le_boundingNumber
+#print axioms exists_fi_mad_of_CH
+#print axioms exists_fi_mad_size_aleph_one_of_CH
+
+-- CH is the only hypothesis. In particular, no recursion, positive-extension,
+-- maximal-family existence, or FI-preservation result is assumed here.
+example (hCH : (2 : Cardinal.{0}) ^ Cardinal.aleph0 = Cardinal.aleph 1) :
+    ∃ M : Set (Set ℕ),
+      (M.Infinite ∧ (∀ a ∈ M, a.Infinite) ∧
+        ∀ a ∈ M, ∀ b ∈ M, a ≠ b → (a ∩ b).Finite) ∧
+      (∀ Y : Set ℕ, Y.Infinite → ∃ a ∈ M, (Y ∩ a).Infinite) ∧
+      (∀ C : R0.FinSequence ℕ, ∃ I : Set ℕ, I.Infinite ∧
+        R0.Centered {t : Set ℕ | t.Infinite ∧ ∃ a ∈ M, t = I ∩ R0.trace C a}) ∧
+      #M = Cardinal.aleph 1 := by
+  obtain ⟨M, hM, hFI, hcard⟩ := exists_fi_mad_size_aleph_one_of_CH hCH
+  exact ⟨M, hM.1, hM.2, hFI, hcard⟩
+
 #print axioms Metatheory.relative_independence
 end FIMADAcceptance

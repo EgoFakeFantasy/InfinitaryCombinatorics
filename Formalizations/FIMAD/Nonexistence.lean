@@ -1,4 +1,4 @@
-import Formalizations.FIMAD.Obstruction
+import Formalizations.FIMAD.SeparationBounding
 import Formalizations.R0.CountableCompletion
 
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
@@ -77,26 +77,22 @@ theorem no_fi_mad_of_s_lt_ap_and_b
   exact not_finIntersecting_of_large hM.1.2
     (hbound.le.trans (boundingNumber_le_mad_card hM)) hsep hbound hFI
 
-/-- The manuscript's stated hypothesis follows using the cited comparison ap ≤ b.
-That comparison is an explicit external input, not an added axiom. -/
+/-- The manuscript's stated nonexistence theorem, with ap ≤ b proved internally. -/
 theorem no_fi_mad_of_s_lt_ap
-    (ap_le_b : almostDisjointSeparationNumber ≤ boundingNumber)
     (hsep : R0.splittingNumber < almostDisjointSeparationNumber) : ¬ ExistsFIMAD :=
-  no_fi_mad_of_s_lt_ap_and_b hsep (hsep.trans_le ap_le_b)
+  no_fi_mad_of_s_lt_ap_and_b hsep (hsep.trans_le almostDisjointSeparationNumber_le_boundingNumber)
 
 theorem fi_mad_implies_ap_le_s
-    (ap_le_b : almostDisjointSeparationNumber ≤ boundingNumber)
     (h : ExistsFIMAD) : almostDisjointSeparationNumber ≤ R0.splittingNumber := by
   by_contra hn
-  exact no_fi_mad_of_s_lt_ap ap_le_b (lt_of_not_ge hn) h
+  exact no_fi_mad_of_s_lt_ap (lt_of_not_ge hn) h
 
 /-- Arbitrary trace labels, including the empty positive fiber. -/
 theorem arbitrary_labels_below_ap {A : Set (Set ℕ)} (hA : R0.AlmostDisjoint A)
-    (ap_le_b : almostDisjointSeparationNumber ≤ boundingNumber)
     (hcard : #A < almostDisjointSeparationNumber) (S : A → Set ℕ) :
     ∃ C : R0.FinSequence ℕ, ∀ a : A, EventuallyEqual (R0.trace C a) (S a) := by
   classical
-  have hb := bounding_of_card_lt (hcard.trans_le ap_le_b)
+  have hb := bounding_of_card_lt (hcard.trans_le almostDisjointSeparationNumber_le_boundingNumber)
   have hsep := weaklySeparable_of_card_lt hA.2 hcard
   have hnot := infinite_ad_not_mad_of_bounding hA hb
   have horth : ∃ X : Set ℕ, X.Infinite ∧ ∀ a ∈ A, (X ∩ a).Finite := by

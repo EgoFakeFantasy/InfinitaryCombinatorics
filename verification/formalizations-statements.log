@@ -68,4 +68,13 @@
 'InfinitaryCombinatorics.Formalizations.FIMAD.no_fi_mad_of_s_lt_ap_and_b' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.almostDisjointSeparationNumber_le_boundingNumber' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.exists_fi_mad_of_CH' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.exists_fi_mad_size_aleph_one_of_CH' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'InfinitaryCombinatorics.Formalizations.FIMAD.Metatheory.relative_independence' depends on axioms: [propext, Quot.sound]

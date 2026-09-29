@@ -9,5 +9,8 @@
   "existing_dependency_revisions": "unchanged",
   "formal_independence_complete": false,
   "coverage": "Formalizations/FIMAD/README.md",
-  "paper_source_sha256": "c90945c75bb1a704fc43e09c3f9b862442b9e19b5e927dae4504a0362ead660e"
+  "paper_source_sha256": "0cf32a053049729f5ded481de26d9e9b27febad866cbbe789ada9a965e1ba8ec",
+  "exact_negative_theorem_complete": true,
+  "CH_positive_construction_complete": true,
+  "verification_checked_at_utc": "2026-09-29T07:44:44.0860922Z"
 }
