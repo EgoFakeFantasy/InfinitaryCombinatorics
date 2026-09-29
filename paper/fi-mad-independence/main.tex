@@ -31,7 +31,7 @@
 \setlength{\emergencystretch}{1em}
 \title{Weak separation and finite-trace coding:\\ independence of infinite fin-intersecting MAD families}
 \author{Haoxuan Ye}
-\date{29 September 2026}
+\date{30 September 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -519,6 +519,14 @@ against every infinite subset of $\omega$, and verifies FI against every
 fin-sequence. The output has size $\aleph_1$. The positive extension,
 finite ideal-cover, and finite-intersection preservation lemmas are
 proved within the development, rather than supplied as assumptions.
+The stronger published implication $\ap=\s=\cont\Rightarrow\E$ is now
+checked as well. Its construction extends every infinite AD family of
+size less than $\cont$. The formal proof first refines fewer than $\bnum$
+infinite sets to an indexed almost disjoint family using the coding lemma,
+then proves simultaneous positive extension below $\ap$ and performs the
+recursion along the initial ordinal of $\cont$. Together with
+Corollary~\ref{cor:necessary}, this verifies the equivalence
+$\E\Leftrightarrow\s=\cont$ under $\ap=\cont$.
 
 The development also encodes $\E$ as a closed first-order set-theoretic
 sentence. Its interpretation uses the model's own natural numbers, finite
@@ -530,13 +538,24 @@ The cardinals $\dpnum$ and $\s_\omega$ are defined by their actual least
 witness sizes, their comparisons with $\ap$ and $\s$ are proved, and the
 combinatorial consequences of the BMZ configuration are checked.
 
+An isolated Lean~4.33.1 package also connects the same sentence source to
+the new typed YesMetaZFC kernel and its standard Boolean-name model.
+It verifies ZFC in that model using the upstream name constructions and
+kernel-checked closure certificates for the fixed axiom formulas.
+Thus generic ZFC satisfaction is proved, not supplied as a model assumption.
+The Boolean consistency endpoints still require top Boolean value of
+$\E$ or $\neg\E$, respectively, in a nontrivial Boolean algebra.
+Both packages audit transitive proof dependencies and permit only Lean's
+standard propositional extensionality, classical choice, and quotient
+soundness axioms.
+
 Substantive obligations remain. The host proofs on natural numbers have
 not yet been transported into the set-theoretic models. The BMZ forcing,
-the positive consistency argument, the stronger positive theorem under
-$\ap=\s=\cont$, the topological results, and the Cohen preservation
-argument are not formalized here. The concrete ZFC/$\E$ interface proves
-independence once actual positive and negative models are supplied;
-it does not construct those models. Accordingly,
+the positive consistency argument, the topological results, and the Cohen
+preservation argument are not formalized here. In particular, the generic
+Boolean ZFC construction does not establish the required positive and
+negative truth values of $\E$. The concrete ZFC/$\E$ interfaces do not
+replace these model constructions. Accordingly,
 Theorem~\ref{thm:independence} remains a paper theorem using the named
 literature inputs. The source archive includes a statement-by-statement
 coverage record and the verification procedure.

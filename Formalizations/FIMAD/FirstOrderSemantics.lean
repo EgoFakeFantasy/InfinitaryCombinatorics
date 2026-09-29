@@ -6,6 +6,12 @@ the project's depth-indexed formulas to the public YesMetaZFC proof kernel. -/
 set_option autoImplicit false
 
 namespace InfinitaryCombinatorics.Formalizations.FIMAD.Internal
+
+theorem Syntax.sentence_is_firstOrder :
+    YesMetaZFC.Logic.FirstOrder.Formula.Sentence
+      (YesMetaZFC.SetTheory.Definitional.Project.fo_sentence Syntax.sentence) :=
+  YesMetaZFC.SetTheory.Definitional.Project.fo_sentence_sentence Syntax.sentence
+
 namespace FirstOrderBridge
 open YesMetaZFC YesMetaZFC.SetTheory
 open Definitional.Project

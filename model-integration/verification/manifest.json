@@ -1,0 +1,59 @@
+{
+  "checked_at_utc": "2026-09-29T15:08:15.2702714Z",
+  "lean_toolchain": "leanprover/lean4:v4.33.1",
+  "yesmetazfc_revision": "51c348a593e41ef9e158d45c69b33d66c432a9b9",
+  "build": "passed",
+  "axiom_audit": "passed",
+  "declarations": 366,
+  "theorem_constants": 285,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "generic_boolean_zfc_model": "proved",
+  "specific_FIMAD_model_truth": "not proved",
+  "formal_independence_complete": false,
+  "source_hashes": [
+    {
+      "sha256": "f43823205555d4d6ae1974d5eb56511dbb620ce4a771a7916afe1cda9a9a6e78",
+      "path": "../Formalizations/FIMAD/CheckedZFC.lean"
+    },
+    {
+      "sha256": "158db099afef4175ecb1009fc006d65d80dfec59eed4b852800c71efcf18d90d",
+      "path": "../Formalizations/FIMAD/InternalSemantics.lean"
+    },
+    {
+      "sha256": "68ec35055932b1c27cf7ec83196935197148237b14e9ac1baef19369c7d2d018",
+      "path": "../Formalizations/FIMAD/SetTheorySentence.lean"
+    },
+    {
+      "sha256": "f328285b019437cd8c0083bc1be6535611e89e5adb4b04b1649f86711c830b75",
+      "path": "Audit.lean"
+    },
+    {
+      "sha256": "07efa5ab2ee6b558d9f61fc91de3b408006c0fbf782d3f52b3d44ee98ce002d6",
+      "path": "FIMADModels.lean"
+    },
+    {
+      "sha256": "47b1ba92d5c652ffa5881eaf829731f9c847975a0a353620b6092e35ff32ddb1",
+      "path": "FIMADModels/CheckedBooleanZFC.lean"
+    },
+    {
+      "sha256": "64104404848f6ed73473658906aa45f90c9c7c7cc68988b34b6f2fa663c01a86",
+      "path": "lake-manifest.json"
+    },
+    {
+      "sha256": "757bf3c5509b8dea6a903c30135eb6f4f313a8ac127d8311303143f9387f1b05",
+      "path": "lakefile.toml"
+    },
+    {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "path": "lean-toolchain"
+    },
+    {
+      "sha256": "0a20361e335c0bd9c6565bff2ba5f146ce962407262b39d34c778b9fac59a9b0",
+      "path": "verify.ps1"
+    }
+  ]
+}

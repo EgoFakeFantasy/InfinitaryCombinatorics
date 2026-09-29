@@ -1,0 +1,17 @@
+name = "fiMadModels"
+version = "0.1.0"
+defaultTargets = ["FIMADModels"]
+
+[[lean_lib]]
+name = "Formalizations"
+srcDir = ".."
+roots = ["Formalizations.FIMAD.InternalSemantics", "Formalizations.FIMAD.SetTheorySentence", "Formalizations.FIMAD.CheckedZFC"]
+globs = ["Formalizations.FIMAD.InternalSemantics", "Formalizations.FIMAD.SetTheorySentence", "Formalizations.FIMAD.CheckedZFC"]
+
+[[lean_lib]]
+name = "FIMADModels"
+
+[[require]]
+name = "YesMetaZFC"
+git = "https://github.com/lanxinge/YesMetaZFC.git"
+rev = "51c348a593e41ef9e158d45c69b33d66c432a9b9"

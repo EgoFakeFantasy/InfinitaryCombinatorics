@@ -2,10 +2,10 @@
 
 Title: Weak separation and finite-trace coding: independence of infinite fin-intersecting MAD families
 Author: Haoxuan Ye
-Date: 2026-09-29
+Date: 2026-09-30
 Language: English
 
-`main.tex` is a standalone LaTeX article. It uses standard article, fontenc, lmodern, amsmath, amssymb, amsthm, geometry, and hyperref packages, with an embedded bibliography and no external figures. Compile twice with pdflatex, or use Tectonic. The exported PDF was generated using bundled Tectonic.
+`main.tex` is a standalone LaTeX article. It uses standard article, fontenc, lmodern, amsmath, amssymb, amsthm, geometry, and hyperref packages, with an embedded bibliography and no external figures. Compile twice with pdflatex, or use Tectonic. Earlier exported PDFs were generated using bundled Tectonic; consult the current source and its compile status before using an older export.
 
 The companion formalization is `Formalizations/FIMAD/Main.lean`; its README is the authoritative coverage map. The mathematical paper uses explicitly cited literature results. It must not be described as a fully machine-checked independence proof.
 

@@ -249,6 +249,31 @@ example (hCH : (2 : Cardinal.{0}) ^ Cardinal.aleph0 = Cardinal.aleph 1) :
   obtain ⟨M, hM, hFI, hcard⟩ := exists_fi_mad_size_aleph_one_of_CH hCH
   exact ⟨M, hM.1, hM.2, hFI, hcard⟩
 
+-- No recursion or extension lemma is an input: only the two cardinal equations.
+example (hap : almostDisjointSeparationNumber = (2 : Cardinal.{0}) ^ Cardinal.aleph0)
+    (hs : R0.splittingNumber = (2 : Cardinal.{0}) ^ Cardinal.aleph0)
+    {B : Set (Set ℕ)} (hB : R0.AlmostDisjoint B)
+    (hsize : #B < (2 : Cardinal.{0}) ^ Cardinal.aleph0) :
+    ∃ M : Set (Set ℕ), B ⊆ M ∧
+      (M.Infinite ∧ (∀ a ∈ M, a.Infinite) ∧
+        ∀ a ∈ M, ∀ b ∈ M, a ≠ b → (a ∩ b).Finite) ∧
+      (∀ Y : Set ℕ, Y.Infinite → ∃ a ∈ M, (Y ∩ a).Infinite) ∧
+      (∀ C : R0.FinSequence ℕ, ∃ I : Set ℕ, I.Infinite ∧
+        R0.Centered {t : Set ℕ | t.Infinite ∧ ∃ a ∈ M, t = I ∩ R0.trace C a}) := by
+  obtain ⟨M, hBM, hM, hFI⟩ :=
+    exists_fi_mad_extension_of_ap_eq_s_eq_continuum hap hs hB hsize
+  exact ⟨M, hBM, hM.1, hM.2, hFI⟩
+
+example (hap : almostDisjointSeparationNumber = (2 : Cardinal.{0}) ^ Cardinal.aleph0) :
+    (∃ M : Set (Set ℕ), MAD M ∧ R0.FinIntersecting M) ↔
+      R0.splittingNumber = (2 : Cardinal.{0}) ^ Cardinal.aleph0 :=
+  exists_fi_mad_iff_s_eq_continuum_of_ap_eq_continuum hap
+
+#print axioms ad_refinement_below_b
+#print axioms small_positive_extension
+#print axioms exists_fi_mad_extension_of_ap_eq_s_eq_continuum
+#print axioms exists_fi_mad_iff_s_eq_continuum_of_ap_eq_continuum
+
 #print axioms Metatheory.relative_independence
 
 -- This is the actual first-order sentence, with a proved membership semantics.

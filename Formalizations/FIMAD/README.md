@@ -2,13 +2,15 @@
 
 Entry point: `Formalizations.FIMAD.Main`.
 
-This project accompanies Haoxuan Ye, *Weak separation and finite-trace coding: independence of infinite fin-intersecting MAD families* (29 September 2026). The English manuscript is in `paper/fi-mad-independence/main.tex`.
+This project accompanies Haoxuan Ye, *Weak separation and finite-trace coding: independence of infinite fin-intersecting MAD families* (30 September 2026). The English manuscript is in `paper/fi-mad-independence/main.tex`.
 
 ## Mathematical content
 
 The coding lemma simultaneously realizes prescribed traces modulo finite from countably many weak intersection tests on a family of size less than b. A direct binary-tree proof establishes ap <= b. Consequently the exact cutoff and nonexistence theorem now require **only s < ap**, as in the paper. Neither ap <= b nor s < b is an additional input to these public theorems. The diagonal comparison b <= a is also proved.
 
 The positive direction is now proved as well: **CH implies an infinite FI MAD family of size aleph_1**. The construction uses the actual first uncountable ordinal, carries out the well-founded recursion, proves maximality against every infinite subset of Nat, and verifies FI against every fin-sequence. Its only hypothesis is the usual cardinal equation for CH. The extension and preservation lemmas are proved, not supplied as assumptions.
+
+The stronger positive theorem is also checked: **ap = s = continuum implies FI MAD existence**, and every infinite AD family of size below the continuum extends to one. This uses a proved AD refinement below b, positive-set extraction below a, simultaneous positive extension below ap, and recursion along the initial ordinal of the continuum. The equivalence **E iff s = continuum under ap = continuum** is therefore checked in full on host sets.
 
 Here ap and b are actual least cardinals of the respective witness classes, not arbitrary parameters. The nonemptiness of both classes is proved. AD families may be finite; `MAD` requires infinitely many members. Blocks are nonempty and finite with no uniform size bound. All infinite retained traces participate in centeredness.
 
@@ -42,7 +44,12 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 | BMZ/Dow relative consistency | No Lean declaration | Cited published result; forcing not formalized |
 | Relative consistency of CH | No Lean declaration | CH as a cardinal hypothesis is not a proof of its relative consistency over ZFC |
 | Transfer of host Nat proofs into ZFC models | No Lean declaration | The sentence and its internal semantics are checked, but the host CH and cutoff proofs are not yet internalized |
-| Positive theorem under ap = s = continuum | No Lean declaration | The CH theorem does not establish this stronger published result |
+| AD refinement below b | `ad_refinement_below_b` | Actual infinite subsets, indexed pairwise almost disjointness; derived from uniform block coding |
+| Positive extraction and simultaneous extension below ap | `positive_subset_below_a`, `small_positive_extension` | Full arbitrary small families, not only countable stages |
+| Positive theorem under ap = s = continuum | `exists_fi_mad_extension_of_ap_eq_s_eq_continuum`, `exists_fi_mad_of_ap_eq_s_eq_continuum` | Fully checked; extends any infinite AD family of size less than the continuum |
+| Under ap = continuum, E iff s = continuum | `exists_fi_mad_iff_s_eq_continuum_of_ap_eq_continuum` | Fully checked on host sets |
+| Typed sentence and standard Boolean ZFC model | `TypedModels.native_semantics`, `value_correct`, `CheckedBooleanZFC.models_zfc` in `model-integration/` | Separate Lean 4.33.1 build, sharing the same sentence source; generic ZFC satisfaction is proved |
+| Boolean consistency endpoints for E and its negation | `TypedModels.positive_consistency`, `negative_consistency` | Top-valued E or its negation is still an explicit input; no specialized model truth is asserted |
 | Topological corollaries and Cohen preservation | No Lean declaration | Paper deductions with named published inputs; not machine checked |
 
 **The repository does not claim a complete formalization of the ZFC independence theorem.** The object-language encoding is now implemented, together with its semantic interpretation and a concrete ZFC/E model interface. The transfer of the host combinatorial proofs into models and the actual positive and negative model constructions remain open formalization obligations. No placeholders or new logical assumptions are introduced as declarations to bypass these obligations. See [MODEL_INTERFACE.md](MODEL_INTERFACE.md) for the precise model contracts.
@@ -57,6 +64,8 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 - `PositiveExtension.lean`: simultaneous positive-set hitting and ideal maximality criterion.
 - `IdealCover.lean`: homogeneous thinning, ideal cover witness, and the block-to-trace step.
 - `CHConstruction.lean`: actual ordinal recursion and complete CH existence theorem.
+- `SmallPositiveExtension.lean`: indexed AD refinement below b, extraction below a, and positive extension below ap.
+- `GeneralConstruction.lean`: full continuum-length construction under ap = s = c, and E iff s = c when ap = c.
 - `Metatheory.lean`: genuine `Derives` and `Derives.Consistent` from YesMetaZFC.
 - `InternalSemantics.lean`, `SetTheorySentence.lean`: internal membership meanings and the closed E sentence, with structural semantic proofs.
 - `FirstOrderSemantics.lean`: semantics-preserving translation to the public first-order proof kernel.
@@ -83,6 +92,8 @@ lake env lean Audit.lean
 On Windows, `./verify.ps1` runs the complete source scan, umbrella coverage check, protected snapshot check, build, statement checks, and transitive logical-assumption audit. The current evidence is `verification/manifest.json` and its companion logs. Standard permitted Lean foundations are `propext`, `Classical.choice`, and `Quot.sound`.
 
 Pinned dependencies: Lean 4.30.0; mathlib `c5ea00351c28e24afc9f0f84379aa41082b1188f`; YesMetaZFC `bae4fcc31b07b505986b11c6c2f13965ae6cd46d`. YesMetaZFC is a Git dependency; uncommitted files in a developer's separate checkout are not used.
+
+The isolated [typed model integration](../../model-integration/README.md) pins Lean 4.33.1 and YesMetaZFC `51c348a593e41ef9e158d45c69b33d66c432a9b9`. It uses the same `InternalSemantics`, `SetTheorySentence`, and `CheckedZFC` sources and has its own `verify.ps1` and manifest. It does not change the main package pins. Both audits permit only the same three foundational axioms.
 
 ## Sources and provenance
 

@@ -1,0 +1,16 @@
+{"version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages":
+ [{"url": "https://github.com/lanxinge/YesMetaZFC.git",
+   "type": "git",
+   "subDir": null,
+   "scope": "",
+   "rev": "51c348a593e41ef9e158d45c69b33d66c432a9b9",
+   "name": "YesMetaZFC",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "51c348a593e41ef9e158d45c69b33d66c432a9b9",
+   "inherited": false,
+   "configFile": "lakefile.toml"}],
+ "name": "fiMadModels",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}

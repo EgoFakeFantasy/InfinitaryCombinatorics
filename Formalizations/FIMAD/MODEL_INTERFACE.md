@@ -41,6 +41,8 @@ The checked theorems `positive_consistent_of_model` and `negative_consistent_of_
 ## Combinatorial inputs ready for internalization
 
 - `exists_fi_mad_of_CH`: the full CH construction on host natural numbers.
+- `exists_fi_mad_extension_of_ap_eq_s_eq_continuum`: the complete continuum-length extension of any infinite small AD family.
+- `exists_fi_mad_iff_s_eq_continuum_of_ap_eq_continuum`: the exact host equivalence under ap = continuum.
 - `no_fi_mad_of_s_lt_ap`: the main exact-hypothesis negative implication on host natural numbers.
 - `dowNumber_le_almostDisjointSeparationNumber`: dp <= ap for actual least witness cardinals.
 - `splittingNumber_le_omegaSplittingNumber`: s <= s_omega for actual least witness cardinals.
@@ -49,3 +51,20 @@ The checked theorems `positive_consistent_of_model` and `negative_consistent_of_
 These are ordinary Lean mathematical theorems. Their internalization is still required: `M` satisfying its CH sentence does not supply host CH, and the host `Set Nat` need not be the model's powerset of its natural numbers. The theorem `finIntersecting_iff_memberwise` checks the finite-member reformulation on host sets, including duplicate traces, but does not itself identify internal finite sets with external ones.
 
 The constructible-universe library's concrete CH model is a candidate positive foundation; no toolchain migration or dependency on a dirty local checkout has been made here. The Dow/BMZ forcing construction is still an external mathematical input.
+
+## New public Boolean infrastructure
+
+The isolated `model-integration/` package now uses public YesMetaZFC commit
+`51c348a593e41ef9e158d45c69b33d66c432a9b9` and Lean 4.33.1. Its
+`TypedModels.CheckedBooleanZFC.models_zfc` constructs the full ZFC certificate
+from the upstream standard Boolean-name construction; ZFC satisfaction is no
+longer supplied as a premise at this endpoint. The concrete E formula and its
+internal semantics are shared source files across the two packages.
+
+`positive_consistency` requires nontriviality and top Boolean value of E;
+`negative_consistency` requires nontriviality and top Boolean value of its
+negation. These truth obligations remain unproved. Generic Boolean-name ZFC
+satisfaction alone proves neither one. The required CH/BMZ interpretations,
+characteristic computations, and host-to-model transfer are still substantive
+mathematical formalization tasks. See the separate package README and its
+transitive axiom audit for the exact completed boundary.

@@ -4,6 +4,7 @@ import Formalizations.FIMAD.CHConstruction
 import Formalizations.FIMAD.MemberwiseSemantics
 import Formalizations.FIMAD.ModelInterface
 import Formalizations.FIMAD.OmegaSplitting
+import Formalizations.FIMAD.GeneralConstruction
 
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 
