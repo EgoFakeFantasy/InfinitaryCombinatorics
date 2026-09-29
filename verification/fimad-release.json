@@ -9,8 +9,15 @@
   "existing_dependency_revisions": "unchanged",
   "formal_independence_complete": false,
   "coverage": "Formalizations/FIMAD/README.md",
-  "paper_source_sha256": "0cf32a053049729f5ded481de26d9e9b27febad866cbbe789ada9a965e1ba8ec",
+  "paper_source_sha256": "f4e9695a64d00c56de72fe969458386a110eb7b4ed78bec35c8fabacca38a9a7",
   "exact_negative_theorem_complete": true,
   "CH_positive_construction_complete": true,
-  "verification_checked_at_utc": "2026-09-29T07:44:44.0860922Z"
+  "verification_checked_at_utc": "2026-09-29T09:03:08.6945157Z",
+  "actual_existence_sentence_complete": true,
+  "first_order_semantic_translation_complete": true,
+  "dp_and_omega_splitting_comparisons_complete": true,
+  "bmz_configuration_consequences_complete": true,
+  "concrete_model_interface_complete": true,
+  "full_model_internalization_complete": false,
+  "positive_and_negative_models_complete": false
 }

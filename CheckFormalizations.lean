@@ -250,4 +250,25 @@ example (hCH : (2 : Cardinal.{0}) ^ Cardinal.aleph0 = Cardinal.aleph 1) :
   exact ⟨M, hM.1, hM.2, hFI, hcard⟩
 
 #print axioms Metatheory.relative_independence
+
+-- This is the actual first-order sentence, with a proved membership semantics.
+example {M : YesMetaZFC.SetTheory.Structure}
+    (hExt : YesMetaZFC.SetTheory.Extensional M)
+    (env : YesMetaZFC.Logic.FirstOrder.Env (Internal.FirstOrderBridge.toFirstOrder M)) :
+    YesMetaZFC.Logic.FirstOrder.Formula.satisfies env ModelInterface.existenceSentence ↔
+      ∃ w A, Internal.Omega M.mem w ∧ Internal.MAD M.mem w A ∧ Internal.FI M.mem w A :=
+  Internal.FirstOrderBridge.satisfies_fimad_sentence hExt env
+
+-- BMZ's configuration is still an explicit input, not a model-existence claim.
+example (hs : omegaSplittingNumber = Cardinal.aleph 1)
+    (hd : dowNumber = (2 : Cardinal.{0}) ^ Cardinal.aleph0)
+    (hc : (2 : Cardinal.{0}) ^ Cardinal.aleph0 = Cardinal.aleph 2) :
+    ¬ ∃ A : Set (Set ℕ), MAD A ∧ R0.FinIntersecting A :=
+  (consequences_of_bmz_configuration hs hd hc).2.2.2.2
+
+#print axioms Internal.FirstOrderBridge.satisfies_fimad_sentence
+#print axioms ModelInterface.independent_of_models
+#print axioms finIntersecting_iff_memberwise
+#print axioms consequences_of_bmz_configuration
+#print axioms exists_fi_mad_of_a_lt_s
 end FIMADAcceptance

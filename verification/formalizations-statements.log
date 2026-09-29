@@ -78,3 +78,17 @@
  Classical.choice,
  Quot.sound]
 'InfinitaryCombinatorics.Formalizations.FIMAD.Metatheory.relative_independence' depends on axioms: [propext, Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.Internal.FirstOrderBridge.satisfies_fimad_sentence' depends on axioms: [propext,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.ModelInterface.independent_of_models' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.finIntersecting_iff_memberwise' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.consequences_of_bmz_configuration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.exists_fi_mad_of_a_lt_s' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

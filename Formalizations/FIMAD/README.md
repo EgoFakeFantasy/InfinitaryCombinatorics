@@ -31,13 +31,21 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 | Ideal block cover | `ideal_block_cover_witness` | Produces a witness for the entire AD family |
 | CH positive recursion | `exists_fi_mad_of_CH`, `exists_fi_mad_size_aleph_one_of_CH` | Fully checked on Nat under CH, including recursion, maximality, FI, and cardinality |
 | Two consistent extensions imply syntactic independence | `Metatheory.relative_independence` | Generic YesMetaZFC proof-calculus theorem, **not instantiated for E or ZFC** |
+| Memberwise FI versus centered retained traces | `finIntersecting_iff_memberwise` | Full equivalence, including duplicate traces; no AD assumption |
+| Actual membership-language sentence for E | `Internal.Syntax.sentence_semantics`, `sentence_is_firstOrder` | Closed, well-formed sentence; internal finite sets, functions, MAD and FI |
+| Semantics in the public first-order proof kernel | `Internal.FirstOrderBridge.satisfies_fimad_sentence` | Translation preserves the internal meaning in every extensional membership structure |
+| Actual ZFC/E model-to-independence interface | `ModelInterface.independent_of_models` | Actual positive and negative ZFC models are still explicit inputs; neither model is constructed here |
+| dp and its comparison with ap | `exists_minimum_dow`, `dowNumber_le_almostDisjointSeparationNumber` | Actual orthogonal-family witness class, proved nonempty |
+| Simultaneous splitting and s <= s_omega | `exists_simultaneous_splitter`, `splittingNumber_le_omegaSplittingNumber` | Actual least witness cardinal; existence and the continuum upper bound are proved |
+| Consequences of the BMZ configuration | `consequences_of_bmz_configuration` | Derives the paper's characteristic values and no FI MAD from the stated configuration; does not force the configuration |
+| The known a < s sufficient condition | `exists_fi_mad_of_a_lt_s` | Reuses a minimum MAD family and the small-family FI theorem |
 | BMZ/Dow relative consistency | No Lean declaration | Cited published result; forcing not formalized |
 | Relative consistency of CH | No Lean declaration | CH as a cardinal hypothesis is not a proof of its relative consistency over ZFC |
-| Actual ZFC sentence for E and semantic bridge | No Lean declaration | Not implemented |
+| Transfer of host Nat proofs into ZFC models | No Lean declaration | The sentence and its internal semantics are checked, but the host CH and cutoff proofs are not yet internalized |
 | Positive theorem under ap = s = continuum | No Lean declaration | The CH theorem does not establish this stronger published result |
 | Topological corollaries and Cohen preservation | No Lean declaration | Paper deductions with named published inputs; not machine checked |
 
-**The repository does not claim a complete formalization of the ZFC independence theorem.** A conditional implication and a generic consistency schema do not discharge the missing model constructions or the object-language encoding. No placeholders or new logical assumptions are introduced as declarations to bypass these obligations.
+**The repository does not claim a complete formalization of the ZFC independence theorem.** The object-language encoding is now implemented, together with its semantic interpretation and a concrete ZFC/E model interface. The transfer of the host combinatorial proofs into models and the actual positive and negative model constructions remain open formalization obligations. No placeholders or new logical assumptions are introduced as declarations to bypass these obligations. See [MODEL_INTERFACE.md](MODEL_INTERFACE.md) for the precise model contracts.
 
 ## Module guide
 
@@ -50,6 +58,12 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 - `IdealCover.lean`: homogeneous thinning, ideal cover witness, and the block-to-trace step.
 - `CHConstruction.lean`: actual ordinal recursion and complete CH existence theorem.
 - `Metatheory.lean`: genuine `Derives` and `Derives.Consistent` from YesMetaZFC.
+- `InternalSemantics.lean`, `SetTheorySentence.lean`: internal membership meanings and the closed E sentence, with structural semantic proofs.
+- `FirstOrderSemantics.lean`: semantics-preserving translation to the public first-order proof kernel.
+- `MemberwiseSemantics.lean`: finite-member versus finite-retained-trace equivalence.
+- `CheckedZFC.lean`: the upstream ZFC formulas with kernel-checked closure certificates; full separation and collection schemas reused unchanged.
+- `ModelInterface.lean`: actual ZFC/E model contracts and soundness consequences.
+- `DowCardinal.lean`, `OmegaSplitting.lean`: actual dp and s_omega, their basic comparisons, and the consequences of the BMZ configuration.
 - `Main.lean`: public entry point and paper-facing cutoff under s < ap alone.
 
 Reused foundations: `InfinitaryCombinatorics.FinIntersection`, `InfinitaryCombinatorics.Characteristics`, and the existing R0 countable-completion and uniform-MAD modules. The protected `R0/` snapshot is unchanged.

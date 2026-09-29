@@ -520,18 +520,26 @@ fin-sequence. The output has size $\aleph_1$. The positive extension,
 finite ideal-cover, and finite-intersection preservation lemmas are
 proved within the development, rather than supplied as assumptions.
 
-There are substantive remaining formalization obligations. The BMZ forcing
-construction, the relative consistency of CH, the stronger published positive
-theorem under $\ap=\s=\cont$, and the topological results are not derived
-in Lean here. Nor is the assertion
-$\E$ encoded as a sentence of first-order set theory with its semantic
-correspondence proved. The YesMetaZFC module checks only the general
-proof-theoretic implication from consistent positive and negative
-extensions to nonderivability on both sides. It is not an instantiation
-of that implication for this problem. Accordingly, Theorem~\ref{thm:independence}
-is a paper theorem using the named literature inputs, not a fully
-machine-checked independence theorem. The source archive includes a
-statement-by-statement coverage record and the verification procedure.
+The development also encodes $\E$ as a closed first-order set-theoretic
+sentence. Its interpretation uses the model's own natural numbers, finite
+sets, functions, and families. A structural proof connects this interpretation
+to the public YesMetaZFC proof kernel. On ordinary sets, the finite-member
+formulation of FI is proved equivalent to centeredness of the retained set
+of traces, including when different members yield the same trace.
+The cardinals $\dpnum$ and $\s_\omega$ are defined by their actual least
+witness sizes, their comparisons with $\ap$ and $\s$ are proved, and the
+combinatorial consequences of the BMZ configuration are checked.
+
+Substantive obligations remain. The host proofs on natural numbers have
+not yet been transported into the set-theoretic models. The BMZ forcing,
+the positive consistency argument, the stronger positive theorem under
+$\ap=\s=\cont$, the topological results, and the Cohen preservation
+argument are not formalized here. The concrete ZFC/$\E$ interface proves
+independence once actual positive and negative models are supplied;
+it does not construct those models. Accordingly,
+Theorem~\ref{thm:independence} remains a paper theorem using the named
+literature inputs. The source archive includes a statement-by-statement
+coverage record and the verification procedure.
 
 The research manuscript and this formalization were prepared with
 generative AI assistance, including GPT-6 Astra. The author supplied the
