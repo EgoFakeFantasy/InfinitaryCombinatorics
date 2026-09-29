@@ -204,3 +204,35 @@ example : (∃ M : Set (Set ℕ), MAD M ∧ #M = almostDisjointnessNumber ∧
 #print axioms exists_nonFinIntersecting_mad_size_a
 #print axioms nonFinIntersecting_mad_size_a_iff
 end Q410PaperAcceptance
+
+namespace FIMADAcceptance
+open InfinitaryCombinatorics InfinitaryCombinatorics.Formalizations.FIMAD
+
+-- All candidate families on the actual natural numbers are quantified here.
+example (hsep : R0.splittingNumber < almostDisjointSeparationNumber)
+    (hbound : R0.splittingNumber < boundingNumber) :
+    ¬ ∃ M : Set (Set ℕ),
+      (M.Infinite ∧ (∀ a ∈ M, a.Infinite) ∧
+        ∀ a ∈ M, ∀ b ∈ M, a ≠ b → (a ∩ b).Finite) ∧
+      (∀ Y : Set ℕ, Y.Infinite → ∃ a ∈ M, (Y ∩ a).Infinite) ∧
+      R0.FinIntersecting M := by
+  rintro ⟨M,hAD,hmax,hFI⟩
+  exact no_fi_mad_of_s_lt_ap_and_b hsep hbound ⟨M,⟨hAD,hmax⟩,hFI⟩
+
+example {A : Set (Set ℕ)} (hA : ADFamily A)
+    (hap : almostDisjointSeparationNumber ≤ boundingNumber)
+    (hs : R0.splittingNumber < almostDisjointSeparationNumber) :
+    R0.FinIntersecting A ↔ #A < R0.splittingNumber :=
+  finIntersecting_iff_card_lt_of_ap_le_b hA hap hs
+
+example (U : Set (Set ℕ)) (hc : #U < boundingNumber)
+    (S : U → Set ℕ) (X : ℕ → Set ℕ) (hX : ∀ n, (X n).Infinite)
+    (ht : ∀ a : U, ∀ n, (a.val ∩ X n).Infinite ↔ n ∈ S a) :
+    ∃ C : R0.FinSequence ℕ, ∀ a : U, ∃ N, ∀ n ≥ N,
+      (a.val ∩ C.block n).Nonempty ↔ n ∈ S a :=
+  uniform_trace_coding U (bounding_of_card_lt hc) S X hX ht
+
+#print axioms uniform_trace_coding
+#print axioms no_fi_mad_of_s_lt_ap_and_b
+#print axioms Metatheory.relative_independence
+end FIMADAcceptance

@@ -38,3 +38,7 @@ Windows 可运行 `./verify.ps1` 完成统一验收。当前证据见 [验收清
 通用工具放在 `InfinitaryCombinatorics/`，问题专属证明放在本目录。声明使用 `InfinitaryCombinatorics.Formalizations.<项目名>` namespace，并在根目录 `Formalizations.lean` 加入入口 import。基础库不反向导入应用项目，以免形成依赖循环。
 
 贡献需接入 `CheckFormalizations.lean` 的语义陈述检查与 `Audit.lean` 的必需声明清单，运行完整构建、源码缺口扫描和传递公理审计。允许的公理依赖为 `propext`、`Classical.choice`、`Quot.sound`；不能将研究目标作为额外公理加入。文献优先权、数学意义与 Lean 内核通过是不同的证据，应分别说明。
+
+## FI MAD trace coding
+
+[FIMAD](FIMAD/README.md), entry `Formalizations.FIMAD.Main`, proves uniform finite-trace coding and the exclusion of all infinite FI MAD families under s < ap and s < b. The paper's s < ap consequence retains ap <= b as an explicit external input. A pinned YesMetaZFC dependency checks a generic consistency-to-independence schema. The CH and forcing constructions, the object-language encoding, and the full independence theorem are not formally verified; see the coverage table.

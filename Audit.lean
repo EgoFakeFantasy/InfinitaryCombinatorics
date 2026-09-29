@@ -5,6 +5,15 @@ open Lean Elab Command in
 run_elab do
   let env ← getEnv
   let required : Array Name := #[
+    `InfinitaryCombinatorics.Formalizations.FIMAD.uniform_trace_coding,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.nonseparableCardinals_nonempty,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.arbitrary_labels_below_ap,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.not_finIntersecting_of_large,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.boundingNumber_le_almostDisjointnessNumber,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.no_fi_mad_of_s_lt_ap_and_b,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.no_fi_mad_of_s_lt_ap,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.finIntersecting_iff_card_lt_of_ap_le_b,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Metatheory.relative_independence,
     `InfinitaryCombinatorics.Formalizations.R0.aleph0_lt_almostDisjointnessNumber,
     `InfinitaryCombinatorics.Formalizations.R0.cell_finite_relative_completion,
     `InfinitaryCombinatorics.Formalizations.R0.predecessor_completion_triangle,

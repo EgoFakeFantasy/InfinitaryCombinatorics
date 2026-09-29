@@ -62,3 +62,10 @@
 'InfinitaryCombinatorics.Formalizations.R0.nonFinIntersecting_mad_size_a_iff' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.uniform_trace_coding' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.no_fi_mad_of_s_lt_ap_and_b' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.Metatheory.relative_independence' depends on axioms: [propext, Quot.sound]

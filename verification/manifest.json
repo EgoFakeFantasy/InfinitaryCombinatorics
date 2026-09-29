@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-09-28T03:06:41.7384707Z",
+  "checked_at_utc": "2026-09-29T06:56:13.1024050Z",
   "lean_toolchain": "leanprover/lean4:v4.30.0",
   "mathlib_revision": "c5ea00351c28e24afc9f0f84379aa41082b1188f",
   "build": "passed",
@@ -7,9 +7,9 @@
   "unfolded_R0_statements": "passed",
   "formalization_statements": "passed",
   "axiom_audit": "passed",
-  "declarations": 1057,
-  "theorem_constants": 776,
-  "library_modules": 68,
+  "declarations": 1096,
+  "theorem_constants": 805,
+  "library_modules": 74,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
@@ -21,11 +21,11 @@
   "R0_snapshot_hashes": "unchanged",
   "source_hashes": [
     {
-      "sha256": "1e252e6af9db4f776c3f696d0c0c3845ee5e6e37b8c2396925805e63b41ec6e0",
+      "sha256": "666c87741d3faa41d136b1a49cfc0f8e8a8897fb6f594373ac5ac984f41635af",
       "path": "Audit.lean"
     },
     {
-      "sha256": "5ebb69849d227ad41d1495750bc0bfa57104ee0af51b66d7c0e3096fa0ce9e9c",
+      "sha256": "b63f3db2efc22c5c1a0d161dd59324f73d735eda4367722b2412a4ef6ec77b4d",
       "path": "CheckFormalizations.lean"
     },
     {
@@ -37,7 +37,7 @@
       "path": "Examples.lean"
     },
     {
-      "sha256": "c3362ef38fe455ec84371f4c8f08162ecbc3f525c4b6980c5e7be4bce96a31ff",
+      "sha256": "1b51202ce7ef6a436af2cf6bed52d68a5afa168c589d6226ade904b369762728",
       "path": "Formalizations.lean"
     },
     {
@@ -139,6 +139,30 @@
     {
       "sha256": "952af28628151c8f25d6d8f4ce6f2c500d03bfc9777d66369c9d03fddce39814",
       "path": "Formalizations/A2/Triangle.lean"
+    },
+    {
+      "sha256": "54bf874006d7a949176e58b44583d4e2d7bdc8c22383d4d598668ca7b6f195ae",
+      "path": "Formalizations/FIMAD/Main.lean"
+    },
+    {
+      "sha256": "654937862765e515f8b9da3f2e852eb9ca12386ce8eea10f4300b9651bc99e62",
+      "path": "Formalizations/FIMAD/Metatheory.lean"
+    },
+    {
+      "sha256": "f807a46a019ec7fc4ee244036635c8365c20e8966048c576392310bf9ed3ff16",
+      "path": "Formalizations/FIMAD/Nonexistence.lean"
+    },
+    {
+      "sha256": "eecbbfb7aceaa0c04554a8f3ca0b36046ee32e759cae2f3f8184bf9385bc69f3",
+      "path": "Formalizations/FIMAD/Obstruction.lean"
+    },
+    {
+      "sha256": "f8441c7597580d0be36683c6634fffe47909f8569df26fda2c7a0213dc7ca805",
+      "path": "Formalizations/FIMAD/SeparationCardinal.lean"
+    },
+    {
+      "sha256": "f9e0bb9300aa43f598cac9664844e1820dfcf66b8f1514217fa2df840b8a7f3f",
+      "path": "Formalizations/FIMAD/TraceCoding.lean"
     },
     {
       "sha256": "32c23dcbcb7396a64cb2a280ef7cd1e6176e6fb7af51eea969fee3f4ecb36669",

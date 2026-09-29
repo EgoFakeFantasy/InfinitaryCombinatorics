@@ -1,0 +1,594 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.08in,nohead,includefoot]{geometry}
+\usepackage[hidelinks,pdfencoding=auto]{hyperref}
+\hypersetup{pdftitle={Weak separation and finite-trace coding: independence of infinite fin-intersecting MAD families},pdfauthor={Haoxuan Ye}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\s}{\mathfrak{s}}
+\newcommand{\bnum}{\mathfrak{b}}
+\newcommand{\anum}{\mathfrak{a}}
+\newcommand{\ap}{\mathfrak{ap}}
+\newcommand{\dpnum}{\mathfrak{dp}}
+\newcommand{\cont}{\mathfrak{c}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\FI}{\operatorname{FI}}
+\newcommand{\Con}{\operatorname{Con}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{\mathcal{I}}
+\newcommand{\E}{\mathsf{E}}
+\newcommand{\PP}{\mathsf{P}}
+\setlength{\emergencystretch}{1em}
+\title{Weak separation and finite-trace coding:\\ independence of infinite fin-intersecting MAD families}
+\author{Haoxuan Ye}
+\date{29 September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove that, if $\s<\ap$, an almost disjoint family is fin-intersecting
+exactly when its cardinality is less than $\s$. Consequently, no infinite
+fin-intersecting maximal almost disjoint family exists in this region.
+The main lemma converts countably many weak intersection tests on a family
+of size less than $\bnum$ into eventual traces of one sequence of disjoint
+nonempty finite sets. Weak separation then encodes a splitting family and
+its complements on prescribed members of any sufficiently large almost
+disjoint family. Combined with a consistency theorem of Banakh, Machura
+and Zdomskyy and the positive results of Corral and Rodrigues, this yields
+the relative independence over ZFC of the existence of an infinite
+fin-intersecting MAD family. The negative model also contains a MAD family
+with pseudocompact Vietoris hyperspace. A companion Lean development
+checks the combinatorial obstruction with its external cardinal comparison
+explicit; the model constructions and the full ZFC independence theorem
+are not formalized there.
+\end{abstract}
+
+\section{Introduction}
+An almost disjoint family can have centered traces along an infinite
+subsequence of every sequence of disjoint finite blocks. Corral and
+Rodrigues call this property \emph{fin-intersecting} and use it to obtain
+MAD families whose associated Vietoris hyperspaces are pseudocompact
+\cite{CR}. Their Question~3.7 asks whether ZFC proves the existence of a
+fin-intersecting MAD family. Throughout this paper, a MAD family is
+required to have infinitely many members.
+
+Let $\E$ denote the assertion that an infinite fin-intersecting MAD family
+on $\omega$ exists. The main combinatorial result is the following.
+\begin{theorem}\label{thm:main}
+Assume $\s<\ap$. For every almost disjoint family $\A\subseteq[\omega]^\omega$,
+\[
+ \FI(\A)\quad\Longleftrightarrow\quad |\A|<\s.
+\]
+In particular, $\neg\E$ holds.
+\end{theorem}
+
+The positive direction of the equivalence is the known small-family
+bound of Corral and Rodrigues. Our argument for the converse starts with
+an arbitrary candidate family. We choose pairs of distinct members indexed
+by a splitting family and prescribe complementary traces on each pair.
+Weak separation supplies countably many infinite testing sets. A single
+eventual bound converts these tests into disjoint finite blocks. Any
+infinite set of indices is split by one of the labels, giving two infinite
+retained traces whose intersection is finite.
+
+The inequality $\ap\leq\bnum$ is the external cardinal comparison that makes
+this coding possible. Banakh, Machura and Zdomskyy give a relative
+consistency model with $\s_\omega=\aleph_1<\dpnum=\cont=\aleph_2$ \cite{BMZ}.
+It satisfies $\s<\ap$, so Theorem~\ref{thm:main} rules out every infinite
+FI MAD family there. On the other hand, Corral and Rodrigues prove
+$\ap=\s=\cont\Rightarrow\E$, in particular $\mathrm{CH}\Rightarrow\E$.
+Thus, with consistency understood syntactically,
+\[
+ \Con(\mathrm{ZFC})\ \Longrightarrow\
+ \Con(\mathrm{ZFC}+\E)\ \wedge\ \Con(\mathrm{ZFC}+\neg\E).
+\]
+
+Sections~\ref{sec:coding}--\ref{sec:obstruction} contain the new coding and
+exclusion arguments. Section~\ref{sec:ch} gives a self-contained reconstruction
+of the known CH construction. Section~\ref{sec:independence} states the model
+inputs precisely and derives independence. We also separate FI existence
+from the existence of a MAD family with pseudocompact hyperspace.
+Section~\ref{sec:formal} records exactly what the companion Lean files prove.
+
+\section{Definitions and preliminary facts}
+We work in ZFC. Write $A\subseteq^*B$ when $A\setminus B$ is finite and
+$A=^*B$ when their symmetric difference is finite. For functions on $\omega$,
+$f\leq^*g$ means that $f(n)\leq g(n)$ for all sufficiently large $n$.
+We use $[0,k)=\{0,\ldots,k-1\}$.
+
+\begin{definition}
+A family $\A\subseteq[\omega]^\omega$ is \emph{almost disjoint} (AD) if distinct
+members have finite intersection. It is \emph{MAD} if $\A$ is infinite and
+\[
+ \forall X\in[\omega]^\omega\ \exists A\in\A\quad |X\cap A|=\aleph_0.
+\]
+Finite or empty AD families are allowed in intermediate arguments, but do
+not count as MAD families.
+A \emph{fin-sequence} is a sequence $C=(C_n:n<\omega)$ of pairwise disjoint
+nonempty finite subsets of $\omega$. Its trace on $A$ is
+\[
+ \tr_C(A)=\{n:A\cap C_n\ne\varnothing\}.
+\]
+There is no uniform bound on the block sizes, and the blocks need not
+cover $\omega$.
+\end{definition}
+
+\begin{definition}[{\cite[Definition~2.3]{CR}}]
+A family of infinite sets is \emph{centered} if every nonempty finite
+subfamily has infinite intersection. The empty family is centered.
+An AD family $\A$ is \emph{fin-intersecting} (FI) if, for every fin-sequence
+$C$, some infinite $I\subseteq\omega$ makes
+\[
+ \{I\cap\tr_C(A):A\in\A,\ |I\cap\tr_C(A)|=\aleph_0\}
+\]
+centered. The test applies to \emph{all} infinite retained traces, after
+finite traces have been discarded.
+\end{definition}
+
+The splitting number $\s$ is the least size of a family $\mathcal S$ of
+subsets of $\omega$ such that every infinite $I$ is split by some
+$S\in\mathcal S$: both $I\cap S$ and $I\setminus S$ are infinite.
+The bounding number $\bnum$ is the least size of an unbounded family in
+$(\omega^\omega,\leq^*)$. Let $\anum$ be the least size of an infinite MAD
+family, and let $\cont=2^{\aleph_0}$.
+
+For $\mathcal B\subseteq\A$, a set $X\subseteq\omega$ \emph{weakly separates}
+$\mathcal B$ from $\A\setminus\mathcal B$ if
+\[
+ |A\cap X|=\aleph_0\ (A\in\mathcal B),\qquad
+ |A\cap X|<\aleph_0\ (A\in\A\setminus\mathcal B).
+\]
+The invariant $\ap$ is the least size of an AD family with a subfamily
+that cannot be weakly separated from its complement. This definition uses
+infinite versus finite intersection, not almost containment.
+
+We use the standard inequalities
+\begin{equation}\label{eq:bounds}
+ \aleph_1\leq\ap\leq\bnum\leq\anum\leq\cont,
+ \qquad \aleph_1\leq\s\leq\cont.
+\end{equation}
+In particular, $\ap\leq\bnum$ follows from \cite[Theorem~2]{BMZ}.
+For completeness we recall the diagonal argument for $\bnum\leq\anum$.
+
+\begin{lemma}\label{lem:ba}
+An infinite AD family of size less than $\bnum$ is not MAD.
+\end{lemma}
+\begin{proof}
+Choose distinct $A_i\in\A$ and put $E_i=A_i\setminus\bigcup_{j<i}A_j$.
+The sets $E_i$ are infinite and pairwise disjoint. For each $A\in\A$, let
+\[
+ f_A(i)=
+ \begin{cases}
+ 1+\max(\{0\}\cup(A\cap E_i)),&A\ne A_i,\\
+ 0,&A=A_i.
+ \end{cases}
+\]
+Choose a common eventual bound $g$ and choose $x_i\in E_i$ with $x_i\geq g(i)$.
+The points are distinct. For a fixed $A$, all sufficiently late $x_i$ lie
+outside $A$, except possibly the unique index with $A=A_i$.
+Thus $\{x_i:i<\omega\}$ is infinite and almost disjoint from every member.
+\end{proof}
+
+\begin{lemma}\label{lem:small}
+The FI property passes to subfamilies. Every AD family of size less than
+$\s$ is FI.
+\end{lemma}
+\begin{proof}
+For heredity, every retained trace for a subfamily is a retained trace for
+the original family. For the second assertion, fix $C$. Its trace family
+has size less than $\s$, so it fails to split some infinite $I$.
+Each trace is finite or cofinite in $I$. Every retained trace is therefore
+cofinite in $I$, and the retained family is centered.
+This is the argument of \cite[Theorem~3.1]{CR}.
+\end{proof}
+
+\section{Uniform finite-trace coding}\label{sec:coding}
+The following lemma makes no almost-disjointness assumption. Its point is
+to use one eventual bound before choosing any of the block endpoints.
+
+\begin{lemma}[Uniform coding]\label{lem:coding}
+Let $\U\subseteq\mathcal P(\omega)$ have size less than $\bnum$, and assign
+$S_A\subseteq\omega$ to each $A\in\U$. Suppose that infinite sets
+$X_n\subseteq\omega$ satisfy
+\[
+ |A\cap X_n|=\aleph_0\quad\Longleftrightarrow\quad n\in S_A.
+\]
+There is a fin-sequence $C$ such that $\tr_C(A)=^*S_A$ for every $A\in\U$.
+\end{lemma}
+\begin{proof}
+First bound each negative test. Set
+\[
+ d_A(k)=
+ \begin{cases}
+ 0,&k\in S_A,\\
+ 1+\max(\{0\}\cup(A\cap X_k)),&k\notin S_A.
+ \end{cases}
+\]
+Thus, in the negative case, $A\cap X_k\subseteq[0,d_A(k))$.
+For a positive test and an endpoint $k$, the infinite set $A\cap X_i$ has a
+least element at least $k$. Collect the finitely many relevant witnesses:
+\[
+ P_A(k)=\{\min(A\cap X_i\cap[k,\infty)):i\leq k,\ i\in S_A\},
+ \quad h_A(k)=\max(\{k+1,d_A(k)\}\cup P_A(k)).
+\]
+Choose $g\in\omega^\omega$ with $h_A\leq^*g$ for every $A\in\U$, increasing
+it if necessary so that $g(k)\geq k+1$. This is the sole use of $|\U|<\bnum$.
+
+Define the endpoints recursively. Let $r_0=0$ and, given $r_n$, put
+\begin{align*}
+ \ell_n&=\max\{n,g(n),r_n\},\\
+ z_n&=\min(X_n\cap[\ell_n,\infty)),\\
+ r_{n+1}&=1+\max\{\ell_n,g(\ell_n),z_n\},
+ &C_n&=X_n\cap[\ell_n,r_{n+1}).
+\end{align*}
+Every $z_n$ exists and belongs to $C_n$, so the blocks are nonempty and finite.
+Since $\ell_{n+1}\geq r_{n+1}$, the successive windows, and hence all the
+blocks, are disjoint.
+
+Fix $A$ and choose $N_A$ so that $h_A(k)\leq g(k)$ for every $k\geq N_A$.
+For $n\geq N_A$ with $n\notin S_A$, we have
+\[
+ A\cap X_n\subseteq[0,d_A(n))\subseteq[0,g(n))\subseteq[0,\ell_n),
+\]
+so $A\cap C_n=\varnothing$. If $n\in S_A$, then $n\leq\ell_n$ and
+$\ell_n\geq N_A$. The witness for test $n$ occurs in $P_A(\ell_n)$, giving
+\[
+ \ell_n\leq\min(A\cap X_n\cap[\ell_n,\infty))
+ \leq h_A(\ell_n)\leq g(\ell_n)<r_{n+1}.
+\]
+It lies in $A\cap C_n$. Thus membership in $\tr_C(A)$ and $S_A$ agrees from
+$N_A$ onward, as required.
+\end{proof}
+
+\begin{remark}
+All functions $h_A$ are defined before $g$ and the endpoints are chosen.
+The later evaluation at $\ell_n$ is legitimate because $\ell_n\geq n$.
+The thresholds $N_A$ can depend on $A$; no uniform threshold over the whole
+family is asserted. Any choices of positive witnesses in place of the
+minima also work, which is the formulation used in Lean.
+\end{remark}
+
+\begin{corollary}[Arbitrary labels on a small infinite AD family]\label{cor:labels}
+If $\A$ is infinite, AD, and $|\A|<\ap$, then every assignment
+$A\mapsto S_A\subseteq\omega$ is realized modulo finite by the traces of
+one fin-sequence.
+\end{corollary}
+\begin{proof}
+For each $n$, put $\mathcal B_n=\{A\in\A:n\in S_A\}$.
+If $\mathcal B_n$ is nonempty, weak separation provides a testing set $X_n$;
+its infinite intersection with any positive member makes $X_n$ infinite.
+If $\mathcal B_n$ is empty, Lemma~\ref{lem:ba} and $|\A|<\ap\leq\bnum$
+provide an infinite set almost disjoint from all of $\A$; use it as $X_n$.
+Apply Lemma~\ref{lem:coding}.
+\end{proof}
+
+Infinitude of the family in this corollary matters: a finite partition of
+$\omega$ cannot have all its traces eventually empty. In the main argument
+below every positive fiber is nonempty, so this special case can also be avoided.
+
+\section{Excluding every sufficiently large candidate}\label{sec:obstruction}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The forward obstruction is the only new direction. Let $\M$ be any AD
+family with $|\M|\geq\s$. Since $2\s=\s$, choose distinct members
+\[
+ \A=\{a_\xi^0,a_\xi^1:\xi<\s\}\subseteq\M.
+\]
+Take a splitting family $(S_\xi:\xi<\s)$ and label the selected members by
+$S_{a_\xi^0}=S_\xi$ and $S_{a_\xi^1}=\omega\setminus S_\xi$.
+Corollary~\ref{cor:labels} gives a fixed fin-sequence $C$ with these traces
+modulo finite. Equivalently, one can weakly separate, for each $n$, the
+nonempty subfamily
+\[
+ \{a_\xi^0:n\in S_\xi\}\ \cup\ \{a_\xi^1:n\notin S_\xi\}
+\]
+and apply Lemma~\ref{lem:coding} directly using $\s<\ap\leq\bnum$.
+
+Let $I$ be any infinite set of indices, and choose $S_\xi$ splitting it.
+The finite errors
+\[
+ D_0=\tr_C(a_\xi^0)\mathbin\triangle S_\xi,\qquad
+ D_1=\tr_C(a_\xi^1)\mathbin\triangle(\omega\setminus S_\xi)
+\]
+do not destroy infinitude of either restricted trace. Both therefore
+survive the deletion of finite traces. But
+\[
+ \tr_C(a_\xi^0)\cap\tr_C(a_\xi^1)\subseteq D_0\cup D_1,
+\]
+so their intersection is finite. They contradict centeredness, and $I$
+cannot witness FI for $C$. The same $C$ works for every infinite $I$.
+Thus $\M$ is not FI. Lemma~\ref{lem:small} supplies the opposite implication.
+
+Finally, any infinite MAD family has size at least $\anum\geq\bnum\geq\ap>\s$,
+so it is excluded by the same argument.
+\end{proof}
+
+\begin{corollary}\label{cor:necessary}
+ZFC proves $\E\Rightarrow\ap\leq\s$.
+\end{corollary}
+The quantifiers in the negative conclusion are $\forall\M\,\exists C\,\forall I$:
+the blocking sequence can depend on the candidate family. This neither
+changes its members nor merely constructs one special non-FI MAD family.
+
+\section{The known positive direction under CH}\label{sec:ch}
+Corral and Rodrigues prove the stronger positive theorem under
+$\ap=\s=\cont$ \cite[Theorem~3.4]{CR}. We reconstruct the CH case to make
+the two sides of the independence argument explicit; no novelty is claimed
+for this positive direction.
+
+For an AD family $\A$, let
+\[
+ \Id(\A)=\{Y\subseteq\omega:\exists F\in[\A]^{<\omega},\ Y\subseteq^*\bigcup F\}.
+\]
+Call $Y$ \emph{positive} if $Y\notin\Id(\A)$.
+
+\begin{lemma}\label{lem:hit}
+If $\A$ is countably infinite and AD, and $\mathcal Y$ is a countable family
+of $\Id(\A)$-positive sets, there is an infinite set $a$ almost disjoint
+from every member of $\A$ and meeting every $Y\in\mathcal Y$ infinitely.
+\end{lemma}
+\begin{proof}
+Add $\omega$ to the requirements. It is positive: a finite subfamily cannot
+almost cover an infinite AD family. Enumerate $\A=(A_i:i<\omega)$ and the
+requirements as $(Y_j:j<\omega)$, repeating entries when necessary.
+At stage $n$, for every $j\leq n$, choose a fresh point
+$x_{j,n}\in Y_j\setminus\bigcup_{i\leq n}A_i$, avoiding all previously
+chosen points. Positivity ensures infinitely many choices at each step.
+The set of all these points meets each requirement infinitely and each
+$A_i$ only in the finitely many points selected before stage $i$.
+\end{proof}
+
+\begin{lemma}\label{lem:cover}
+Let $\A$ be AD and $C$ a fin-sequence. If an infinite $I$ satisfies
+$\bigcup_{n\in I}C_n\in\Id(\A)$, some infinite $J\subseteq I$ witnesses FI
+for $\A$ and $C$.
+\end{lemma}
+\begin{proof}
+Choose finite $F\subseteq\A$ almost covering that union. Remove the finitely
+many blocks meeting the finite uncovered part. Every remaining block is
+contained in $\bigcup F$. There are only finitely many intersection
+patterns with $F$, so one nonempty pattern $K\subseteq F$ occurs on an
+infinite set $J$ of blocks. Members of $K$ have trace $J$ after restriction;
+members of $F\setminus K$ have empty trace. Each $A\in\A\setminus F$ meets
+$\bigcup F$ finitely, hence meets only finitely many of the disjoint blocks.
+The only retained trace is therefore $J$, and centeredness follows.
+This is the mechanism of \cite[Lemma~2.4]{CR}.
+\end{proof}
+
+\begin{theorem}[Known CH construction]\label{thm:ch}
+Under CH, there is an infinite FI MAD family of size $\aleph_1$.
+\end{theorem}
+\begin{proof}
+Start with a countably infinite AD family $(a_n:n<\omega)$. Using CH,
+enumerate all infinite subsets as $(X_\alpha:\omega\leq\alpha<\omega_1)$
+and all fin-sequences as $(C^\alpha:\omega\leq\alpha<\omega_1)$.
+At stage $\alpha$, the preceding family
+$\A_\alpha=\{a_\xi:\xi<\alpha\}$ is countably infinite.
+Choose an infinite $I_\alpha$ on which every trace of an old member against
+$C^\alpha$ is finite or cofinite. Successive thinning followed by a
+diagonal pseudointersection gives such an $I_\alpha$.
+
+For each already registered $\omega\leq\gamma\leq\alpha$ and finite
+$F\subseteq\alpha$, put
+\[
+ S_\gamma(F)=I_\gamma\cap\bigcap_{\xi\in F}\tr_{C^\gamma}(a_\xi),
+ \qquad Y_\gamma(F)=\bigcup_{n\in S_\gamma(F)}C_n^\gamma.
+\]
+Include in the requirement list every such $Y_\gamma(F)$ that is currently
+$\Id(\A_\alpha)$-positive, together with $\omega$ and, if positive, $X_\alpha$.
+This list is countable. Lemma~\ref{lem:hit} gives a new member $a_\alpha$
+meeting all requirements infinitely and almost disjoint from the preceding
+family. In particular,
+\begin{equation}\label{eq:invariant}
+ Y_\gamma(F)\notin\Id(\A_\alpha)
+ \quad\Longrightarrow\quad |S_\gamma(F\cup\{\alpha\})|=\aleph_0.
+\end{equation}
+The implication uses the finiteness and disjointness of the blocks.
+
+The resulting $\M=\{a_\xi:\xi<\omega_1\}$ is AD with distinct infinite
+members, hence of size $\aleph_1$. It is maximal: at the stage for an
+infinite $X_\alpha$, either finitely many preceding members almost cover it,
+so one already meets it infinitely, or the new member is required to do so.
+
+Fix $C=C^\gamma$. If any infinite union of its blocks belongs to $\Id(\M)$,
+Lemma~\ref{lem:cover} gives an FI witness. Otherwise every infinite block
+union is positive for the final ideal and consequently for every earlier
+ideal. We show that $I_\gamma$ itself is a witness.
+Take finitely many members with infinite traces on $I_\gamma$.
+Those indexed below $\gamma$ have cofinite traces there, so their finite
+intersection $L$ is infinite; if there are none, take $L=I_\gamma$.
+Add the remaining indices in increasing order. Whenever the current
+intersection $L$ is infinite, its block union is positive in the final
+ideal, hence positive when the next member was added.
+Condition~\eqref{eq:invariant} preserves infinitude of the intersection.
+After finitely many steps the intersection of the chosen traces is infinite.
+Thus all retained traces are centered and $\M$ is FI.
+\end{proof}
+
+\section{Relative independence and the external model}\label{sec:independence}
+The invariant $\dpnum$ is the least size of the union of two orthogonal
+families of infinite subsets of $\omega$ that cannot be weakly separated.
+Orthogonality requires finite intersections between the two families.
+An inseparable cut in an AD family is such a pair, so $\dpnum\leq\ap$.
+Let $\s_\omega$ be the least size of a family containing a simultaneous
+splitter for every countable sequence of infinite subsets of $\omega$.
+In particular, $\s\leq\s_\omega$.
+
+\begin{theorem}[External consistency input, {\cite[Theorem~4(3)]{BMZ}}]\label{thm:bmz}
+Relative to the consistency of ZFC, it is consistent that
+$\s_\omega=\aleph_1$ and $\dpnum=\cont=\aleph_2$.
+\end{theorem}
+This is a weakening of the configuration stated in the cited theorem.
+Its proof refers to Dow's model and establishes the value of $\s_\omega$.
+We use that published consistency result and do not reconstruct its forcing.
+In this model, the inequalities give
+\[
+ \s=\aleph_1,\qquad \ap=\bnum=\anum=\cont=\aleph_2.
+\]
+Thus Theorem~\ref{thm:main} applies internally to every infinite MAD family.
+
+\begin{theorem}\label{thm:independence}
+If ZFC is consistent, then both $\mathrm{ZFC}+\E$ and
+$\mathrm{ZFC}+\neg\E$ are consistent. Consequently $\E$ is independent of ZFC.
+\end{theorem}
+\begin{proof}
+For the positive side use the standard relative consistency of CH with
+ZFC and Theorem~\ref{thm:ch}. For the negative side use
+Theorem~\ref{thm:bmz} and the ZFC implication in Theorem~\ref{thm:main}.
+If either $\E$ or its negation were a theorem of ZFC, the respective
+opposite extension would be inconsistent.
+\end{proof}
+This is a relative-consistency argument in the usual syntactic sense.
+It does not assert that ZFC proves its own consistency, and does not assume
+an extra transitive-model hypothesis. It answers the published existence
+question \cite[Question~3.7]{CR}; in the earlier arXiv v2 this is Question~17.
+
+\section{Consequences and limits}
+\begin{corollary}\label{cor:section}
+ZFC proves $\ap=\cont\Rightarrow(\E\leftrightarrow\s=\cont)$.
+\end{corollary}
+\begin{proof}
+If $\s<\cont=\ap$, Theorem~\ref{thm:main} gives $\neg\E$.
+If $\s=\cont=\ap$, apply \cite[Theorem~3.4]{CR}.
+\end{proof}
+
+For an AD family $\A$, the space $\Psi(\A)$ has underlying disjoint union
+$\omega\mathbin{\dot\cup}\A$. Natural numbers are isolated; a basic
+neighborhood of $A\in\A$ is $\{A\}\cup(A\setminus F)$ for finite $F$.
+Write $\exp(X)$ for the hyperspace of nonempty closed subsets with the
+Vietoris topology, generated by $U^+=\{F:F\subseteq U\}$ and
+$U^-=\{F:F\cap U\ne\varnothing\}$ for open $U$.
+Pseudocompactness means that every continuous real-valued function is bounded.
+Let $\PP$ assert that some infinite MAD family $\A$ has pseudocompact
+$\exp(\Psi(\A))$.
+
+Corral and Rodrigues prove $\E\Rightarrow\PP$ \cite[Proposition~2.5]{CR}.
+They also prove $\ap=\cont\Rightarrow\PP$ \cite[Theorem~5]{CRnew}.
+\begin{corollary}\label{cor:topology}
+If ZFC is consistent, then $\mathrm{ZFC}+\PP+\neg\E$ is consistent.
+\end{corollary}
+\begin{proof}
+The model of Theorem~\ref{thm:bmz} satisfies $\ap=\cont$ and $\s<\ap$.
+Apply the two preceding implications.
+\end{proof}
+This is stronger than producing one pseudocompact MAD family that is not FI:
+there is no infinite FI MAD family in that model at all. It does not prove
+independence of $\PP$, nor produce a model of $\neg\PP$.
+
+The known sufficient condition $\anum<\s$ and our necessary condition give
+\[
+ \anum<\s\quad\Longrightarrow\quad\E\quad\Longrightarrow\quad\ap\leq\s.
+\]
+We do not establish sufficiency of $\ap\leq\s$, or even of $\ap=\s$.
+The negative model refutes the implication from $\ap=\cont$ alone to FI MAD
+existence asked about in \cite[Question~7]{CRnew}; it does not settle the
+other alternative in that question.
+
+\section{Formal verification and provenance}\label{sec:formal}
+The companion development belongs to the \emph{InfinitaryCombinatorics}
+library \cite{IC}. It reuses its definitions of AD, infinite MAD,
+fin-sequences, retained traces, centeredness, and FI. Its new modules are in
+\texttt{Formalizations/FIMAD/}. The toolchain remains Lean~4.30.0 with the
+library's pinned mathlib revision. A pinned YesMetaZFC dependency supplies
+the genuine first-order derivation and consistency notions \cite{YM}.
+
+The checked combinatorial chain proves uniform trace coding, finite-error
+trace obstruction, the diagonal bound $\bnum\leq\anum$, and the exclusion
+of all infinite FI MAD families under $\s<\ap$ and $\s<\bnum$.
+The stated $\s<\ap$ consequence is derived with the cited comparison
+$\ap\leq\bnum$ supplied as an explicit hypothesis. Arbitrary labels,
+including empty positive fibers, are also covered. The development defines
+$\ap$ by the least nonseparable AD cardinal and proves that its witness class
+is nonempty; it does not replace $\ap$ by an unspecified parameter.
+
+There are substantive remaining formalization obligations. The comparison
+$\ap\leq\bnum$, the CH recursion, the BMZ forcing construction, and the
+topological results are not derived in Lean here. Nor is the assertion
+$\E$ encoded as a sentence of first-order set theory with its semantic
+correspondence proved. The YesMetaZFC module checks only the general
+proof-theoretic implication from consistent positive and negative
+extensions to nonderivability on both sides. It is not an instantiation
+of that implication for this problem. Accordingly, Theorem~\ref{thm:independence}
+is a paper theorem using the named literature inputs, not a fully
+machine-checked independence theorem. The source archive includes a
+statement-by-statement coverage record and the verification procedure.
+
+The research manuscript and this formalization were prepared with
+generative AI assistance, including GPT-6 Astra. The author supplied the
+research problem and coordinated the work. Checks performed by the
+producing AI system do not constitute independent expert review; no such
+review of this manuscript is claimed. The author is unaffiliated and
+received no specific funding for this work. Known positive constructions,
+cardinal comparisons, forcing results, and hyperspace theorems are credited
+to their cited sources. No claim of an exhaustive priority search is made.
+
+\appendix
+\section{The same splitting number and continuum need not decide existence}
+Corral and Rodrigues construct under CH a FI MAD family that survives
+adding arbitrarily many Cohen reals; the countable-forcing case is
+\cite[Theorem~5.3]{CR} and the arbitrary-Cohen extension is discussed in
+Section~5 of that paper. This yields a useful comparison, separate from
+the independence proof above.
+
+Start from GCH with such a family $\A$ of size $\aleph_1$ and force with
+$\operatorname{Add}(\omega,\omega_2)$. The forcing is ccc and preserves
+cardinals. Counting nice names gives $\cont\leq\aleph_2$, and the distinct
+coordinate reals give equality. A nice name for a real or a fin-sequence
+has countable support, so it appears in a countable-coordinate extension.
+The cited preservation theorem applies there. An infinite-index FI witness
+continues to work in the full extension: the family has the same members,
+and statements about finite intersections of its traces are absolute.
+The same support argument checks maximality.
+
+The first $\omega_1$ Cohen reals form a splitting family. For any infinite
+$X$ in the final extension, choose a countable support for its name and
+then an index below $\omega_1$ outside that support. That coordinate is
+Cohen over the extension containing $X$, and the dense requirements to
+put both bits at arbitrarily large positions in $X$ ensure splitting.
+Thus $\s=\aleph_1$. Since the preserved MAD family still has size $\aleph_1$,
+$\anum=\ap=\bnum=\aleph_1$ as well.
+\[
+\begin{array}{lcccc}
+\text{Model} & \s & \ap & \cont & \E\\\hline
+\text{Cohen extension above} & \aleph_1 & \aleph_1 & \aleph_2 & \text{true}\\
+\text{BMZ model} & \aleph_1 & \aleph_2 & \aleph_2 & \text{false}
+\end{array}
+\]
+In particular, the hypothesis $\ap=\cont$ cannot simply be dropped from
+Corollary~\ref{cor:section}. This appendix relies on the cited preservation
+result and is not included in the Lean verification.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{CR} C\'esar Corral and Vinicius de O.~Rodrigues,
+\emph{Fin-intersecting MAD families}, Filomat \textbf{38} (2024), no.~7,
+2563--2578. \href{https://doi.org/10.2298/FIL2407563C}{doi:10.2298/FIL2407563C}.
+Published numbering is used. Earlier version:
+\href{https://arxiv.org/abs/2212.01484v2}{arXiv:2212.01484v2}.
+\bibitem{BMZ} Taras Banakh, Micha\l{} Machura and Lubomyr Zdomskyy,
+\emph{On critical cardinalities related to Q-sets}, Mathematical Bulletin
+of the Shevchenko Scientific Society \textbf{11} (2014), 21--32.
+\href{https://arxiv.org/abs/1306.0204v3}{arXiv:1306.0204v3}.
+Theorem~2 is on p.~2 and Theorem~4(3) on p.~5 of that version.
+\bibitem{CRnew} C\'esar Corral and Vinicius de O.~Rodrigues,
+\emph{New examples of MAD families with pseudocompact hyperspaces},
+Topology and its Applications \textbf{342} (2024), 108773.
+\href{https://doi.org/10.1016/j.topol.2023.108773}{doi:10.1016/j.topol.2023.108773}.
+Theorem~5 and Question~7 refer to
+\href{https://arxiv.org/abs/2309.03405v2}{arXiv:2309.03405v2}.
+\bibitem{IC} Haoxuan Ye, \emph{InfinitaryCombinatorics}, Lean source repository,
+\url{https://github.com/EgoFakeFantasy/InfinitaryCombinatorics}.
+The accompanying archive fixes the source and dependency hashes for this revision.
+\bibitem{YM} \emph{YesMetaZFC}, Lean source repository,
+\url{https://github.com/lanxinge/YesMetaZFC}, commit
+\texttt{bae4fcc31b07b505986b11c6c2f13965ae6cd46d}.
+\end{thebibliography}
+\end{document}
