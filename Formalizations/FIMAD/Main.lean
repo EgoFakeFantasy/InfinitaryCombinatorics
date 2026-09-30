@@ -7,6 +7,7 @@ import Formalizations.FIMAD.OmegaSplitting
 import Formalizations.FIMAD.GeneralConstruction
 import Formalizations.FIMAD.StandardModel
 import Formalizations.FIMAD.DowCertificate
+import Formalizations.FIMAD.UnboundedSyntax
 
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 

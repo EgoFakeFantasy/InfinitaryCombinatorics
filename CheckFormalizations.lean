@@ -368,4 +368,13 @@ example (X : Set ℕ) : PosetRegular.NatUnbounded X ↔ X.Infinite :=
   (DowForcing.infinite_iff_natUnbounded X).symm
 
 #print axioms DowForcing.splittingCertificate
+
+-- These quantifiers are over the entire internal carrier; the old injection
+-- definition of Infinite is preserved separately.
+example {U : Type u} (E : U → U → Prop) (w a : U) :
+    Internal.Unbounded E w a ↔
+      ∀ x, E x w → ∃ y, E y w ∧ (E x y ∨ x = y) ∧ E y a := Iff.rfl
+
+#print axioms Internal.Syntax.satisfies_UnboundedFormula
+#print axioms Internal.Syntax.unboundedBody_closed
 end FIMADAcceptance

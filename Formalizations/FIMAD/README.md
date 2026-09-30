@@ -94,6 +94,7 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 - `PosetRegular.lean`: regular lower sets of any forcing preorder, complete Boolean operations, nonzero canonical condition values, and dense decision semantics; shared unchanged by both toolchains.
 - `DowBoolean.lean`: the actual Dow completion is ccc; canonical union-of-stems coefficients have top-valued unbounded hitting and finite avoidance; total Boolean enumerations have countable splitting tests without an assumed decision-density premise.
 - `BooleanEnumeration.lean`, `DowCertificate.lean`: shared countable Boolean splitting contract and its proof for the exact Dow order. The typed `SplittingNames` adapter consumes this same source-level contract.
+- `UnboundedSyntax.lean`: unboundedness and unbounded splitting in the original membership language, with a checked formula; the original injection-based definition of infinitude is retained.
 - `Main.lean`: public entry point and paper-facing cutoff under s < ap alone.
 
 Reused foundations: `InfinitaryCombinatorics.FinIntersection`, `InfinitaryCombinatorics.Characteristics`, and the existing R0 countable-completion and uniform-MAD modules. The protected `R0/` snapshot is unchanged.

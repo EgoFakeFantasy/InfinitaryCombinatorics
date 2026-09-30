@@ -209,6 +209,39 @@ in one toolchain and connecting the bounded unboundedness formula with the
 original internal finite/infinite predicates. The finite-support iteration,
 bookkeeping, cardinal configuration and full FI MAD value remain open.
 
+### Exact object syntax, least omega, and ordinary quotient splitting
+
+`UnboundedSyntax.lean` adds a separately named `Internal.Unbounded` predicate
+and its formula to the existing membership language. Its quantifiers range
+over the whole carrier. `Internal.Infinite` keeps its original definition:
+there is no internal injection into any member of the internal natural set.
+No equivalence between those two predicates is assumed or installed.
+
+`UnboundedTruth.lean` proves that evaluating this exact formula in the typed
+Boolean name model gives `unboundedValue`. `quotient_unbounded_iff` applies
+the full formula truth lemma, including both quantifiers, to obtain precisely
+`Internal.Unbounded` in the ordinary maximal-filter quotient. It does not
+assume that every natural number of that quotient has a standard representative
+or that the filter is countably complete.
+
+`OmegaMinimal.lean` verifies the exact existing `OmegaFormula` at top value.
+It proves empty-name uniqueness, successor-name uniqueness, membership of
+every ground natural in an arbitrary inductive name under the same Boolean
+condition, and hence leastness of the omega graph among all inductive names.
+`quotient_omega` transfers this to the original `Internal.Omega` predicate.
+Thus the natural set in the quotient splitting statement is a proved least
+inductive set, not just a designated graph with an unchecked name.
+
+`QuotientSplitting.lean` proves that restriction names give actual intersections
+and differences in the quotient membership relation. Its complement argument
+covers all internal members of omega. `quotient_countable_splitting` combines
+these facts with the shared certificate to produce `Internal.UnboundedSplit`
+for the countable collection of top-valued unbounded names. The certificate
+remains explicit, and the target deliberately records unboundedness rather
+than the still-unproved equivalence with the original injection-based
+infinitude predicate. These results do not complete the BMZ iteration or its
+cardinal arithmetic.
+
 ## CH source audit
 
 The inspected constructible-universe source at

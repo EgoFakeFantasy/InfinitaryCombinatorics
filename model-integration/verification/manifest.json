@@ -1,11 +1,11 @@
 {
-  "checked_at_utc": "2026-09-30T03:17:49.6812889Z",
+  "checked_at_utc": "2026-09-30T03:38:47.2471672Z",
   "lean_toolchain": "leanprover/lean4:v4.33.1",
   "yesmetazfc_revision": "a4903d2054085db0b454363a5fb15f1a3e1f9eab",
   "build": "passed",
   "axiom_audit": "passed",
-  "declarations": 509,
-  "theorem_constants": 369,
+  "declarations": 562,
+  "theorem_constants": 411,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
@@ -18,76 +18,92 @@
   "formal_independence_complete": false,
   "source_hashes": [
     {
-      "sha256": "d9f8e1dcc88e67d1ee9b9bd6323c7dc2f672600847bf60150e51937ff775d2ad",
-      "path": "../Formalizations/FIMAD/BooleanEnumeration.lean"
+      "path": "../Formalizations/FIMAD/BooleanEnumeration.lean",
+      "sha256": "d9f8e1dcc88e67d1ee9b9bd6323c7dc2f672600847bf60150e51937ff775d2ad"
     },
     {
-      "sha256": "f43823205555d4d6ae1974d5eb56511dbb620ce4a771a7916afe1cda9a9a6e78",
-      "path": "../Formalizations/FIMAD/CheckedZFC.lean"
+      "path": "../Formalizations/FIMAD/CheckedZFC.lean",
+      "sha256": "f43823205555d4d6ae1974d5eb56511dbb620ce4a771a7916afe1cda9a9a6e78"
     },
     {
-      "sha256": "158db099afef4175ecb1009fc006d65d80dfec59eed4b852800c71efcf18d90d",
-      "path": "../Formalizations/FIMAD/InternalSemantics.lean"
+      "path": "../Formalizations/FIMAD/InternalSemantics.lean",
+      "sha256": "158db099afef4175ecb1009fc006d65d80dfec59eed4b852800c71efcf18d90d"
     },
     {
-      "sha256": "e021167318b2d904bd83bc59f9c3b6fa7092781cc9ba8d469363a31befa75c28",
-      "path": "../Formalizations/FIMAD/PosetRegular.lean"
+      "path": "../Formalizations/FIMAD/PosetRegular.lean",
+      "sha256": "e021167318b2d904bd83bc59f9c3b6fa7092781cc9ba8d469363a31befa75c28"
     },
     {
-      "sha256": "68ec35055932b1c27cf7ec83196935197148237b14e9ac1baef19369c7d2d018",
-      "path": "../Formalizations/FIMAD/SetTheorySentence.lean"
+      "path": "../Formalizations/FIMAD/SetTheorySentence.lean",
+      "sha256": "68ec35055932b1c27cf7ec83196935197148237b14e9ac1baef19369c7d2d018"
     },
     {
-      "sha256": "638fc4cb3ef8e32f3b3a90f71139c9b67b2db0a89f75d0efa9ea296791534620",
-      "path": "Audit.lean"
+      "path": "../Formalizations/FIMAD/UnboundedSyntax.lean",
+      "sha256": "b5e8dfa361dc058c36fbffbbf8531ccbdf435c2c24fd995178341a8f81854024"
     },
     {
-      "sha256": "bd17152f5543d2b86d4b11f0034885b83c255cd6600f98a607c0d0f6d691aa03",
-      "path": "FIMADModels.lean"
+      "path": "Audit.lean",
+      "sha256": "523486c41507d662b2498de9f9840cd1464b563fedcb3e1e9751606fe331311e"
     },
     {
-      "sha256": "83ee10bed2b33e9be7ad69bbaf34e7e6f86943cef82a2481d281869758f4af4b",
-      "path": "FIMADModels/BooleanQuotient.lean"
+      "path": "FIMADModels.lean",
+      "sha256": "547ba5ec745af9266c7dea219391d0b4719f734d82c24bc7069ce644fce5688b"
     },
     {
-      "sha256": "47b1ba92d5c652ffa5881eaf829731f9c847975a0a353620b6092e35ff32ddb1",
-      "path": "FIMADModels/CheckedBooleanZFC.lean"
+      "path": "FIMADModels/BooleanQuotient.lean",
+      "sha256": "83ee10bed2b33e9be7ad69bbaf34e7e6f86943cef82a2481d281869758f4af4b"
     },
     {
-      "sha256": "b653b2234a3892ec73803f976611b9dcc546abeaa24fb876e62e5deb30cd74b2",
-      "path": "FIMADModels/NaturalNames.lean"
+      "path": "FIMADModels/CheckedBooleanZFC.lean",
+      "sha256": "47b1ba92d5c652ffa5881eaf829731f9c847975a0a353620b6092e35ff32ddb1"
     },
     {
-      "sha256": "0bc17263df82171052fdeeeece48b327f063692158a5123fd158716c876a7211",
-      "path": "FIMADModels/PosetCompletion.lean"
+      "path": "FIMADModels/NaturalNames.lean",
+      "sha256": "b653b2234a3892ec73803f976611b9dcc546abeaa24fb876e62e5deb30cd74b2"
     },
     {
-      "sha256": "042cc73d4f2869c0a64b52f458d2b7c62fb00cd49972719787144c9fde1c1507",
-      "path": "FIMADModels/SplittingNames.lean"
+      "path": "FIMADModels/OmegaMinimal.lean",
+      "sha256": "f8bedd93891a7d86096d1cea51afced358d756063c20f2227503b6e70879a017"
     },
     {
-      "sha256": "ff638d90ead3d8a4975078da05e66754ec712ca665f8d564742040f09a062dbe",
-      "path": "FIMADModels/UltrafilterTruth.lean"
+      "path": "FIMADModels/PosetCompletion.lean",
+      "sha256": "0bc17263df82171052fdeeeece48b327f063692158a5123fd158716c876a7211"
     },
     {
-      "sha256": "0c3e88c3622b8de4bb76d88e3320c5cf083d5def7b42f8fdcaa083b320c457ce",
-      "path": "FIMADModels/UnboundedNames.lean"
+      "path": "FIMADModels/QuotientSplitting.lean",
+      "sha256": "9d14ea00f41af6513514c8288d464066cd297db8891e5186c4f554f4877e0408"
     },
     {
-      "sha256": "2acfa1cef4b3ca896083540329a86ed57f9ec5b0c83c21dedc936b5b25ef4ecb",
-      "path": "lake-manifest.json"
+      "path": "FIMADModels/SplittingNames.lean",
+      "sha256": "042cc73d4f2869c0a64b52f458d2b7c62fb00cd49972719787144c9fde1c1507"
     },
     {
-      "sha256": "d142e8d3620556d8ccf448614086ed6cac81f499c82f31d1b17069fbc1320067",
-      "path": "lakefile.toml"
+      "path": "FIMADModels/UltrafilterTruth.lean",
+      "sha256": "ff638d90ead3d8a4975078da05e66754ec712ca665f8d564742040f09a062dbe"
     },
     {
-      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
-      "path": "lean-toolchain"
+      "path": "FIMADModels/UnboundedNames.lean",
+      "sha256": "0c3e88c3622b8de4bb76d88e3320c5cf083d5def7b42f8fdcaa083b320c457ce"
     },
     {
-      "sha256": "d97a3183e03c909bb39232b6c5736697e044d404054e124cce98d3bde20669c7",
-      "path": "verify.ps1"
+      "path": "FIMADModels/UnboundedTruth.lean",
+      "sha256": "6bccd3623624d108470700b702049f12056051f3577ce48fcd8e1b9d33ceebf5"
+    },
+    {
+      "path": "lake-manifest.json",
+      "sha256": "2acfa1cef4b3ca896083540329a86ed57f9ec5b0c83c21dedc936b5b25ef4ecb"
+    },
+    {
+      "path": "lakefile.toml",
+      "sha256": "f89a4044ca759e4bbe220d5f5236a1c9ec4403b2653cd951fef0a21b4b3f297a"
+    },
+    {
+      "path": "lean-toolchain",
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+    },
+    {
+      "path": "verify.ps1",
+      "sha256": "06f8605476150861cfefd3cc260f1ff4422a9d6a253b7ece553a8e650d10998e"
     }
   ]
 }

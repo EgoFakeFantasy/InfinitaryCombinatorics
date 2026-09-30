@@ -6,7 +6,7 @@ This separate package uses Lean 4.33.1 and the public YesMetaZFC revision
 keeps Lean 4.30.0 and its existing dependency pins.
 
 The source files `InternalSemantics.lean`, `SetTheorySentence.lean`,
-`CheckedZFC.lean`, `PosetRegular.lean`, and `BooleanEnumeration.lean` are imported directly from `../Formalizations/FIMAD/`.
+`CheckedZFC.lean`, `PosetRegular.lean`, `BooleanEnumeration.lean`, and `UnboundedSyntax.lean` are imported directly from `../Formalizations/FIMAD/`.
 There is no copied or second FI MAD definition. The formula closure proofs
 compile on both versions; sentence well-scoping is intrinsic in the new kernel.
 
@@ -79,6 +79,18 @@ its Dow instance is verified in the other package. A single-toolchain build
 of the final application and a connection to the original internal
 finite/infinite predicates are pending. Cross-version compiled artifacts are
 not imported or treated as proof certificates.
+
+`UnboundedTruth.lean` connects the exact shared unboundedness formula to its
+Boolean value and to truth in every maximal-filter quotient.
+`OmegaMinimal.lean` proves that the omega graph satisfies the original
+`OmegaFormula` at top value, including leastness among all inductive names;
+`quotient_omega` gives the exact `Internal.Omega` statement in the quotient.
+`QuotientSplitting.lean` verifies actual intersections and differences in that
+membership relation and proves `quotient_countable_splitting` from the shared
+certificate. Its conclusion is `Internal.UnboundedSplit`. The equivalence
+with the original injection-based infinitude predicate has not been proved,
+so this result is not advertised as the completed internal splitting-number
+calculation.
 
 The Boolean values of FI MAD existence have **not** been computed in a positive
 CH model or a negative BMZ model. The public generic name model does not provide

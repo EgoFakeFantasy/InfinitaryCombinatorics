@@ -164,3 +164,7 @@
 'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.splittingCertificate' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_UnboundedFormula' depends on axioms: [propext,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.unboundedBody_closed' depends on axioms: [propext,
+ Quot.sound]

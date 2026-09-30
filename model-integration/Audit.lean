@@ -5,6 +5,14 @@ open Lean Elab Command in
 run_elab do
   let env ← getEnv
   let required : Array Name := #[
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.typed_unbounded_value,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_unbounded_iff,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.omega_minimal,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.typed_omega_value,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_omega,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_restriction_inter,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_restriction_difference,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_countable_splitting,
     `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.omega_all,
     `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.omega_sup,
     `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.unbounded_eq_tails,

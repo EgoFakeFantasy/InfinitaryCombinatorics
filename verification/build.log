@@ -19,6 +19,7 @@ info: Formalizations/A1/Check.lean:97:0: 'InfinitaryCombinatorics.Formalizations
 info: Formalizations/A1/Check.lean:98:0: 'InfinitaryCombinatorics.Formalizations.A1.KA_implies_KAomegaOne' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
-✔ [1181/1183] Built Formalizations.FIMAD.Main (19s)
-✔ [1182/1183] Built Formalizations (16s)
-Build completed successfully (1183 jobs).
+✔ [1181/1184] Built Formalizations.FIMAD.UnboundedSyntax (13s)
+✔ [1182/1184] Built Formalizations.FIMAD.Main (21s)
+✔ [1183/1184] Built Formalizations (16s)
+Build completed successfully (1184 jobs).

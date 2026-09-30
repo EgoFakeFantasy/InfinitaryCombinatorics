@@ -5,6 +5,8 @@ open Lean Elab Command in
 run_elab do
   let env ← getEnv
   let required : Array Name := #[
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_UnboundedFormula,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.unboundedBody_closed,
     `InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.splittingCertificate,
     `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.double_neg,
     `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.sup_le_iff,

@@ -5,8 +5,8 @@ defaultTargets = ["FIMADModels"]
 [[lean_lib]]
 name = "Formalizations"
 srcDir = ".."
-roots = ["Formalizations.FIMAD.InternalSemantics", "Formalizations.FIMAD.SetTheorySentence", "Formalizations.FIMAD.CheckedZFC", "Formalizations.FIMAD.PosetRegular", "Formalizations.FIMAD.BooleanEnumeration"]
-globs = ["Formalizations.FIMAD.InternalSemantics", "Formalizations.FIMAD.SetTheorySentence", "Formalizations.FIMAD.CheckedZFC", "Formalizations.FIMAD.PosetRegular", "Formalizations.FIMAD.BooleanEnumeration"]
+roots = ["Formalizations.FIMAD.InternalSemantics", "Formalizations.FIMAD.SetTheorySentence", "Formalizations.FIMAD.CheckedZFC", "Formalizations.FIMAD.PosetRegular", "Formalizations.FIMAD.BooleanEnumeration", "Formalizations.FIMAD.UnboundedSyntax"]
+globs = ["Formalizations.FIMAD.InternalSemantics", "Formalizations.FIMAD.SetTheorySentence", "Formalizations.FIMAD.CheckedZFC", "Formalizations.FIMAD.PosetRegular", "Formalizations.FIMAD.BooleanEnumeration", "Formalizations.FIMAD.UnboundedSyntax"]
 
 [[lean_lib]]
 name = "FIMADModels"
