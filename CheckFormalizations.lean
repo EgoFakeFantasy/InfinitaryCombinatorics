@@ -320,4 +320,21 @@ example (h : R0.splittingNumber < almostDisjointSeparationNumber) :
 #print axioms Standard.satisfies_sentence_iff
 #print axioms Standard.positive_consistency_of_CH
 #print axioms Standard.negative_consistency_of_s_lt_ap
+
+-- This is Dow's forbidden-stem forcing, with stronger conditions smaller.
+example (A : Set (Set ℕ)) (p q : DowForcing.Condition A) : p ≤ q ↔
+    q.stem ⊆ p.stem ∧ q.forbidden ⊆ p.forbidden ∧ p.stem ∉ q.forbidden := Iff.rfl
+
+example (A : Set (Set ℕ)) (S : Set (Finset ℕ)) : DowForcing.Admissible A S ↔
+    ∀ s, s ∉ S → ∀ a ∈ A, ∃ n, ∀ t : Finset ℕ,
+      (∀ k ∈ t, k ∈ a ∧ n ≤ k) → s ∪ t ∉ S := Iff.rfl
+
+#print axioms DowForcing.sigma_centered
+#print axioms DowForcing.antichain_countable
+#print axioms DowForcing.hit_dense
+#print axioms DowForcing.avoid_dense
+#print axioms DowForcing.reach_all
+#print axioms DowForcing.unionStems_weaklySeparates
+#print axioms DowForcing.countable_tallness_tests
+#print axioms DowForcing.simultaneous_splitting_tests
 end FIMADAcceptance

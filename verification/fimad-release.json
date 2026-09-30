@@ -12,7 +12,7 @@
   "paper_source_sha256": "55f84d4fc67cd8e759e773044fdf463df189eadf55e0c26b296aaa3c17ab74eb",
   "exact_negative_theorem_complete": true,
   "CH_positive_construction_complete": true,
-  "verification_checked_at_utc": "2026-09-30T02:05:59.5988983Z",
+  "verification_checked_at_utc": "2026-09-30T02:23:34.5431043Z",
   "actual_existence_sentence_complete": true,
   "first_order_semantic_translation_complete": true,
   "dp_and_omega_splitting_comparisons_complete": true,
@@ -36,5 +36,11 @@
   "standard_universe_internal_finiteness_complete": true,
   "standard_universe_FIMAD_equivalence_complete": true,
   "standard_universe_checked_ZFC_complete": true,
-  "consistency_under_host_cardinal_hypotheses_complete": true
+  "consistency_under_host_cardinal_hypotheses_complete": true,
+  "dow_single_step_poset_complete": true,
+  "dow_dense_separator_requirements_complete": true,
+  "dow_decision_relation_tallness_tests_complete": true,
+  "dow_forcing_name_semantics_complete": false,
+  "bmz_finite_support_iteration_complete": false,
+  "CH_constructible_FIMAD_internal_construction_complete": false
 }

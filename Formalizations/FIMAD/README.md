@@ -41,7 +41,11 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 | Simultaneous splitting and s <= s_omega | `exists_simultaneous_splitter`, `splittingNumber_le_omegaSplittingNumber` | Actual least witness cardinal; existence and the continuum upper bound are proved |
 | Consequences of the BMZ configuration | `consequences_of_bmz_configuration` | Derives the paper's characteristic values and no FI MAD from the stated configuration; does not force the configuration |
 | The known a < s sufficient condition | `exists_fi_mad_of_a_lt_s` | Reuses a minimum MAD family and the small-family FI theorem |
-| BMZ/Dow relative consistency | No Lean declaration | Cited published result; forcing not formalized |
+| BMZ/Dow relative consistency | No Lean declaration | Single-step poset and decision-relation preservation now checked; full forcing-name semantics and iteration not yet formalized |
+| Dow's actual single-step poset | `DowForcing.Condition`, `sigma_centered`, `antichain_countable` | Definition 2, forbidden finite stems; not the simpler Solovay forcing |
+| Dense requirements and weak separation | `DowForcing.hit_dense`, `avoid_dense`, `unionStems_weaklySeparates` | Dense sets are constructed; a directed set meeting them is an explicit input |
+| Dense-stem closure | `DowForcing.reach_all` | The well-founded closure argument underlying Dow's Lemma 1 |
+| Countable tallness and splitting tests | `DowForcing.simultaneous_tallness_tests`, `simultaneous_splitting_tests` | Countable witnesses constructed from monotone dense decision relations; real forcing-name interpretation and iteration still needed |
 | Relative consistency of CH | No Lean declaration | CH as a cardinal hypothesis is not a proof of its relative consistency over ZFC |
 | Exact semantics in the standard set universe | `Standard.existsFIMAD_iff`, `Standard.satisfies_sentence_iff` | All subsets, arbitrary families, sequences, and retained traces; not a transfer to arbitrary models |
 | Standard universe satisfies checked ZFC | `Standard.models_zfc` | Concrete membership structure, full separation and collection |
@@ -84,6 +88,9 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 - `StandardTransfer.lean`: FI and the full internal E sentence agree with the host predicates, at every universe level.
 - `StandardModel.lean`: concrete standard model of full checked ZFC, exact first-order meaning, and consistency from the stated host cardinal hypotheses.
 - `DowCardinal.lean`, `OmegaSplitting.lean`: actual dp and s_omega, their basic comparisons, and the consequences of the BMZ configuration.
+- `DowForcing.lean`: the actual forbidden-stem poset, centered fibers, ccc, dense hitting/avoidance, directed-set separator, and dense-stem closure.
+- `DowPossibleValues.lean`: common possible values and the countable test-family induction for Dow's preservation argument.
+- `DowTallness.lean`: simultaneous countable tallness/splitting tests for explicit monotone dense natural-number decision relations.
 - `Main.lean`: public entry point and paper-facing cutoff under s < ap alone.
 
 Reused foundations: `InfinitaryCombinatorics.FinIntersection`, `InfinitaryCombinatorics.Characteristics`, and the existing R0 countable-completion and uniform-MAD modules. The protected `R0/` snapshot is unchanged.

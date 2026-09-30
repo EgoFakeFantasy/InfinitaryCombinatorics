@@ -6,6 +6,7 @@ import Formalizations.FIMAD.ModelInterface
 import Formalizations.FIMAD.OmegaSplitting
 import Formalizations.FIMAD.GeneralConstruction
 import Formalizations.FIMAD.StandardModel
+import Formalizations.FIMAD.DowTallness
 
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 

@@ -119,3 +119,27 @@
 'InfinitaryCombinatorics.Formalizations.FIMAD.Standard.negative_consistency_of_s_lt_ap' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.sigma_centered' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.antichain_countable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.hit_dense' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.avoid_dense' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.reach_all' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.unionStems_weaklySeparates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.countable_tallness_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.simultaneous_splitting_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -5,6 +5,14 @@ open Lean Elab Command in
 run_elab do
   let env ← getEnv
   let required : Array Name := #[
+    `InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.sigma_centered,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.antichain_countable,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.hit_dense,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.avoid_dense,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.reach_all,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.unionStems_weaklySeparates,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.countable_tallness_tests,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.simultaneous_splitting_tests,
     `InfinitaryCombinatorics.Formalizations.FIMAD.Standard.finite_iff,
     `InfinitaryCombinatorics.Formalizations.FIMAD.Standard.mad_family,
     `InfinitaryCombinatorics.Formalizations.FIMAD.Standard.fi_family,

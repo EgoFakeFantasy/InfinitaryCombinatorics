@@ -115,3 +115,52 @@ They are not relative consistency from `Con(ZFC)`. In particular, the positive
 and negative host hypotheses cannot be assumed simultaneously to manufacture
 an independence proof. Establishing the required separate models, or computing
 the corresponding Boolean truth values, remains a distinct obligation.
+
+## Dow forcing: single-step construction and preservation core
+
+`DowForcing.Condition A` follows Dow, *On compact separable radial spaces*,
+[Definition 2, p. 426](https://doi.org/10.4153/CMB-1997-050-0).
+A condition has a finite stem and a set of forbidden finite stems satisfying
+the tail-extension condition. Smaller conditions are stronger. The source
+proves centeredness of every stem fiber, hence ccc, and constructs dense sets
+for hitting each infinite member of A and avoiding sets orthogonal to A.
+`unionStems_weaklySeparates` verifies the resulting separator for a directed
+set meeting those requirements; it does not assume or construct a generic model.
+
+The inductive `Reach` predicate and `reach_all` implement the dense-stem
+closure argument underlying Lemma 1. `reach_possible_tests` constructs
+countable test families by induction on that closure. The common-value argument
+uses only finitely many blocking conditions at a time, together with centered
+fibers and the tail-extension condition. `simultaneous_tallness_tests` then
+handles countably many increasing enumeration decision relations; applying
+its conclusion to B and its complement yields `simultaneous_splitting_tests`.
+No preservation assertion is a premise of these theorems.
+
+**Remaining BMZ obligations:** interpret these decision relations using actual
+forcing names; prove finite-support iteration preservation and the relevant
+ccc/cardinal facts; implement bookkeeping to handle all small orthogonal
+families; verify the final cardinal configuration and the E truth value.
+The iteration dependence is spelled out in
+[BMZ, Theorem 4(3)](https://arxiv.org/pdf/1306.0204v3), which uses Dow's
+single-step preservation and the iteration result of Brendle--Hrusak.
+The present declarations do not construct the omega-two-length iteration.
+
+## CH source audit
+
+The inspected constructible-universe source at
+`7f5a7d03d63d9769172f17350bbe8303996e5b53` declares
+`Constructible.Model.lCarrier_models_ZFCCH` and
+`FirstOrder.Language.Theory.ZFCCH_isSatisfiable` in
+`ConstructibleUniverse/SetTheory/ZFC/Constructible/CHRelativeConsistency.lean`.
+Their target is a concrete L-carrier model in Lean's ambient foundation and
+mathlib's first-order language. The file explicitly excludes a claim of
+parameterization over arbitrary, possibly externally ill-founded ZFC models.
+This turn inspected those sources but did not independently build/audit their
+full dependency closure or import them into the project.
+
+To use this route for E, the constructible model must be connected to our
+exact theory and sentence, and the CH construction must be performed internally
+there. `Standard.existsFIMAD_iff` is specific to the full ZFSet universe and
+cannot be reused unchanged for the smaller L-carrier. No theorem in the present
+development supplies that missing construction. A source theorem name ending
+in `RelativeConsistency` does not by itself certify the required interface.
