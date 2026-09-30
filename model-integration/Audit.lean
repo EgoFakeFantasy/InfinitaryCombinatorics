@@ -5,6 +5,16 @@ open Lean Elab Command in
 run_elab do
   let env ← getEnv
   let required : Array Name := #[
+    `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.models_native_zf,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Internal.pairInterpretation,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Internal.injection_native_iff,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Internal.finite_of_not_unbounded,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Internal.bounded_of_injection,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Internal.finite_iff_bounded,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Internal.infinite_iff_unbounded,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_infinite_iff_unbounded,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_infinite_iff_value,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_countable_infinite_splitting,
     `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.typed_unbounded_value,
     `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_unbounded_iff,
     `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.omega_minimal,

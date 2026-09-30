@@ -215,7 +215,8 @@ bookkeeping, cardinal configuration and full FI MAD value remain open.
 and its formula to the existing membership language. Its quantifiers range
 over the whole carrier. `Internal.Infinite` keeps its original definition:
 there is no internal injection into any member of the internal natural set.
-No equivalence between those two predicates is assumed or installed.
+Their equivalence for subsets of omega is now proved in the typed package,
+as described below; the definition of infinitude is unchanged.
 
 `UnboundedTruth.lean` proves that evaluating this exact formula in the typed
 Boolean name model gives `unboundedValue`. `quotient_unbounded_iff` applies
@@ -237,10 +238,29 @@ and differences in the quotient membership relation. Its complement argument
 covers all internal members of omega. `quotient_countable_splitting` combines
 these facts with the shared certificate to produce `Internal.UnboundedSplit`
 for the countable collection of top-valued unbounded names. The certificate
-remains explicit, and the target deliberately records unboundedness rather
-than the still-unproved equivalence with the original injection-based
-infinitude predicate. These results do not complete the BMZ iteration or its
-cardinal arithmetic.
+remains explicit.
+
+`NativeZF.lean` exposes the quotient through the upstream native ZF API.
+`NativeFinite.lean` implements the manuscript's Kuratowski-pair interpretation
+and proves `injection_native_iff`, then reuses the upstream inclusion injection.
+`FiniteUnbounded.lean` proves `finite_iff_bounded` and `infinite_iff_unbounded`
+for every native ZF model and every internal subset of its least inductive set.
+The finite-to-bounded direction uses the upstream internal omega induction:
+the property quantifies over all internal domains and injection graphs and is
+explicitly separated. At a successor, restriction removes the last fiber;
+injectivity makes that fiber contain at most one member. This works in
+nonstandard models as well.
+
+`InfiniteSplitting.lean` derives `quotient_infinite_iff_value` and
+`quotient_countable_infinite_splitting` with the original finiteness semantics.
+The latter retains the certificate and top-valued input hypotheses. These
+results do not complete the BMZ iteration or its cardinal arithmetic.
+
+To use the upstream native ZF theorems without enlarging the project's axiom
+whitelist, the typed package records and verifies a patch replacing only the
+eight fixed axiom formulas' native-evaluation closure certificates with kernel
+proofs. Its pinned revision is unchanged. See `model-integration/README.md` and
+`dependency-patches/manifest.json` there for reproduction and hashes.
 
 ## CH source audit
 

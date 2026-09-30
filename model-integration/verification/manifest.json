@@ -1,11 +1,12 @@
 {
-  "checked_at_utc": "2026-09-30T03:38:47.2471672Z",
+  "checked_at_utc": "2026-09-30T04:16:42.5376375Z",
   "lean_toolchain": "leanprover/lean4:v4.33.1",
   "yesmetazfc_revision": "a4903d2054085db0b454363a5fb15f1a3e1f9eab",
+  "yesmetazfc_certificate_patch": "dependency-patches/manifest.json",
   "build": "passed",
   "axiom_audit": "passed",
-  "declarations": 562,
-  "theorem_constants": 411,
+  "declarations": 612,
+  "theorem_constants": 455,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
@@ -42,12 +43,24 @@
       "sha256": "b5e8dfa361dc058c36fbffbbf8531ccbdf435c2c24fd995178341a8f81854024"
     },
     {
+      "path": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Axioms/Common.lean",
+      "sha256": "cff69668c2602ffba6230e8d61c48eaa4a7018240d869ba30c77642466bce43b"
+    },
+    {
       "path": "Audit.lean",
-      "sha256": "523486c41507d662b2498de9f9840cd1464b563fedcb3e1e9751606fe331311e"
+      "sha256": "506a2de59dde8cf722f1bd025cf35126c3745e7f6c184c3af1f27b70572bcd6e"
+    },
+    {
+      "path": "dependency-patches/kernel-checked-axioms.patch",
+      "sha256": "03ac4c1ae2652e04164be228c043068895da7a410f03a8a25f45ae1aea29479f"
+    },
+    {
+      "path": "dependency-patches/manifest.json",
+      "sha256": "a894ed1c30e9df19f431b8d6a11afe4fe90e8408912c1113bc136a208a53a105"
     },
     {
       "path": "FIMADModels.lean",
-      "sha256": "547ba5ec745af9266c7dea219391d0b4719f734d82c24bc7069ce644fce5688b"
+      "sha256": "8e9366ab3e5cbd1e1d32bb85e78e887474d00519007068a9f15727e256c0fe0e"
     },
     {
       "path": "FIMADModels/BooleanQuotient.lean",
@@ -56,6 +69,22 @@
     {
       "path": "FIMADModels/CheckedBooleanZFC.lean",
       "sha256": "47b1ba92d5c652ffa5881eaf829731f9c847975a0a353620b6092e35ff32ddb1"
+    },
+    {
+      "path": "FIMADModels/FiniteUnbounded.lean",
+      "sha256": "15abb7529edac32f3e1acbd9a50dce8d3f49d36de2e39253f1d718b147fe845e"
+    },
+    {
+      "path": "FIMADModels/InfiniteSplitting.lean",
+      "sha256": "ac004dcf858b9bad596e4094136762f11fd2f2a55a8036b59ea71efad59d6734"
+    },
+    {
+      "path": "FIMADModels/NativeFinite.lean",
+      "sha256": "154bba2bf2b584024b0eec8d1072f8a23967e7e10a9c58de70cfe0962fcb8b79"
+    },
+    {
+      "path": "FIMADModels/NativeZF.lean",
+      "sha256": "11d36a5d02aa5284ff7972b4cfe0be61a259308ff0824cdc6011e0fc1a7756a2"
     },
     {
       "path": "FIMADModels/NaturalNames.lean",
@@ -102,8 +131,12 @@
       "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
     },
     {
+      "path": "prepare-dependencies.ps1",
+      "sha256": "42e85247cd04059928e94d543c939d5b2b6ce22139400d7c5daada7b07710596"
+    },
+    {
       "path": "verify.ps1",
-      "sha256": "06f8605476150861cfefd3cc260f1ff4422a9d6a253b7ece553a8e650d10998e"
+      "sha256": "356cf2e4ed7980063e365c32aecdbe7ad471bcd6e0078790042b28d385279e83"
     }
   ]
 }

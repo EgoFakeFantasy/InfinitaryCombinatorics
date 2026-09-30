@@ -3,12 +3,18 @@ $fmOriginalLocation = Get-Location
 try {
   Set-Location -LiteralPath $PSScriptRoot
   New-Item -ItemType Directory -Path 'verification' -Force | Out-Null
+  & (Join-Path $PSScriptRoot 'prepare-dependencies.ps1')
   $fmFiles = @('FIMADModels.lean', 'FIMADModels/CheckedBooleanZFC.lean', 'FIMADModels/UltrafilterTruth.lean',
     'FIMADModels/BooleanQuotient.lean', 'FIMADModels/PosetCompletion.lean',
     'FIMADModels/NaturalNames.lean', 'FIMADModels/UnboundedNames.lean',
     'FIMADModels/SplittingNames.lean', 'Audit.lean',
     'FIMADModels/UnboundedTruth.lean', 'FIMADModels/OmegaMinimal.lean',
     'FIMADModels/QuotientSplitting.lean',
+    'FIMADModels/NativeZF.lean', 'FIMADModels/NativeFinite.lean',
+    'FIMADModels/FiniteUnbounded.lean', 'FIMADModels/InfiniteSplitting.lean',
+    'prepare-dependencies.ps1', 'dependency-patches/manifest.json',
+    'dependency-patches/kernel-checked-axioms.patch',
+    '.lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Axioms/Common.lean',
     '../Formalizations/FIMAD/PosetRegular.lean',
     '../Formalizations/FIMAD/BooleanEnumeration.lean',
     '../Formalizations/FIMAD/UnboundedSyntax.lean',
@@ -48,6 +54,7 @@ try {
     checked_at_utc = [DateTime]::UtcNow.ToString('o')
     lean_toolchain = (Get-Content -LiteralPath 'lean-toolchain' -Raw).Trim()
     yesmetazfc_revision = ($fmDependencies.packages | Where-Object name -eq 'YesMetaZFC').rev
+    yesmetazfc_certificate_patch = 'dependency-patches/manifest.json'
     build = 'passed'
     axiom_audit = 'passed'
     declarations = $fmDeclarations

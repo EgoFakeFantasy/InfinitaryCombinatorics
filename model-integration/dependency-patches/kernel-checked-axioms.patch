@@ -1,0 +1,66 @@
+--- a/YesMetaZFC/SetTheory/Axioms/Common.lean
++++ b/YesMetaZFC/SetTheory/Axioms/Common.lean
+@@ -8,39 +8,49 @@
+ namespace YesMetaZFC
+ namespace SetTheory
+ namespace Axioms
++set_option maxRecDepth 20000
++set_option maxHeartbeats 1000000
+ /-- 外延性公理。 -/
+ def extensionality : Definitional.Project.Sentence :=
+-  sentence! ⟪∀ left right, (∀ element, element ∈ left ↔ element ∈ right) → left = right⟫
++  Definitional.Project.Sentence.ofFormula (set! ⟪∀ left right, (∀ element, element ∈ left ↔ element ∈ right) → left = right⟫) (by simp [Definitional.Formula.FreeClosed, Definitional.Project.Term.newest])
++
+ /-- 空集公理。 -/
+ def emptySet : Definitional.Project.Sentence :=
+-  sentence! ⟪∃ empty, ∀ element, element ∉ empty⟫
++  Definitional.Project.Sentence.ofFormula (set! ⟪∃ empty, ∀ element, element ∉ empty⟫) (by simp [Definitional.Formula.FreeClosed, Definitional.Project.Term.newest])
++
+ /-- 配对公理。 -/
+ def pairing : Definitional.Project.Sentence :=
+-  sentence! ⟪∀ left right, ∃ pair, ∀ element,
+-    element ∈ pair ↔ (element = left ∨ element = right)⟫
++  Definitional.Project.Sentence.ofFormula (set! ⟪∀ left right, ∃ pair, ∀ element,
++    element ∈ pair ↔ (element = left ∨ element = right)⟫) (by simp [Definitional.Formula.FreeClosed, Definitional.Project.Term.newest])
++
+ /-- 并集公理。 -/
+ def union : Definitional.Project.Sentence :=
+-  sentence! ⟪∀ family, ∃ union, ∀ element,
+-    element ∈ union ↔ ∃ member ∈ family, element ∈ member⟫
++  Definitional.Project.Sentence.ofFormula (set! ⟪∀ family, ∃ union, ∀ element,
++    element ∈ union ↔ ∃ member ∈ family, element ∈ member⟫) (by simp [Definitional.Formula.FreeClosed, Definitional.Project.Formula.existsMem, Definitional.Project.Term.newest])
++
+ /-- 幂集公理。 -/
+ def powerSet : Definitional.Project.Sentence :=
+-  sentence! ⟪∀ set, ∃ power, ∀ subset,
+-    subset ∈ power ↔ subset ⊆ set⟫
++  Definitional.Project.Sentence.ofFormula (set! ⟪∀ set, ∃ power, ∀ subset,
++    subset ∈ power ↔ subset ⊆ set⟫) (by simp [Definitional.Formula.FreeClosed, Definitional.Project.Term.newest])
++
+ /-- 无穷公理。 -/
+ def infinity : Definitional.Project.Sentence :=
+-  sentence! ⟪∃ omegaSet, (∃ empty, (∀ element, element ∉ empty) ∧ empty ∈ omegaSet) ∧ (∀ set ∈ omegaSet, ∃ successor, ((∀ element,
++  Definitional.Project.Sentence.ofFormula (set! ⟪∃ omegaSet, (∃ empty, (∀ element, element ∉ empty) ∧ empty ∈ omegaSet) ∧ (∀ set ∈ omegaSet, ∃ successor, ((∀ element,
+         element ∈ successor ↔ (element ∈ set ∨ element = set)) ∧
+-        successor ∈ omegaSet))⟫
++        successor ∈ omegaSet))⟫) (by simp [Definitional.Formula.FreeClosed, Definitional.Project.Formula.forallMem, Definitional.Project.Term.newest])
++
+ /-- 正则/基础公理。 -/
+ def foundation : Definitional.Project.Sentence :=
+-  sentence! ⟪∀ set, (∃ element, element ∈ set) →
+-      ∃ minimal ∈ set, ∀ element ∈ set, element ∉ minimal⟫
++  Definitional.Project.Sentence.ofFormula (set! ⟪∀ set, (∃ element, element ∈ set) →
++      ∃ minimal ∈ set, ∀ element ∈ set, element ∉ minimal⟫) (by simp [Definitional.Formula.FreeClosed, Definitional.Project.Formula.forallMem, Definitional.Project.Formula.existsMem, Definitional.Project.Term.newest])
++
+ /-- 选择公理的选择集形式。 -/
+ def choice : Definitional.Project.Sentence :=
+-  sentence! ⟪∀ family, ((∀ member ∈ family, ∃ element, element ∈ member) ∧ (∀ first ∈ family, ∀ second ∈ family,
++  Definitional.Project.Sentence.ofFormula (set! ⟪∀ family, ((∀ member ∈ family, ∃ element, element ∈ member) ∧ (∀ first ∈ family, ∀ second ∈ family,
+         first ≠ second →
+           ¬ (∃ element, element ∈ first ∧ element ∈ second))) → ∃ choice,
+-      ∀ member ∈ family, ∃ selected, ((selected ∈ choice ∧ selected ∈ member) ∧ (∀ other, (other ∈ choice ∧ other ∈ member) → other = selected))⟫
++      ∀ member ∈ family, ∃ selected, ((selected ∈ choice ∧ selected ∈ member) ∧ (∀ other, (other ∈ choice ∧ other ∈ member) → other = selected))⟫) (by simp [Definitional.Formula.FreeClosed, Definitional.Project.Formula.extensionalNe, Definitional.Project.Formula.forallMem, Definitional.Project.Term.newest])
++
+ namespace Schema
+ /-- 分离模式在参数上下文中的核心公式。 -/
+ def separationCore {parameterCount : Nat} (schema : Definitional.Project.UnarySchema parameterCount) :

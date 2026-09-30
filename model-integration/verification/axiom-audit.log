@@ -1,3 +1,4 @@
+warning: YesMetaZFC: repository 'C:\Users\17857\Documents\Codex\2026-07-24\zhe\work\R0-paper-20260919\model-integration\.lake/packages\YesMetaZFC' has local changes
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_subset_of_top: [propext,
  Classical.choice,
  Quot.sound]
@@ -44,12 +45,18 @@ InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.project_successor_valu
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_MADFormula: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_ADFormula._simp_1_5: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Succ.eq_1: []
+InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_infinite_iff_value: [propext,
+ Classical.choice,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_NonemptyFormula: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_InductiveFormula._simp_1: [propext, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundInjectionSchema_semantics: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.ground_complement_value: [propext,
  Classical.choice,
  Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.omega_minimal: [propext, Classical.choice, Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.value_pairMember: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_CommonTraceFormula: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_ExistsFIMADFormula._simp_1_26: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_NonemptyFormula._simp_1_3: [propext, Quot.sound]
@@ -80,11 +87,13 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_MADFormul
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.mk.injEq: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_PairFormula._simp_1_4: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.imp._proof_2: []
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.unbounded_of_infinite: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_InjectionFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_CommonTraceFormula._simp_1_7: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FinSequenceFormula._simp_1_3: [propext,
  Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Omega.eq_1: []
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.injection_native_iff: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.real.eq_1: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_FiniteFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_ValueFormula._simp_1_5: [propext, Quot.sound]
@@ -109,6 +118,8 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_MADFormula._
 InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.CheckedBooleanZFC.project_zfc: [propext,
  Classical.choice,
  Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.removeFiberSchema.eq_1: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_FunctionOnFormula._simp_1_6: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_SubsetFormula._simp_1_3: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_OmegaFormula._simp_1_6: [propext, Quot.sound]
@@ -120,20 +131,27 @@ InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.quotien
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_InductiveFormula._simp_1_6: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_UnboundedFormula._simp_1_4: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Inductive.eq_1: []
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundInjectionSchema._proof_2: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.UnorderedPair.eq_1: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_CommonTraceFormula._simp_1_6: [propext,
  Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Order.mk.sizeOf_spec: []
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.tail_as_exists: [propext, Classical.choice, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundInjectionSchema_semantics._simp_1_2: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.UnboundedFormula.eq_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.sup_le_iff: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_FinSequenceFormula._simp_1_11: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.holds_iff_top: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_ADFormula._simp_1: [propext, Quot.sound]
+_private.FIMADModels.NativeFinite.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.pair_intersection: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FunctionOnFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.UnorderedPairFormula.eq_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_ValueFormula._simp_1_4: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.value_correct: [propext, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundInjectionSchema_semantics._simp_1_3: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.le_refl: []
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.natural_decisions_dense: [propext,
  Classical.choice,
@@ -155,6 +173,7 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_Singleton
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_CommonTraceFormula._simp_1_3: [propext,
  Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.mk.sizeOf_spec: []
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.pair_unique: []
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.nonzero_iff: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_RestrictedTraceFormula._simp_1_6: [propext,
  Quot.sound]
@@ -165,6 +184,7 @@ InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.inductive_contains_nat
  Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FinSequenceFormula._simp_1_4: [propext,
  Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundInjectionSchema._proof_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.InductiveFormula._proof_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_InfiniteFormula: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FinSequenceFormula._simp_1_5: [propext,
@@ -178,6 +198,8 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.sentence.eq_1: [pro
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_EmptyFormula._simp_1_3: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_ValueFormula._simp_1_3: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.le_imp_iff: []
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundInjectionSchema.eq_1: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_SingletonFormula: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.model_of_nonzero: [propext,
  Classical.choice,
@@ -209,6 +231,7 @@ InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.natural_eq_of_ne: [pro
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.condition_le_iff: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.InfiniteInter.eq_1: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_ADFormula: [propext, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.removeFiberSchema._proof_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.FunctionOnFormula._proof_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_EmptyFormula: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Infinite.eq_1: []
@@ -232,7 +255,9 @@ InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.CheckedBooleanZFC.model
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_InductiveFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.quotientMap._proof_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_SuccFormula._simp_1_6: [propext, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundedFormula._proof_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.FinSequenceFormula.eq_1: [propext]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.infinite_iff_unbounded: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_NonemptyFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_UnorderedPairFormula._simp_1_6: [propext,
  Quot.sound]
@@ -245,9 +270,14 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_MADFormul
 InfinitaryCombinatorics.Formalizations.FIMAD.CheckedZFC.union._proof_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_InterFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.CommonTraceFormula.eq_1: [propext]
+InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.models_native_zf: [propext,
+ Classical.choice,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_NonemptyFormula: [propext, Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.omega_native_iff: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_RestrictedTraceFormula._simp_1: [propext,
  Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.finite_of_subset_natural: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_UnboundedFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.NonemptyFormula.eq_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_unbounded_of_top: [propext,
@@ -258,6 +288,7 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_OmegaFormula
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.decisions_disjoint: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.InfiniteFormula.eq_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_ValueFormula._simp_1_5: [propext, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundedFormula.eq_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_MADFormula._simp_1_7: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_InterFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_OmegaFormula: [propext, Quot.sound]
@@ -269,6 +300,8 @@ InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.UltrafilterTruth.imp_if
  Classical.choice,
  Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.lower: []
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.removeFiberSchema._proof_2: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.natural_mem_of_ge: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_ExistsFIMADFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.MADFormula.eq_1: [propext]
@@ -324,6 +357,8 @@ InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.name_model_satisfies_zf
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.atLeast_natural_of_lt: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.OmegaFormula.eq_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_SubsetFormula: [propext, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundedFormula_semantics: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Empty.eq_1: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.SubsetFormula._proof_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_TraceAtFormula._simp_1_6: [propext, Quot.sound]
@@ -332,7 +367,10 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_InjectionFor
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_PairFormula._simp_1_3: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_NonemptyFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.FinSequence.eq_1: []
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundedFormula_semantics._simp_1_3: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.EmptyFormula.eq_1: [propext]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.finite_of_not_unbounded: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_InductiveFormula._simp_1_4: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FinSequenceFormula._simp_1_6: [propext,
  Quot.sound]
@@ -347,6 +385,9 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FunctionO
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_RestrictedTraceFormula._simp_1_5: [propext,
  Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_FIFormula: [propext, Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_countable_infinite_splitting: [propext,
+ Classical.choice,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.restriction_mem: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FiniteFormula: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_ADFormula: [propext, Quot.sound]
@@ -379,14 +420,17 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.InjectionFormula.eq
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.FunctionOnFormula.eq_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_RestrictedTraceFormula: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.FIFormula.eq_1: [propext]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.bounded_of_injection: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Finite.eq_1: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_ADFormula._simp_1_4: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.MAD.eq_1: []
+_private.FIMADModels.NativeFinite.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.pair_union: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_InterFormula: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.real_subset_omega: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.ValueFormula.eq_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_FinSequenceFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FIFormula._simp_1: [propext, Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.pairInterpretation._proof_2: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_PairFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Order.refl: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_InfiniteFormula._simp_1: [propext, Quot.sound]
@@ -394,9 +438,12 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_InfiniteForm
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.ext: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_NonemptyFormula._simp_1_4: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.UnboundedFormula._proof_2: [propext]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.removeFiber_exists: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_ADFormula._simp_1_6: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FunctionOnFormula: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_InductiveFormula: [propext, Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.pairInterpretation._proof_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.omega_sup: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_InfiniteInterFormula._simp_1_11: [propext,
  Quot.sound]
@@ -405,6 +452,9 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FIFormula
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_UnorderedPairFormula._simp_1_2: [propext,
  Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_UnorderedPairFormula: [propext, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundedFormula_closed: [propext,
+ Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.successor_native_iff: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.CheckedZFC.extensionality._proof_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_OmegaFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.InfiniteInterFormula.eq_1: [propext]
@@ -425,6 +475,7 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_MADFormul
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.FinSequenceFormula._proof_2: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_InterFormula._simp_1_5: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_UnboundedFormula._simp_1: [propext, Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.inductive_native_iff: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_UnorderedPairFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FiniteFormula._simp_1_5: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.CommonTrace.eq_1: []
@@ -435,6 +486,8 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FunctionO
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_InterFormula._simp_1_6: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_UnboundedFormula._simp_1_6: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.unboundedBody_closed: [propext, Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.finite_iff_bounded: [propext, Classical.choice, Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.pairInterpretation._proof_3: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_PairFormula._simp_1_4: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.natural_self_mem: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FiniteFormula._simp_1_3: [propext, Quot.sound]
@@ -444,7 +497,11 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_InfiniteInte
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Nonempty.eq_1: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.ExistsFIMADFormula.eq_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_EmptyFormula._simp_1: [propext, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundInjectionSchema_semantics._simp_1_4: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_ValueFormula: [propext, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundedFormula_semantics._simp_1_5: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.CheckedZFC.pairing._proof_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_TraceAtFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.positive_model_of_nonzero: [propext,
@@ -469,17 +526,29 @@ InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.UltrafilterTruth.iff_if
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.UnboundedFormula._proof_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_SingletonFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.algebra_top: [propext, Classical.choice, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.removeFiber_exists._simp_1_2: [propext,
+ Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Bounded.eq_1: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_RetainedFormula._simp_1_12: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_TraceAtFormula._simp_1_5: [propext, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.boundedFormula_semantics._simp_1_4: [propext,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.project_inductive_value: [propext,
  Classical.choice,
  Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_TraceAtFormula: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.sentence_semantics: [propext, Classical.choice, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.restrict_injection: [propext,
+ Classical.choice,
+ Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.Internal.pair_injective: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_OmegaFormula._simp_1_5: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_InductiveFormula._simp_1_5: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.classOf.eq_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_ValueFormula._simp_1: [propext, Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.quotient_infinite_iff_unbounded: [propext,
+ Classical.choice,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_InterFormula._simp_1_3: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_CommonTraceFormula: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_RetainedFormula: [propext, Quot.sound]
@@ -491,6 +560,9 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_Restricte
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.typed_unbounded_value: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.closed_SubsetFormula._simp_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_InjectionFormula: [propext, Quot.sound]
+_private.FIMADModels.FiniteUnbounded.0.InfinitaryCombinatorics.Formalizations.FIMAD.Internal.bounded_insert: [propext,
+ Classical.choice,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.negative_consistency: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.RestrictedTraceFormula.eq_1: [propext]
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FinSequenceFormula._simp_1_7: [propext,
@@ -499,4 +571,4 @@ InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.natural_zero_empty: [p
 InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.closure._proof_2: []
 InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_CommonTraceFormula._simp_1_5: [propext,
  Quot.sound]
-Typed model audit passed: 562 declarations, 411 theorem constants
+Typed model audit passed: 612 declarations, 455 theorem constants

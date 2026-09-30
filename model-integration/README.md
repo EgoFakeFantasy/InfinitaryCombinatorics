@@ -27,7 +27,12 @@ compile on both versions; sentence well-scoping is intrinsic in the new kernel.
 The fixed ZFC formulas use the existing `CheckedZFC` kernel closure proofs.
 The upstream ZFC endpoint depends on extra native-evaluation closure certificates;
 this adaptation reconstructs its short ZFC verification using the same name
-constructions and the kernel-checked formulas. It does not modify the dependency.
+constructions and the kernel-checked formulas. The native ZF adapters additionally
+use the recorded patch `dependency-patches/kernel-checked-axioms.patch` on this
+package's private dependency checkout. The eight fixed axiom formulas are
+unchanged; only their closure certificates use kernel proofs. The pinned revision
+is unchanged, and `prepare-dependencies.ps1` checks both revision and content hashes,
+refusing to overwrite unrelated changes.
 See `THIRD_PARTY_NOTICES.md` for attribution of the adapted proof.
 
 ## Actual two-valued models
@@ -87,10 +92,25 @@ Boolean value and to truth in every maximal-filter quotient.
 `quotient_omega` gives the exact `Internal.Omega` statement in the quotient.
 `QuotientSplitting.lean` verifies actual intersections and differences in that
 membership relation and proves `quotient_countable_splitting` from the shared
-certificate. Its conclusion is `Internal.UnboundedSplit`. The equivalence
-with the original injection-based infinitude predicate has not been proved,
-so this result is not advertised as the completed internal splitting-number
-calculation.
+certificate. Its conclusion is `Internal.UnboundedSplit`.
+
+`NativeZF.lean` makes the quotient a native ZF model for the upstream theorem API.
+`NativeFinite.lean` realizes the manuscript's actual Kuratowski pair convention
+and proves exact equivalence of its injection predicate with the upstream one.
+It reuses `ZF.exists_inclusionInjection`. `FiniteUnbounded.lean` reuses
+`Structure.IsOmega.induction`, `membershipWellOrder`, `ZF.separation_exists_d`,
+and `ZF.exists_restriction` to prove `finite_iff_bounded` and
+`infinite_iff_unbounded` in every native ZF model. The induction property is an
+explicit first-order schema separated inside omega; no external induction over
+possibly nonstandard model naturals is used.
+
+`InfiniteSplitting.lean` applies these results to the ordinary Boolean quotient.
+`quotient_infinite_iff_value` connects the original injection-based infinitude to
+membership of `unboundedValue` in the ultrafilter, for subset-of-omega names.
+`quotient_countable_infinite_splitting` upgrades both intersection and difference
+to original internal infinitude. It still requires the shared splitting
+certificate and top-valued unbounded input names; it does not compute a splitting
+cardinal or supply the BMZ iteration.
 
 The Boolean values of FI MAD existence have **not** been computed in a positive
 CH model or a negative BMZ model. The public generic name model does not provide
@@ -108,6 +128,7 @@ From this directory, with elan installed:
 
 ```text
 lake update
+pwsh -File prepare-dependencies.ps1
 lake build
 lake env lean Audit.lean
 ```
