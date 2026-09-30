@@ -5,6 +5,13 @@ open Lean Elab Command in
 run_elab do
   let env ← getEnv
   let required : Array Name := #[
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.algebra,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.natural_decisions_dense,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.natural_eq_of_ne,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.small_value_eq_bot,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.decisions_disjoint,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.real_mem,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.real_subset_omega,
     `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.truth,
     `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.models_zfc,
     `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.extensional,

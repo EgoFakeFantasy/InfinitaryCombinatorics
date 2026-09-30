@@ -337,4 +337,25 @@ example (A : Set (Set ℕ)) (S : Set (Finset ℕ)) : DowForcing.Admissible A S �
 #print axioms DowForcing.unionStems_weaklySeparates
 #print axioms DowForcing.countable_tallness_tests
 #print axioms DowForcing.simultaneous_splitting_tests
+
+-- The canonical Boolean coefficients really are regularized stem membership.
+example (A : Set (Set ℕ)) (k : ℕ) (p : DowForcing.Condition A) :
+    (DowForcing.genericValue A k).mem p ↔
+      ∀ q, q ≤ p → ∃ r, r ≤ q ∧ k ∈ r.stem := Iff.rfl
+
+-- The negative tail value quantifies over all stronger conditions, with a
+-- genuine finite stem as the bound. No generic filter is an input.
+example (A : Set (Set ℕ)) (B : Set ℕ) (s : Finset ℕ)
+    (p : DowForcing.Condition A) :
+    (DowForcing.avoidsOutside (A := A) B s).mem p ↔
+      ∀ q, q ≤ p → ¬ (∀ r, r ≤ q → ∃ t, t ≤ r ∧
+        ∃ k : {k : ℕ // k ∈ B ∧ k ∉ s},
+          ∀ v, v ≤ t → ∃ w, w ≤ v ∧ k.1 ∈ w.stem) := Iff.rfl
+
+#print axioms PosetRegular.Regular.double_neg
+#print axioms PosetRegular.Regular.condition_dense
+#print axioms DowForcing.generic_hits_top
+#print axioms DowForcing.generic_avoids_top
+#print axioms DowForcing.boolean_antichain_countable
+#print axioms DowForcing.boolean_splitting_tests
 end FIMADAcceptance

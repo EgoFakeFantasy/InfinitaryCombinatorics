@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-09-30T02:23:34.5431043Z",
+  "checked_at_utc": "2026-09-30T02:59:23.2198883Z",
   "lean_toolchain": "leanprover/lean4:v4.30.0",
   "mathlib_revision": "c5ea00351c28e24afc9f0f84379aa41082b1188f",
   "build": "passed",
@@ -7,9 +7,9 @@
   "unfolded_R0_statements": "passed",
   "formalization_statements": "passed",
   "axiom_audit": "passed",
-  "declarations": 1847,
-  "theorem_constants": 1378,
-  "library_modules": 96,
+  "declarations": 1930,
+  "theorem_constants": 1420,
+  "library_modules": 98,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
@@ -22,11 +22,11 @@
   "source_hashes": [
     {
       "path": "Audit.lean",
-      "sha256": "30b7837d6c7c7414c524f7d531fa79c607f35e400a3e5549630bff1f908b1ecc"
+      "sha256": "f6f23a3e4db3dfd74d657ec130635e0d49e4c5616edef8ba11456bbd7fb927c5"
     },
     {
       "path": "CheckFormalizations.lean",
-      "sha256": "699f5e4d0474745833d2a74b80da8837531f94983ea4102b8cc37cf23d7b6754"
+      "sha256": "37115f59daad538a9cb5cc186487f2f05ee7caa513d41d63c523a2f7359bf964"
     },
     {
       "path": "CheckR0.lean",
@@ -149,6 +149,10 @@
       "sha256": "f43823205555d4d6ae1974d5eb56511dbb620ce4a771a7916afe1cda9a9a6e78"
     },
     {
+      "path": "Formalizations/FIMAD/DowBoolean.lean",
+      "sha256": "afa1d87f6b9c9bc9d2d751f145d11f2bade22ea18024b8a589a9d472bb758b6b"
+    },
+    {
       "path": "Formalizations/FIMAD/DowCardinal.lean",
       "sha256": "b1661c7155641b75d1189674b747605ff1840b029a872f1841fd9dd0fa738fee"
     },
@@ -182,7 +186,7 @@
     },
     {
       "path": "Formalizations/FIMAD/Main.lean",
-      "sha256": "b3ca1ea9db32b5a2ce1af7c569fe7815a953f35995dfb165c11a8257a46b9ce2"
+      "sha256": "fd6a41332c8d8e0e628166c30544eb2060b48db8ed7fc4ae38b2982cc5f8e1bc"
     },
     {
       "path": "Formalizations/FIMAD/MemberwiseSemantics.lean",
@@ -207,6 +211,10 @@
     {
       "path": "Formalizations/FIMAD/OmegaSplitting.lean",
       "sha256": "8c12b70af139d73078b5bcdb3ad3145cd1cb90548cafade8caf92c40a29b8c12"
+    },
+    {
+      "path": "Formalizations/FIMAD/PosetRegular.lean",
+      "sha256": "e021167318b2d904bd83bc59f9c3b6fa7092781cc9ba8d469363a31befa75c28"
     },
     {
       "path": "Formalizations/FIMAD/PositiveExtension.lean",

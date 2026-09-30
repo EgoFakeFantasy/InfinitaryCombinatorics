@@ -12,7 +12,7 @@
   "paper_source_sha256": "55f84d4fc67cd8e759e773044fdf463df189eadf55e0c26b296aaa3c17ab74eb",
   "exact_negative_theorem_complete": true,
   "CH_positive_construction_complete": true,
-  "verification_checked_at_utc": "2026-09-30T02:23:34.5431043Z",
+  "verification_checked_at_utc": "2026-09-30T02:59:23.2198883Z",
   "actual_existence_sentence_complete": true,
   "first_order_semantic_translation_complete": true,
   "dp_and_omega_splitting_comparisons_complete": true,
@@ -29,7 +29,7 @@
   "topological_results_complete": false,
   "cohen_preservation_complete": false,
   "paper_native_compile_status": "unavailable: Unable to find standard directories for platform",
-  "typed_model_checked_at_utc": "2026-09-29T22:03:33.3133308Z",
+  "typed_model_checked_at_utc": "2026-09-30T02:57:35.7791673Z",
   "ordinary_boolean_quotient_complete": true,
   "full_boolean_quotient_truth_lemma_complete": true,
   "ordinary_models_from_nonzero_truth_complete": true,
@@ -42,5 +42,9 @@
   "dow_decision_relation_tallness_tests_complete": true,
   "dow_forcing_name_semantics_complete": false,
   "bmz_finite_support_iteration_complete": false,
-  "CH_constructible_FIMAD_internal_construction_complete": false
+  "CH_constructible_FIMAD_internal_construction_complete": false,
+  "poset_regular_open_completion_complete": true,
+  "dow_boolean_single_step_values_complete": true,
+  "boolean_natural_and_real_names_complete": true,
+  "cross_package_dow_name_application_complete": false
 }

@@ -136,14 +136,51 @@ handles countably many increasing enumeration decision relations; applying
 its conclusion to B and its complement yields `simultaneous_splitting_tests`.
 No preservation assertion is a premise of these theorems.
 
-**Remaining BMZ obligations:** interpret these decision relations using actual
-forcing names; prove finite-support iteration preservation and the relevant
+**Remaining BMZ obligations:** finish the internal sequence-name application
+described below; prove finite-support iteration preservation and the relevant
 ccc/cardinal facts; implement bookkeeping to handle all small orthogonal
 families; verify the final cardinal configuration and the E truth value.
 The iteration dependence is spelled out in
 [BMZ, Theorem 4(3)](https://arxiv.org/pdf/1306.0204v3), which uses Dow's
 single-step preservation and the iteration result of Brendle--Hrusak.
 The present declarations do not construct the omega-two-length iteration.
+
+### Concrete regular-open truth values and graph names
+
+`PosetRegular.Regular R` consists of downward-closed predicates fixed by
+the operation "dense below a condition". The file constructs implication,
+intersection, arbitrary suprema, and double negation, proving all required
+complete Boolean algebra laws. `condition` is the canonical dense map from
+the preorder. Each condition has nonzero value; no injectivity claim is made
+before taking the separative quotient.
+
+`DowBoolean` instantiates this construction with the exact Dow order.
+`boolean_antichain_countable` proves ccc of the completion. `genericValue A k`
+regularizes the set of conditions whose stem contains k. `generic_hits_top`
+and `generic_avoids_top` compute the unbounded-hitting and finite-avoidance
+values as top, without supplying a generic filter. `boolean_splitting_tests`
+applies the earlier preservation argument to total Boolean enumerations:
+the hypotheses are supremum-one of the possible values and bottom values
+below the enumeration index; monotonicity and dense decisions are derived.
+
+The separate typed package imports the very same `PosetRegular` file.
+`PosetRegular.algebra` supplies the actual YesMetaZFC `CB_alg` structure.
+`natural_decisions_dense` uses actual `BV_graph.bv_eq` and membership in the
+upstream omega graph. `small_value_eq_bot` obtains the lower-value exclusion
+from the semantic assertion i belongs to G or i equals G. Distinct ground
+naturals have bottom equality value, and `decisions_disjoint` proves uniqueness
+of a decided value. `real b`, `real_mem`, and `real_subset_omega` construct an
+actual graph name for every Boolean coefficient sequence and verify its exact
+natural membership values and top-valued subset-of-omega assertion.
+
+These are checked components of the missing semantic connection. The main
+Dow package and typed graph-name package still use different Lean versions;
+their final application is not a single compiled theorem. Extraction of
+increasing enumerations from arbitrary internal infinite-set names, the
+internal finite/infinite and splitting formulas, and the finite-support
+iteration remain to be joined and proved. The specific FI MAD sentence value
+is still uncomputed. In particular, the new single-step Boolean calculations
+do not establish the BMZ model or the independence theorem.
 
 ## CH source audit
 

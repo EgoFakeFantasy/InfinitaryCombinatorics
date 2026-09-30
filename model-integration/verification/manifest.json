@@ -1,11 +1,11 @@
 {
-  "checked_at_utc": "2026-09-29T22:03:33.3133308Z",
+  "checked_at_utc": "2026-09-30T02:57:35.7791673Z",
   "lean_toolchain": "leanprover/lean4:v4.33.1",
   "yesmetazfc_revision": "a4903d2054085db0b454363a5fb15f1a3e1f9eab",
   "build": "passed",
   "axiom_audit": "passed",
-  "declarations": 399,
-  "theorem_constants": 308,
+  "declarations": 487,
+  "theorem_constants": 356,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
@@ -18,52 +18,64 @@
   "formal_independence_complete": false,
   "source_hashes": [
     {
-      "path": "../Formalizations/FIMAD/CheckedZFC.lean",
-      "sha256": "f43823205555d4d6ae1974d5eb56511dbb620ce4a771a7916afe1cda9a9a6e78"
+      "sha256": "f43823205555d4d6ae1974d5eb56511dbb620ce4a771a7916afe1cda9a9a6e78",
+      "path": "../Formalizations/FIMAD/CheckedZFC.lean"
     },
     {
-      "path": "../Formalizations/FIMAD/InternalSemantics.lean",
-      "sha256": "158db099afef4175ecb1009fc006d65d80dfec59eed4b852800c71efcf18d90d"
+      "sha256": "158db099afef4175ecb1009fc006d65d80dfec59eed4b852800c71efcf18d90d",
+      "path": "../Formalizations/FIMAD/InternalSemantics.lean"
     },
     {
-      "path": "../Formalizations/FIMAD/SetTheorySentence.lean",
-      "sha256": "68ec35055932b1c27cf7ec83196935197148237b14e9ac1baef19369c7d2d018"
+      "sha256": "e021167318b2d904bd83bc59f9c3b6fa7092781cc9ba8d469363a31befa75c28",
+      "path": "../Formalizations/FIMAD/PosetRegular.lean"
     },
     {
-      "path": "Audit.lean",
-      "sha256": "94632f9d5e96b2a84a589d6a8eb8a03679aa76321ba3663d56e3e5e63b3e83ae"
+      "sha256": "68ec35055932b1c27cf7ec83196935197148237b14e9ac1baef19369c7d2d018",
+      "path": "../Formalizations/FIMAD/SetTheorySentence.lean"
     },
     {
-      "path": "FIMADModels.lean",
-      "sha256": "c1b74125f5c79f66e14688a71f6abc2569fd22937c7a51580081deb586d4540d"
+      "sha256": "a30d83f547298a1471b3c6ef212bb8a8cef06f6c10facb0266b5c7187b7c4167",
+      "path": "Audit.lean"
     },
     {
-      "path": "FIMADModels/BooleanQuotient.lean",
-      "sha256": "83ee10bed2b33e9be7ad69bbaf34e7e6f86943cef82a2481d281869758f4af4b"
+      "sha256": "aaccc684b6fbe39bb2686899d3d8a9dcb487e34060c340396a7eea30001c79f6",
+      "path": "FIMADModels.lean"
     },
     {
-      "path": "FIMADModels/CheckedBooleanZFC.lean",
-      "sha256": "47b1ba92d5c652ffa5881eaf829731f9c847975a0a353620b6092e35ff32ddb1"
+      "sha256": "83ee10bed2b33e9be7ad69bbaf34e7e6f86943cef82a2481d281869758f4af4b",
+      "path": "FIMADModels/BooleanQuotient.lean"
     },
     {
-      "path": "FIMADModels/UltrafilterTruth.lean",
-      "sha256": "ff638d90ead3d8a4975078da05e66754ec712ca665f8d564742040f09a062dbe"
+      "sha256": "47b1ba92d5c652ffa5881eaf829731f9c847975a0a353620b6092e35ff32ddb1",
+      "path": "FIMADModels/CheckedBooleanZFC.lean"
     },
     {
-      "path": "lake-manifest.json",
-      "sha256": "2acfa1cef4b3ca896083540329a86ed57f9ec5b0c83c21dedc936b5b25ef4ecb"
+      "sha256": "b653b2234a3892ec73803f976611b9dcc546abeaa24fb876e62e5deb30cd74b2",
+      "path": "FIMADModels/NaturalNames.lean"
     },
     {
-      "path": "lakefile.toml",
-      "sha256": "e2f2e2af8490625082480da798ecdc8012b71085aae22495c42766773a987265"
+      "sha256": "0bc17263df82171052fdeeeece48b327f063692158a5123fd158716c876a7211",
+      "path": "FIMADModels/PosetCompletion.lean"
     },
     {
-      "path": "lean-toolchain",
-      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+      "sha256": "ff638d90ead3d8a4975078da05e66754ec712ca665f8d564742040f09a062dbe",
+      "path": "FIMADModels/UltrafilterTruth.lean"
     },
     {
-      "path": "verify.ps1",
-      "sha256": "b9aef6d8d2a822439e6a428a94b7d774c34388230600a138116378a19433ef99"
+      "sha256": "2acfa1cef4b3ca896083540329a86ed57f9ec5b0c83c21dedc936b5b25ef4ecb",
+      "path": "lake-manifest.json"
+    },
+    {
+      "sha256": "a9d469651258745859a3c04519e951a89e3e5ad8c664d467167fdefe831a6b31",
+      "path": "lakefile.toml"
+    },
+    {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "path": "lean-toolchain"
+    },
+    {
+      "sha256": "1073dbba3d0756e7ef7bc77601bab6517b3e6df5df7d70fb6b41e021e72f0378",
+      "path": "verify.ps1"
     }
   ]
 }

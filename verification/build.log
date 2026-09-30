@@ -1,4 +1,4 @@
-ℹ [1058/1091] Replayed Formalizations.A1.Check
+ℹ [1051/1091] Replayed Formalizations.A1.Check
 info: Formalizations/A1/Check.lean:91:0: 'InfinitaryCombinatorics.Formalizations.A1.cantorPair_closedForm' depends on axioms: [propext, Quot.sound]
 info: Formalizations/A1/Check.lean:92:0: 'InfinitaryCombinatorics.Formalizations.A1.countable_convex_partition' depends on axioms: [propext,
  Classical.choice,
@@ -19,7 +19,6 @@ info: Formalizations/A1/Check.lean:97:0: 'InfinitaryCombinatorics.Formalizations
 info: Formalizations/A1/Check.lean:98:0: 'InfinitaryCombinatorics.Formalizations.A1.KA_implies_KAomegaOne' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
-✔ [1166/1179] Built Formalizations.FIMAD.DowTallness (16s)
-✔ [1177/1179] Built Formalizations.FIMAD.Main (16s)
-✔ [1178/1179] Built Formalizations (16s)
-Build completed successfully (1179 jobs).
+✔ [1179/1181] Built Formalizations.FIMAD.Main (28s)
+✔ [1180/1181] Built Formalizations (15s)
+Build completed successfully (1181 jobs).

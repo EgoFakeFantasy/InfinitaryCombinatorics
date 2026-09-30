@@ -5,8 +5,8 @@ This separate package uses Lean 4.33.1 and the public YesMetaZFC revision
 `codex/set-theory-filter-core` branch (public `main` was still `51c348a` when checked). The main combinatorial package
 keeps Lean 4.30.0 and its existing dependency pins.
 
-The source files `InternalSemantics.lean`, `SetTheorySentence.lean`, and
-`CheckedZFC.lean` are imported directly from `../Formalizations/FIMAD/`.
+The source files `InternalSemantics.lean`, `SetTheorySentence.lean`,
+`CheckedZFC.lean`, and `PosetRegular.lean` are imported directly from `../Formalizations/FIMAD/`.
 There is no copied or second FI MAD definition. The formula closure proofs
 compile on both versions; sentence well-scoping is intrinsic in the new kernel.
 
@@ -54,6 +54,20 @@ conditional on the indicated Boolean-value hypotheses; those specific values
 remain to be established.
 
 ## Exact remaining boundary
+
+`FIMADModels/PosetCompletion.lean` constructs an actual `CB_alg` from the shared
+regular-open completion of an arbitrary forcing preorder. It proves that an
+actual graph name with top-valued membership in omega has dense natural-number
+decisions. `FIMADModels/NaturalNames.lean` proves distinctness of ground
+natural names, disjointness of incompatible decisions, and exclusion of values
+below a semantically forced lower bound. It also constructs `real b`, a graph
+name for a subset of omega whose membership values are exactly b.
+
+The main package proves the Dow completion ccc and computes its canonical
+separator coefficients and countable splitting tests. Both packages compile
+the same regular-open source. Their end-to-end application to arbitrary
+internal sequence names is still pending; cross-version compiled artifacts
+are not imported or treated as proof certificates.
 
 The Boolean values of FI MAD existence have **not** been computed in a positive
 CH model or a negative BMZ model. The public generic name model does not provide

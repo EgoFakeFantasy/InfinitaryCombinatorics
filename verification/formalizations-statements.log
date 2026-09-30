@@ -143,3 +143,21 @@
 'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.simultaneous_splitting_tests' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.double_neg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.PosetRegular.Regular.condition_dense' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.generic_hits_top' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.generic_avoids_top' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.boolean_antichain_countable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.boolean_splitting_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

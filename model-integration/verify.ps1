@@ -4,7 +4,9 @@ try {
   Set-Location -LiteralPath $PSScriptRoot
   New-Item -ItemType Directory -Path 'verification' -Force | Out-Null
   $fmFiles = @('FIMADModels.lean', 'FIMADModels/CheckedBooleanZFC.lean', 'FIMADModels/UltrafilterTruth.lean',
-    'FIMADModels/BooleanQuotient.lean', 'Audit.lean',
+    'FIMADModels/BooleanQuotient.lean', 'FIMADModels/PosetCompletion.lean',
+    'FIMADModels/NaturalNames.lean', 'Audit.lean',
+    '../Formalizations/FIMAD/PosetRegular.lean',
     '../Formalizations/FIMAD/InternalSemantics.lean',
     '../Formalizations/FIMAD/SetTheorySentence.lean', '../Formalizations/FIMAD/CheckedZFC.lean',
     'lakefile.toml', 'lake-manifest.json', 'lean-toolchain', 'verify.ps1')

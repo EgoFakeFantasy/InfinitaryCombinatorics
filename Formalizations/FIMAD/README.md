@@ -91,6 +91,8 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 - `DowForcing.lean`: the actual forbidden-stem poset, centered fibers, ccc, dense hitting/avoidance, directed-set separator, and dense-stem closure.
 - `DowPossibleValues.lean`: common possible values and the countable test-family induction for Dow's preservation argument.
 - `DowTallness.lean`: simultaneous countable tallness/splitting tests for explicit monotone dense natural-number decision relations.
+- `PosetRegular.lean`: regular lower sets of any forcing preorder, complete Boolean operations, nonzero canonical condition values, and dense decision semantics; shared unchanged by both toolchains.
+- `DowBoolean.lean`: the actual Dow completion is ccc; canonical union-of-stems coefficients have top-valued unbounded hitting and finite avoidance; total Boolean enumerations have countable splitting tests without an assumed decision-density premise.
 - `Main.lean`: public entry point and paper-facing cutoff under s < ap alone.
 
 Reused foundations: `InfinitaryCombinatorics.FinIntersection`, `InfinitaryCombinatorics.Characteristics`, and the existing R0 countable-completion and uniform-MAD modules. The protected `R0/` snapshot is unchanged.
@@ -111,7 +113,7 @@ On Windows, `./verify.ps1` runs the complete source scan, umbrella coverage chec
 
 Pinned dependencies: Lean 4.30.0; mathlib `c5ea00351c28e24afc9f0f84379aa41082b1188f`; YesMetaZFC `bae4fcc31b07b505986b11c6c2f13965ae6cd46d`. YesMetaZFC is a Git dependency; uncommitted files in a developer's separate checkout are not used.
 
-The isolated [typed model integration](../../model-integration/README.md) pins Lean 4.33.1 and YesMetaZFC `a4903d2054085db0b454363a5fb15f1a3e1f9eab`. It uses the same `InternalSemantics`, `SetTheorySentence`, and `CheckedZFC` sources and has its own `verify.ps1` and manifest. It does not change the main package pins. Both audits permit only the same three foundational axioms.
+The isolated [typed model integration](../../model-integration/README.md) pins Lean 4.33.1 and YesMetaZFC `a4903d2054085db0b454363a5fb15f1a3e1f9eab`. It uses the same `InternalSemantics`, `SetTheorySentence`, `CheckedZFC`, and `PosetRegular` sources and has its own `verify.ps1` and manifest. Its `PosetCompletion` and `NaturalNames` modules construct the YesMetaZFC algebra, prove dense decisions for actual natural-number graph names, and realize any Boolean membership coefficients as a name for a subset of omega. It does not change the main package pins. The Dow combinatorics and the typed graph-name application are still compiled in separate packages; there is not yet a single checked theorem applying the former to arbitrary internal sequence names in the latter. Both audits permit only the same three foundational axioms.
 
 ## Sources and provenance
 
