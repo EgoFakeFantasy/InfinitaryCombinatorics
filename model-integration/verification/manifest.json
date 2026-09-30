@@ -1,11 +1,11 @@
 {
-  "checked_at_utc": "2026-09-30T02:57:35.7791673Z",
+  "checked_at_utc": "2026-09-30T03:17:49.6812889Z",
   "lean_toolchain": "leanprover/lean4:v4.33.1",
   "yesmetazfc_revision": "a4903d2054085db0b454363a5fb15f1a3e1f9eab",
   "build": "passed",
   "axiom_audit": "passed",
-  "declarations": 487,
-  "theorem_constants": 356,
+  "declarations": 509,
+  "theorem_constants": 369,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
@@ -17,6 +17,10 @@
   "specific_FIMAD_model_truth": "not proved",
   "formal_independence_complete": false,
   "source_hashes": [
+    {
+      "sha256": "d9f8e1dcc88e67d1ee9b9bd6323c7dc2f672600847bf60150e51937ff775d2ad",
+      "path": "../Formalizations/FIMAD/BooleanEnumeration.lean"
+    },
     {
       "sha256": "f43823205555d4d6ae1974d5eb56511dbb620ce4a771a7916afe1cda9a9a6e78",
       "path": "../Formalizations/FIMAD/CheckedZFC.lean"
@@ -34,11 +38,11 @@
       "path": "../Formalizations/FIMAD/SetTheorySentence.lean"
     },
     {
-      "sha256": "a30d83f547298a1471b3c6ef212bb8a8cef06f6c10facb0266b5c7187b7c4167",
+      "sha256": "638fc4cb3ef8e32f3b3a90f71139c9b67b2db0a89f75d0efa9ea296791534620",
       "path": "Audit.lean"
     },
     {
-      "sha256": "aaccc684b6fbe39bb2686899d3d8a9dcb487e34060c340396a7eea30001c79f6",
+      "sha256": "bd17152f5543d2b86d4b11f0034885b83c255cd6600f98a607c0d0f6d691aa03",
       "path": "FIMADModels.lean"
     },
     {
@@ -58,15 +62,23 @@
       "path": "FIMADModels/PosetCompletion.lean"
     },
     {
+      "sha256": "042cc73d4f2869c0a64b52f458d2b7c62fb00cd49972719787144c9fde1c1507",
+      "path": "FIMADModels/SplittingNames.lean"
+    },
+    {
       "sha256": "ff638d90ead3d8a4975078da05e66754ec712ca665f8d564742040f09a062dbe",
       "path": "FIMADModels/UltrafilterTruth.lean"
+    },
+    {
+      "sha256": "0c3e88c3622b8de4bb76d88e3320c5cf083d5def7b42f8fdcaa083b320c457ce",
+      "path": "FIMADModels/UnboundedNames.lean"
     },
     {
       "sha256": "2acfa1cef4b3ca896083540329a86ed57f9ec5b0c83c21dedc936b5b25ef4ecb",
       "path": "lake-manifest.json"
     },
     {
-      "sha256": "a9d469651258745859a3c04519e951a89e3e5ad8c664d467167fdefe831a6b31",
+      "sha256": "d142e8d3620556d8ccf448614086ed6cac81f499c82f31d1b17069fbc1320067",
       "path": "lakefile.toml"
     },
     {
@@ -74,7 +86,7 @@
       "path": "lean-toolchain"
     },
     {
-      "sha256": "1073dbba3d0756e7ef7bc77601bab6517b3e6df5df7d70fb6b41e021e72f0378",
+      "sha256": "d97a3183e03c909bb39232b6c5736697e044d404054e124cce98d3bde20669c7",
       "path": "verify.ps1"
     }
   ]

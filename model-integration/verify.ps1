@@ -5,8 +5,10 @@ try {
   New-Item -ItemType Directory -Path 'verification' -Force | Out-Null
   $fmFiles = @('FIMADModels.lean', 'FIMADModels/CheckedBooleanZFC.lean', 'FIMADModels/UltrafilterTruth.lean',
     'FIMADModels/BooleanQuotient.lean', 'FIMADModels/PosetCompletion.lean',
-    'FIMADModels/NaturalNames.lean', 'Audit.lean',
+    'FIMADModels/NaturalNames.lean', 'FIMADModels/UnboundedNames.lean',
+    'FIMADModels/SplittingNames.lean', 'Audit.lean',
     '../Formalizations/FIMAD/PosetRegular.lean',
+    '../Formalizations/FIMAD/BooleanEnumeration.lean',
     '../Formalizations/FIMAD/InternalSemantics.lean',
     '../Formalizations/FIMAD/SetTheorySentence.lean', '../Formalizations/FIMAD/CheckedZFC.lean',
     'lakefile.toml', 'lake-manifest.json', 'lean-toolchain', 'verify.ps1')

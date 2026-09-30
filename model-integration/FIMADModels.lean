@@ -1,6 +1,6 @@
 import Formalizations.FIMAD.SetTheorySentence
 import FIMADModels.BooleanQuotient
-import FIMADModels.NaturalNames
+import FIMADModels.SplittingNames
 import YesMetaZFC.Model.SetTheory.ProjectSemantics
 
 /-! The actual FI MAD sentence in the public typed kernel and Boolean name model.

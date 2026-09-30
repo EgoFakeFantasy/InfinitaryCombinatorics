@@ -173,14 +173,41 @@ of a decided value. `real b`, `real_mem`, and `real_subset_omega` construct an
 actual graph name for every Boolean coefficient sequence and verify its exact
 natural membership values and top-valued subset-of-omega assertion.
 
-These are checked components of the missing semantic connection. The main
-Dow package and typed graph-name package still use different Lean versions;
-their final application is not a single compiled theorem. Extraction of
-increasing enumerations from arbitrary internal infinite-set names, the
-internal finite/infinite and splitting formulas, and the finite-support
-iteration remain to be joined and proved. The specific FI MAD sentence value
-is still uncomputed. In particular, the new single-step Boolean calculations
+These are checked components of the semantic connection. The main Dow package
+and typed graph-name package still use different Lean versions; their final
+application is not a single compiled theorem. The specific FI MAD sentence
+value is still uncomputed. In particular, the single-step Boolean calculations
 do not establish the BMZ model or the independence theorem.
+
+### Unbounded names and the shared splitting certificate
+
+`BooleanEnumeration.lean` now defines the exact shared `SplittingCertificate`
+contract, including a Nat-indexed family of unbounded ground tests.
+`DowForcing.splittingCertificate` proves it for the actual Dow order, using
+`boolean_splitting_tests` and a proved equivalence between set infinitude and
+natural-number unboundedness. The same file is imported unchanged by the
+typed package; no second contract or countability convention is substituted.
+
+In that package, `unboundedValue G` is the complete Boolean value of
+forall X in omega, exists Y in omega, X <= Y and Y in G. Both variables range
+over all graph names. `omega_all` and `omega_sup` reduce bounded quantifiers
+to ground natural names; `unbounded_eq_tails` proves the precise tail-value
+equality. `unbounded_witnesses` applies the maximum principle to construct
+actual names f(i) belonging to G and omega, with i <= f(i), all at top value.
+Strictly increasing enumerations are unnecessary for the proved Dow argument.
+
+`restriction G B` is an actual separation name for G intersected with the
+ground real B. `hits_force_unbounded` translates witness-value hits into
+unboundedness of this restriction. `split_unbounded_names` then derives the
+countable-name splitting conclusion from the shared certificate, constructing
+its own witnesses. Its certificate premise is explicit and is discharged for
+Dow by the theorem in the main package; neither package silently imports a
+compiled proof from the other Lean version.
+
+The remaining semantic/build work includes checking this final application
+in one toolchain and connecting the bounded unboundedness formula with the
+original internal finite/infinite predicates. The finite-support iteration,
+bookkeeping, cardinal configuration and full FI MAD value remain open.
 
 ## CH source audit
 

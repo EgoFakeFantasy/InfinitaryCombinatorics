@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-09-30T02:59:23.2198883Z",
+  "checked_at_utc": "2026-09-30T03:19:24.7031821Z",
   "lean_toolchain": "leanprover/lean4:v4.30.0",
   "mathlib_revision": "c5ea00351c28e24afc9f0f84379aa41082b1188f",
   "build": "passed",
@@ -7,9 +7,9 @@
   "unfolded_R0_statements": "passed",
   "formalization_statements": "passed",
   "axiom_audit": "passed",
-  "declarations": 1930,
-  "theorem_constants": 1420,
-  "library_modules": 98,
+  "declarations": 1936,
+  "theorem_constants": 1422,
+  "library_modules": 100,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
@@ -22,11 +22,11 @@
   "source_hashes": [
     {
       "path": "Audit.lean",
-      "sha256": "f6f23a3e4db3dfd74d657ec130635e0d49e4c5616edef8ba11456bbd7fb927c5"
+      "sha256": "3b1e9adb8a6c3c47eb22aa1d7398133f5016b888e48804a6df8ffd3afd1942ef"
     },
     {
       "path": "CheckFormalizations.lean",
-      "sha256": "37115f59daad538a9cb5cc186487f2f05ee7caa513d41d63c523a2f7359bf964"
+      "sha256": "760fd8e74b43af4225236132bfa52f5c4f95d6170a0ae41da6207b61e0b467c9"
     },
     {
       "path": "CheckR0.lean",
@@ -141,6 +141,10 @@
       "sha256": "952af28628151c8f25d6d8f4ce6f2c500d03bfc9777d66369c9d03fddce39814"
     },
     {
+      "path": "Formalizations/FIMAD/BooleanEnumeration.lean",
+      "sha256": "d9f8e1dcc88e67d1ee9b9bd6323c7dc2f672600847bf60150e51937ff775d2ad"
+    },
+    {
       "path": "Formalizations/FIMAD/CHConstruction.lean",
       "sha256": "80d392cf11aa4f7f76683bc933d87b3fd4ace2716fce93ce2deb05eb82ba1b7f"
     },
@@ -155,6 +159,10 @@
     {
       "path": "Formalizations/FIMAD/DowCardinal.lean",
       "sha256": "b1661c7155641b75d1189674b747605ff1840b029a872f1841fd9dd0fa738fee"
+    },
+    {
+      "path": "Formalizations/FIMAD/DowCertificate.lean",
+      "sha256": "a30d57de800b9fd1c85d727ecff572bd34159064de40919c77611d00e4ba0578"
     },
     {
       "path": "Formalizations/FIMAD/DowForcing.lean",
@@ -186,7 +194,7 @@
     },
     {
       "path": "Formalizations/FIMAD/Main.lean",
-      "sha256": "fd6a41332c8d8e0e628166c30544eb2060b48db8ed7fc4ae38b2982cc5f8e1bc"
+      "sha256": "febf65af16f40b007f2d589dd1a5cbfdd592fea4312f0fcf3247120a876b9163"
     },
     {
       "path": "Formalizations/FIMAD/MemberwiseSemantics.lean",

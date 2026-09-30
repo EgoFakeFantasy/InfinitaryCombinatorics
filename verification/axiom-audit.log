@@ -1178,6 +1178,7 @@ InfinitaryCombinatorics.Formalizations.FIMAD.FIStage.mk.inj: []
 InfinitaryCombinatorics.Formalizations.R0.AlmostEqual.trans: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.A1.ladderPoint_strictMono: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.A1.limitPoint._proof_1: [propext, Classical.choice, Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.splittingCertificate: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.A2.boundaryColor._proof_1: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.A1.jk_lt_nk._proof_1_1: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.A2.normalizedPullback_at_zero: [propext, Classical.choice, Quot.sound]
@@ -1433,6 +1434,9 @@ InfinitaryCombinatorics.Formalizations.FIMAD.Internal.Syntax.satisfies_FIFormula
 InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.forcingOrder._proof_2: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.R0.allBranches_card: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.CheckedZFC.extensionality._proof_1: [propext, Quot.sound]
+InfinitaryCombinatorics.Formalizations.FIMAD.DowForcing.infinite_iff_natUnbounded: [propext,
+ Classical.choice,
+ Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.finite_branch_intersections_bounded._simp_1_3: [propext, Quot.sound]
 InfinitaryCombinatorics.Ladder.mk.injEq: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.FIMAD.Standard.nat_eq_mk: [Quot.sound]
@@ -1570,4 +1574,4 @@ InfinitaryCombinatorics.Formalizations.FIMAD.exists_minimum_dow: [propext, Class
 InfinitaryCombinatorics.Formalizations.FIMAD.CHConstruction.finalFamily_mad: [propext, Classical.choice, Quot.sound]
 InfinitaryCombinatorics.Formalizations.A2.delta_maximal._proof_1_3: [propext, Quot.sound]
 InfinitaryCombinatorics.Formalizations.R0.regularCode_injective._proof_1_1: [propext, Quot.sound]
-Kernel audit passed: 1930 declarations, 1420 theorem constants; axioms: [propext, Quot.sound, Classical.choice]
+Kernel audit passed: 1936 declarations, 1422 theorem constants; axioms: [propext, Quot.sound, Classical.choice]

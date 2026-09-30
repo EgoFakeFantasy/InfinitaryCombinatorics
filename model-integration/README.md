@@ -6,7 +6,7 @@ This separate package uses Lean 4.33.1 and the public YesMetaZFC revision
 keeps Lean 4.30.0 and its existing dependency pins.
 
 The source files `InternalSemantics.lean`, `SetTheorySentence.lean`,
-`CheckedZFC.lean`, and `PosetRegular.lean` are imported directly from `../Formalizations/FIMAD/`.
+`CheckedZFC.lean`, `PosetRegular.lean`, and `BooleanEnumeration.lean` are imported directly from `../Formalizations/FIMAD/`.
 There is no copied or second FI MAD definition. The formula closure proofs
 compile on both versions; sentence well-scoping is intrinsic in the new kernel.
 
@@ -63,11 +63,22 @@ natural names, disjointness of incompatible decisions, and exclusion of values
 below a semantically forced lower bound. It also constructs `real b`, a graph
 name for a subset of omega whose membership values are exactly b.
 
-The main package proves the Dow completion ccc and computes its canonical
-separator coefficients and countable splitting tests. Both packages compile
-the same regular-open source. Their end-to-end application to arbitrary
-internal sequence names is still pending; cross-version compiled artifacts
-are not imported or treated as proof certificates.
+`UnboundedNames.lean` treats the full bounded-name assertion that G has members
+arbitrarily high in omega. It proves exact reduction to tail values and uses
+the maximum principle to construct natural names f(i) in G above each i.
+`SplittingNames.lean` constructs actual separation names for intersection
+with a ground real and its complement. `split_unbounded_names` proves the
+countable-name splitting conclusion from `SplittingCertificate`, constructing
+all witnesses rather than assuming an enumeration.
+
+The main package proves the Dow completion ccc, computes its canonical
+separator coefficients, and proves the shared certificate for the exact Dow
+order. Both packages compile the same contract and regular-open sources.
+The certificate is still an explicit premise of the generic typed adapter;
+its Dow instance is verified in the other package. A single-toolchain build
+of the final application and a connection to the original internal
+finite/infinite predicates are pending. Cross-version compiled artifacts are
+not imported or treated as proof certificates.
 
 The Boolean values of FI MAD existence have **not** been computed in a positive
 CH model or a negative BMZ model. The public generic name model does not provide

@@ -358,4 +358,14 @@ example (A : Set (Set ℕ)) (B : Set ℕ) (s : Finset ℕ)
 #print axioms DowForcing.generic_avoids_top
 #print axioms DowForcing.boolean_antichain_countable
 #print axioms DowForcing.boolean_splitting_tests
+
+-- The exact same source-level contract is consumed by the graph-name adapter.
+example (A : Set (Set ℕ)) :
+    PosetRegular.SplittingCertificate (DowForcing.forcingOrder A) :=
+  DowForcing.splittingCertificate A
+
+example (X : Set ℕ) : PosetRegular.NatUnbounded X ↔ X.Infinite :=
+  (DowForcing.infinite_iff_natUnbounded X).symm
+
+#print axioms DowForcing.splittingCertificate
 end FIMADAcceptance
