@@ -104,3 +104,18 @@
 'InfinitaryCombinatorics.Formalizations.FIMAD.exists_fi_mad_of_a_lt_s' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.Standard.existsFIMAD_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.Standard.models_zfc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.Standard.satisfies_sentence_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.Standard.positive_consistency_of_CH' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'InfinitaryCombinatorics.Formalizations.FIMAD.Standard.negative_consistency_of_s_lt_ap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

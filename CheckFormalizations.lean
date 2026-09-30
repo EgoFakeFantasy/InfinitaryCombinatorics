@@ -296,4 +296,28 @@ example (hs : omegaSplittingNumber = Cardinal.aleph 1)
 #print axioms finIntersecting_iff_memberwise
 #print axioms consequences_of_bmz_configuration
 #print axioms exists_fi_mad_of_a_lt_s
+
+-- The interpretation uses actual membership and agrees at arbitrary universe levels.
+example (a : ZFSet.{u}) : Internal.Finite (fun x y => x ∈ y) ZFSet.omega a ↔
+    (a : Set ZFSet).Finite := Standard.finite_iff a
+
+example : Internal.ExistsFIMAD (fun x y : ZFSet.{u} => x ∈ y) ↔
+    ∃ M : Set (Set ℕ), MAD M ∧ R0.FinIntersecting M := Standard.existsFIMAD_iff
+
+example : ModelInterface.ModelsZFC Standard.model.{u} := Standard.models_zfc
+
+example (hCH : (2 : Cardinal.{0}) ^ Cardinal.aleph0 = Cardinal.aleph 1) :
+    YesMetaZFC.Logic.FirstOrder.Derives.Consistent ModelInterface.zfcTheory
+      [ModelInterface.existenceSentence] := Standard.positive_consistency_of_CH hCH
+
+example (h : R0.splittingNumber < almostDisjointSeparationNumber) :
+    YesMetaZFC.Logic.FirstOrder.Derives.Consistent ModelInterface.zfcTheory
+      [YesMetaZFC.Logic.FirstOrder.Formula.neg ModelInterface.existenceSentence] :=
+  Standard.negative_consistency_of_s_lt_ap h
+
+#print axioms Standard.existsFIMAD_iff
+#print axioms Standard.models_zfc
+#print axioms Standard.satisfies_sentence_iff
+#print axioms Standard.positive_consistency_of_CH
+#print axioms Standard.negative_consistency_of_s_lt_ap
 end FIMADAcceptance

@@ -538,6 +538,19 @@ The cardinals $\dpnum$ and $\s_\omega$ are defined by their actual least
 witness sizes, their comparisons with $\ap$ and $\s$ are proved, and the
 combinatorial consequences of the BMZ configuration are checked.
 
+For mathlib's standard well-founded set universe, the development now
+proves that internal natural numbers and finiteness agree with their host
+counterparts. It codes all subsets of $\omega$ and all families of such
+subsets, and proves both directions of the correspondence for MAD,
+fin-sequences, retained traces, and FI. Consequently, the actual
+first-order sentence has exactly the intended combinatorial meaning in
+this universe. The same universe is verified to satisfy the checked ZFC
+presentation, including full separation and collection. Soundness then
+gives consistency of $\ZFC+\E$ from host CH (or host
+$\ap=\s=\cont$), and consistency of $\ZFC+\neg\E$ from host
+$\s<\ap$. These are conditional results in Lean's ambient foundation;
+they do not establish the relative consistency of the cardinal hypotheses.
+
 An isolated Lean~4.33.1 package also connects the same sentence source to
 the new typed YesMetaZFC kernel and its standard Boolean-name model.
 It verifies ZFC in that model using the upstream name constructions and
@@ -555,10 +568,12 @@ Both packages audit transitive proof dependencies and permit only Lean's
 standard propositional extensionality, classical choice, and quotient
 soundness axioms.
 
-Substantive obligations remain. The host proofs on natural numbers have
-not yet been transported into the set-theoretic models. The BMZ forcing,
-the positive consistency argument, the topological results, and the Cohen
-preservation argument are not formalized here. In particular, the generic
+Substantive obligations remain. The standard-universe correspondence does
+not identify the natural numbers and power sets of arbitrary ZFC models
+with their host counterparts. Transfer into the required CH and BMZ
+models, the BMZ forcing, the relative consistency of CH, the topological
+results, and the Cohen preservation argument are not formalized here.
+In particular, the generic
 Boolean ZFC construction does not establish the required positive and
 negative truth values of $\E$. The constructed quotients therefore do not yet give the required
 CH and BMZ instances. Accordingly,

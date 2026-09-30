@@ -43,7 +43,10 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 | The known a < s sufficient condition | `exists_fi_mad_of_a_lt_s` | Reuses a minimum MAD family and the small-family FI theorem |
 | BMZ/Dow relative consistency | No Lean declaration | Cited published result; forcing not formalized |
 | Relative consistency of CH | No Lean declaration | CH as a cardinal hypothesis is not a proof of its relative consistency over ZFC |
-| Transfer of host Nat proofs into ZFC models | No Lean declaration | The sentence and its internal semantics are checked, but the host CH and cutoff proofs are not yet internalized |
+| Exact semantics in the standard set universe | `Standard.existsFIMAD_iff`, `Standard.satisfies_sentence_iff` | All subsets, arbitrary families, sequences, and retained traces; not a transfer to arbitrary models |
+| Standard universe satisfies checked ZFC | `Standard.models_zfc` | Concrete membership structure, full separation and collection |
+| Consistency under host cardinal hypotheses | `Standard.positive_consistency_of_CH`, `Standard.negative_consistency_of_s_lt_ap` | Actual model plus soundness; host hypotheses remain inputs |
+| Transfer into CH and BMZ models | No Lean declaration | Standard-universe semantics does not supply the required relative consistency constructions |
 | AD refinement below b | `ad_refinement_below_b` | Actual infinite subsets, indexed pairwise almost disjointness; derived from uniform block coding |
 | Positive extraction and simultaneous extension below ap | `positive_subset_below_a`, `small_positive_extension` | Full arbitrary small families, not only countable stages |
 | Positive theorem under ap = s = continuum | `exists_fi_mad_extension_of_ap_eq_s_eq_continuum`, `exists_fi_mad_of_ap_eq_s_eq_continuum` | Fully checked; extends any infinite AD family of size less than the continuum |
@@ -55,7 +58,7 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 | Consistency from nonzero value | `TypedModels.consistency_of_nonzero` | Stronger than the original top-valued endpoint; does not compute the required CH/BMZ truth values |
 | Topological corollaries and Cohen preservation | No Lean declaration | Paper deductions with named published inputs; not machine checked |
 
-**The repository does not claim a complete formalization of the ZFC independence theorem.** The object-language encoding is now implemented, together with its semantic interpretation and a concrete ZFC/E model interface. The transfer of host combinatorial proofs into models and the CH/BMZ Boolean-value computations remain open. Ordinary ZFC models are now constructed from nonzero values, but the required specific values have not been proved. No placeholders or new logical assumptions are introduced as declarations to bypass these obligations. See [MODEL_INTERFACE.md](MODEL_INTERFACE.md) for the precise model contracts.
+**The repository does not claim a complete formalization of the ZFC independence theorem.** The object-language encoding and its exact meaning in mathlib's standard well-founded set universe are checked. That concrete universe satisfies the checked ZFC theory, so host CH gives consistency of ZFC + E and host s < ap gives consistency of ZFC + not-E. Neither host cardinal hypothesis is established by these semantic results. Transfer into the required CH/BMZ models and the specific Boolean-value computations remain open. Ordinary ZFC models are also constructed from nonzero values, but the required specific values have not been proved. No placeholders or new logical assumptions are introduced as declarations to bypass these obligations. See [MODEL_INTERFACE.md](MODEL_INTERFACE.md) for the precise model contracts.
 
 ## Module guide
 
@@ -75,6 +78,11 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 - `MemberwiseSemantics.lean`: finite-member versus finite-retained-trace equivalence.
 - `CheckedZFC.lean`: the upstream ZFC formulas with kernel-checked closure certificates; full separation and collection schemas reused unchanged.
 - `ModelInterface.lean`: actual ZFC/E model contracts and soundness consequences.
+- `StandardSemantics.lean`: standard omega, Kuratowski pairs, function graphs, and equivalence of internal and external finiteness.
+- `StandardCoding.lean`: all real/family codes and the exact AD/MAD equivalences.
+- `StandardSequences.lean`: coding and decoding arbitrary finite-block sequences, restricted and common traces.
+- `StandardTransfer.lean`: FI and the full internal E sentence agree with the host predicates, at every universe level.
+- `StandardModel.lean`: concrete standard model of full checked ZFC, exact first-order meaning, and consistency from the stated host cardinal hypotheses.
 - `DowCardinal.lean`, `OmegaSplitting.lean`: actual dp and s_omega, their basic comparisons, and the consequences of the BMZ configuration.
 - `Main.lean`: public entry point and paper-facing cutoff under s < ap alone.
 

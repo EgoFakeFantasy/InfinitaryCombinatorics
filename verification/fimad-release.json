@@ -9,10 +9,10 @@
   "existing_dependency_revisions": "unchanged",
   "formal_independence_complete": false,
   "coverage": "Formalizations/FIMAD/README.md",
-  "paper_source_sha256": "efa996c20e2da8e810f3f77e85a8b8afc38e488b035a4030486096979a87cff7",
+  "paper_source_sha256": "55f84d4fc67cd8e759e773044fdf463df189eadf55e0c26b296aaa3c17ab74eb",
   "exact_negative_theorem_complete": true,
   "CH_positive_construction_complete": true,
-  "verification_checked_at_utc": "2026-09-29T22:03:12.5689589Z",
+  "verification_checked_at_utc": "2026-09-30T02:05:59.5988983Z",
   "actual_existence_sentence_complete": true,
   "first_order_semantic_translation_complete": true,
   "dp_and_omega_splitting_comparisons_complete": true,
@@ -32,5 +32,9 @@
   "typed_model_checked_at_utc": "2026-09-29T22:03:33.3133308Z",
   "ordinary_boolean_quotient_complete": true,
   "full_boolean_quotient_truth_lemma_complete": true,
-  "ordinary_models_from_nonzero_truth_complete": true
+  "ordinary_models_from_nonzero_truth_complete": true,
+  "standard_universe_internal_finiteness_complete": true,
+  "standard_universe_FIMAD_equivalence_complete": true,
+  "standard_universe_checked_ZFC_complete": true,
+  "consistency_under_host_cardinal_hypotheses_complete": true
 }

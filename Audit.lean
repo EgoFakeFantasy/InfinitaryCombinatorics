@@ -5,6 +5,15 @@ open Lean Elab Command in
 run_elab do
   let env ← getEnv
   let required : Array Name := #[
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Standard.finite_iff,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Standard.mad_family,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Standard.fi_family,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Standard.existsFIMAD_iff,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Standard.models_zfc,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Standard.satisfies_sentence_iff,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Standard.positive_consistency_of_CH,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Standard.negative_consistency_of_s_lt_ap,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Standard.positive_consistency_of_ap_eq_s_eq_continuum,
     `InfinitaryCombinatorics.Formalizations.FIMAD.ad_refinement_below_b,
     `InfinitaryCombinatorics.Formalizations.FIMAD.positive_subset_below_a,
     `InfinitaryCombinatorics.Formalizations.FIMAD.small_positive_extension,
