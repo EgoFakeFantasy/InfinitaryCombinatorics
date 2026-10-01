@@ -1,6 +1,9 @@
 import Formalizations.FIMAD.SetTheorySentence
 import FIMADModels.BooleanQuotient
 import FIMADModels.InfiniteSplitting
+import FIMADModels.ObjectTheory
+import FIMADModels.ForcingFinite
+import FIMADModels.IterationSchema
 import YesMetaZFC.Model.SetTheory.ProjectSemantics
 
 /-! The actual FI MAD sentence in the public typed kernel and Boolean name model.

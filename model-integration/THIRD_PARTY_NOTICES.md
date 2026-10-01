@@ -16,7 +16,7 @@ The source definitions use identical ZFC formulas with kernel closure proofs.
 
 `dependency-patches/kernel-checked-axioms.patch` adapts
 `YesMetaZFC/SetTheory/Axioms/Common.lean` at revision
-`a4903d2054085db0b454363a5fb15f1a3e1f9eab`, under the same Apache-2.0 license.
+`0e91389178caf34fc916ef40f76f84c3f3733714`, under the same Apache-2.0 license.
 It preserves the eight fixed axiom formulas and replaces only their closure
 certificates with kernel proofs, with increased elaboration limits. No mathematical
 axiom is added or removed. The preparation script verifies the exact patch and

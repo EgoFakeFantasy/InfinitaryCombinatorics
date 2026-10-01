@@ -14,4 +14,4 @@ name = "FIMADModels"
 [[require]]
 name = "YesMetaZFC"
 git = "https://github.com/lanxinge/YesMetaZFC.git"
-rev = "a4903d2054085db0b454363a5fb15f1a3e1f9eab"
+rev = "0e91389178caf34fc916ef40f76f84c3f3733714"

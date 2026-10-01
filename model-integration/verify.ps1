@@ -12,6 +12,8 @@ try {
     'FIMADModels/QuotientSplitting.lean',
     'FIMADModels/NativeZF.lean', 'FIMADModels/NativeFinite.lean',
     'FIMADModels/FiniteUnbounded.lean', 'FIMADModels/InfiniteSplitting.lean',
+    'FIMADModels/ObjectTheory.lean', 'FIMADModels/ForcingFinite.lean', 'FIMADModels/Iteration.lean',
+    'FIMADModels/IterationSchema.lean',
     'prepare-dependencies.ps1', 'dependency-patches/manifest.json',
     'dependency-patches/kernel-checked-axioms.patch',
     '.lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Axioms/Common.lean',
@@ -63,6 +65,11 @@ try {
     generic_boolean_zfc_model = 'proved'
     ordinary_quotient_truth_lemma = 'proved for all formulas and environments'
     ordinary_model_from_nonzero_value = 'constructed using Tarski ultrafilter extension and maximum principle'
+    object_ZF_finite_unbounded_equivalences = 'proved in original Project.Derives'
+    object_ZF_forcing_finite_bridge = 'proved in original Project.Derives'
+    object_ZFC_finite_support_CCC = 'proved in original Project.Derives'
+    object_ZFC_iteration_existence_schema = 'proved for every original successor BinarySchema with object specifications'
+    BMZ_specific_rule_and_preservation = 'not proved'
     specific_FIMAD_model_truth = 'not proved'
     formal_independence_complete = $false
     source_hashes = @($fmFiles | Sort-Object | ForEach-Object {

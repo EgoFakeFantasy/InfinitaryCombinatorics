@@ -1,8 +1,7 @@
 # Typed Boolean-model integration for FI MAD
 
 This separate package uses Lean 4.33.1 and the public YesMetaZFC revision
-`a4903d2054085db0b454363a5fb15f1a3e1f9eab` from the public
-`codex/set-theory-filter-core` branch (public `main` was still `51c348a` when checked). The main combinatorial package
+`0e91389178caf34fc916ef40f76f84c3f3733714` from public `main`. The main combinatorial package
 keeps Lean 4.30.0 and its existing dependency pins.
 
 The source files `InternalSemantics.lean`, `SetTheorySentence.lean`,
@@ -81,8 +80,8 @@ separator coefficients, and proves the shared certificate for the exact Dow
 order. Both packages compile the same contract and regular-open sources.
 The certificate is still an explicit premise of the generic typed adapter;
 its Dow instance is verified in the other package. A single-toolchain build
-of the final application and a connection to the original internal
-finite/infinite predicates are pending. Cross-version compiled artifacts are
+of the final Dow application is pending. The original internal finite/infinite
+predicates are connected in the modules below. Cross-version compiled artifacts are
 not imported or treated as proof certificates.
 
 `UnboundedTruth.lean` connects the exact shared unboundedness formula to its
@@ -122,6 +121,34 @@ hypotheses have not yet been established. Ambient Lean consistency
 consequences should not be confused with an internally proved ZFC consistency
 statement or a relative-consistency theorem over a specified weak metatheory.
 
+## Object-theory endpoints
+
+`ObjectTheory.lean` constructs closed pure-membership sentences and proves
+`derives_finite_iff_bounded` and `derives_infinite_iff_unbounded` in the original
+`Project.Derives ZF` interface. `ForcingFinite.lean` proves `derives_finite_bridge`:
+the manuscript's original finite-injection formula is equivalent to the new
+forcing library's finite-set formula. The Kuratowski graph coding is identical.
+
+`Iteration.lean` constructs the actual name-level successor CCC specification
+and proves `derives_system_ccc` in original ZFC. `IterationSchema.lean` proves
+`derives_iteration_exists` for every original `BinarySchema` successor rule.
+Its closed object sentence includes the rule's totality, uniqueness, stage
+links, finite support and actual forced-CCC hypotheses. Its conclusion constructs
+the whole internal recursive stage system and proves CCC at every stage.
+The rule's external finite parameter index stays external; all object parameters
+are universally quantified. No specification is introduced as an axiom.
+
+These endpoints use the original strong-completeness theorem for the countable
+pure-membership signature. The typed ZF/ZFC axioms and native model reduct are
+matched explicitly. Completeness needs universe-zero models for this signature;
+the native semantic lemmas hold at every universe and therefore cover that range.
+Lean's classical metatheory is part of proof certification; choice is not added
+to the object ZF theory. No external well-foundedness or standard omega is used.
+
+The specific internal Dow successor rule, BMZ bookkeeping and splitting
+preservation, and the internal CH construction of FI MAD existence are still
+unproved. The generic iteration schema is not a formal BMZ configuration or a
+complete independence proof.
 ## Reproduce
 
 From this directory, with elan installed:

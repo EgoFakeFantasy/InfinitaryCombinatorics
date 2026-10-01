@@ -5,6 +5,13 @@ open Lean Elab Command in
 run_elab do
   let env ← getEnv
   let required : Array Name := #[
+    `InfinitaryCombinatorics.Formalizations.FIMAD.ObjectTheory.derives_infinite_iff_unbounded,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.ObjectTheory.derives_finite_iff_bounded,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.ForcingFinite.derives_finite_bridge,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Iteration.derives_system_ccc,
+    `InfinitaryCombinatorics.Formalizations.FIMAD.Iteration.derives_iteration_exists,
+    `YesMetaZFC.Model.Forcing.Internal.row_system_ccc_l,
+    `YesMetaZFC.Model.Forcing.Internal.row_iteration_ccc_exists_l,
     `InfinitaryCombinatorics.Formalizations.FIMAD.TypedModels.BooleanQuotient.models_native_zf,
     `InfinitaryCombinatorics.Formalizations.FIMAD.Internal.pairInterpretation,
     `InfinitaryCombinatorics.Formalizations.FIMAD.Internal.injection_native_iff,
