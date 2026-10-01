@@ -1,12 +1,12 @@
 {
-  "checked_at_utc": "2026-10-01T04:09:17.6458279Z",
+  "checked_at_utc": "2026-10-01T04:40:44.4743412Z",
   "lean_toolchain": "leanprover/lean4:v4.33.1",
   "yesmetazfc_revision": "0e91389178caf34fc916ef40f76f84c3f3733714",
   "yesmetazfc_certificate_patch": "dependency-patches/manifest.json",
   "build": "passed",
   "axiom_audit": "passed",
-  "declarations": 791,
-  "theorem_constants": 604,
+  "declarations": 959,
+  "theorem_constants": 748,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
@@ -19,6 +19,9 @@
   "object_ZF_forcing_finite_bridge": "proved in original Project.Derives",
   "object_ZFC_finite_support_CCC": "proved in original Project.Derives",
   "object_ZFC_iteration_existence_schema": "proved for every original successor BinarySchema with object specifications",
+  "object_ZF_Dow_same_stem_merge": "proved for exact internal forbidden-stem conditions",
+  "object_ZFC_countable_finite_stems": "proved with internal finite-set enumeration and injection",
+  "object_ZFC_Dow_poset_CCC": "exact carrier, strengthening relation, maximum condition and CCC constructed",
   "BMZ_specific_rule_and_preservation": "not proved",
   "specific_FIMAD_model_truth": "not proved",
   "formal_independence_complete": false,
@@ -52,7 +55,7 @@
       "path": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Axioms/Common.lean"
     },
     {
-      "sha256": "6fba8bb637210844ca72f0a685670c32b03814deeec0c14c462a7581c1798658",
+      "sha256": "75b1b32950d39c5420af0e5764406316ea396664071631c7fb10e8c90d011cb0",
       "path": "Audit.lean"
     },
     {
@@ -64,7 +67,7 @@
       "path": "dependency-patches/manifest.json"
     },
     {
-      "sha256": "cd475cb436d0324463d23d46091b95b22e107793df04773e9fbea77972b4d883",
+      "sha256": "f4a183fa234ebf05e5b3980fd25b48edecafd556e52ab5df400e0138ed70660c",
       "path": "FIMADModels.lean"
     },
     {
@@ -74,6 +77,18 @@
     {
       "sha256": "47b1ba92d5c652ffa5881eaf829731f9c847975a0a353620b6092e35ff32ddb1",
       "path": "FIMADModels/CheckedBooleanZFC.lean"
+    },
+    {
+      "sha256": "b85a07a29b9956f18520ec93c1b3f2d5be2f2cca682657abd12b220349b1c740",
+      "path": "FIMADModels/DowInternal.lean"
+    },
+    {
+      "sha256": "3dafb3113abcc02bbcef04ac52adc37cb8ff998d573ec2b3029e7cabb4f11714",
+      "path": "FIMADModels/DowPoset.lean"
+    },
+    {
+      "sha256": "b0f163e0c85ca6d09943500271dec56f0752022e6309c3b34f19a0c24a29a524",
+      "path": "FIMADModels/FiniteStems.lean"
     },
     {
       "sha256": "15abb7529edac32f3e1acbd9a50dce8d3f49d36de2e39253f1d718b147fe845e",
@@ -108,7 +123,7 @@
       "path": "FIMADModels/NaturalNames.lean"
     },
     {
-      "sha256": "5a61bbecfdd6acc530104be622fdc8d761b6d60823c5226c5788381e30ffcbed",
+      "sha256": "fe014ed443d3278f6b21d3b3359b78b45a127465b960eb84b9b7e772f36f1c8c",
       "path": "FIMADModels/ObjectTheory.lean"
     },
     {
@@ -156,7 +171,7 @@
       "path": "prepare-dependencies.ps1"
     },
     {
-      "sha256": "91d6a08f62162c78da594c14644d2bfa4a44da72e9d636c6acc1809ef58e1679",
+      "sha256": "a21c01a774363b01d5af8ccbc20873baee2c5c754aac909a28d4b0688098a404",
       "path": "verify.ps1"
     }
   ]

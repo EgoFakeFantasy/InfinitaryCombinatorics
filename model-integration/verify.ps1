@@ -14,6 +14,7 @@ try {
     'FIMADModels/FiniteUnbounded.lean', 'FIMADModels/InfiniteSplitting.lean',
     'FIMADModels/ObjectTheory.lean', 'FIMADModels/ForcingFinite.lean', 'FIMADModels/Iteration.lean',
     'FIMADModels/IterationSchema.lean',
+    'FIMADModels/DowInternal.lean', 'FIMADModels/FiniteStems.lean', 'FIMADModels/DowPoset.lean',
     'prepare-dependencies.ps1', 'dependency-patches/manifest.json',
     'dependency-patches/kernel-checked-axioms.patch',
     '.lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Axioms/Common.lean',
@@ -69,6 +70,9 @@ try {
     object_ZF_forcing_finite_bridge = 'proved in original Project.Derives'
     object_ZFC_finite_support_CCC = 'proved in original Project.Derives'
     object_ZFC_iteration_existence_schema = 'proved for every original successor BinarySchema with object specifications'
+    object_ZF_Dow_same_stem_merge = 'proved for exact internal forbidden-stem conditions'
+    object_ZFC_countable_finite_stems = 'proved with internal finite-set enumeration and injection'
+    object_ZFC_Dow_poset_CCC = 'exact carrier, strengthening relation, maximum condition and CCC constructed'
     BMZ_specific_rule_and_preservation = 'not proved'
     specific_FIMAD_model_truth = 'not proved'
     formal_independence_complete = $false

@@ -112,8 +112,9 @@ certificate and top-valued unbounded input names; it does not compute a splittin
 cardinal or supply the BMZ iteration.
 
 The Boolean values of FI MAD existence have **not** been computed in a positive
-CH model or a negative BMZ model. The public generic name model does not provide
-the BMZ iteration, the required characteristic values, or Cohen preservation.
+CH model or a negative BMZ model. The public library provides generic finite-support
+iteration, but its BMZ-specific rule, characteristic values and splitting
+preservation are not yet instantiated here.
 The host combinatorial proofs also need internalization. Consequently this is
 not a complete formal independence proof. The newly constructed quotients
 must not be presented as verified CH or BMZ models: their required Boolean-value
@@ -144,6 +145,22 @@ matched explicitly. Completeness needs universe-zero models for this signature;
 the native semantic lemmas hold at every universe and therefore cover that range.
 Lean's classical metatheory is part of proof certification; choice is not added
 to the object ZF theory. No external well-foundedness or standard omega is used.
+
+`DowInternal.lean` proves `derives_same_stem_merge` in original ZF for actual
+forbidden-stem conditions. `FiniteStems.lean` proves
+`derives_countable_finite_stems` in original ZFC. The finite enumeration is
+obtained by internal finite-set insertion induction and actual sequence graphs;
+the injection numbers all internal finite subsets, not merely externally finite
+sets. This countability proof uses ZFC's internal fiber selection explicitly.
+
+`DowPoset.lean` proves `derives_dow_poset_ccc` in original ZFC. Its existential
+object sentence constructs the exact Kuratowski-coded carrier, the prescribed
+strengthening relation, a maximum condition, and the internal CCC proof. The
+forbidden coordinate may be any internal set of finite stems. The carrier and
+relation specifications are conclusions rather than supplied poset hypotheses.
+The CCC argument constructs an internal injection from every antichain into
+the finite-stem space using the same-stem merge. This does not yet supply the
+name-level successor rule or prove the splitting-preservation lemma.
 
 The specific internal Dow successor rule, BMZ bookkeeping and splitting
 preservation, and the internal CH construction of FI MAD existence are still

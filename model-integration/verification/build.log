@@ -1,2 +1,10 @@
 warning: YesMetaZFC: repository 'C:\Users\17857\Documents\Codex\2026-07-24\zhe\work\R0-paper-20260919\model-integration\.lake/packages\YesMetaZFC' has local changes
-Build completed successfully (476 jobs).
+✔ [291/296] Built FIMADModels.ObjectTheory (5.4s)
+✔ [295/333] Built FIMADModels.ForcingFinite (4.6s)
+✔ [462/475] Built FIMADModels.DowInternal (5.1s)
+✔ [479/484] Built FIMADModels.FiniteStems (4.9s)
+✔ [480/484] Built FIMADModels.Iteration (5.8s)
+✔ [481/484] Built FIMADModels.DowPoset (5.7s)
+✔ [482/484] Built FIMADModels.IterationSchema (5.0s)
+✔ [483/484] Built FIMADModels (11s)
+Build completed successfully (484 jobs).

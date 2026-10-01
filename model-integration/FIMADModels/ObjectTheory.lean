@@ -138,8 +138,16 @@ theorem native_zfc_of_typed {M : Logic.FirstOrder.Structure.{0,0,0,u} ℒ}
     exact hM _ ⟨t, ZFC.Axiom.zf ht, rfl⟩
   exact (FirstOrderSemantics.models_iff (native_extensional_of_zf hZF) SetTheory.ZFC).mp hM
 
-/-- Reusable transfer with the exact universe of the original completeness theorem.
-Only native models of ZFC in universe zero are needed for this small signature. -/
+/-- Original ZF transfer at the exact model universe required by completeness. -/
+theorem derives_of_native_zf_models (s : Project.Sentence)
+    (h : ∀ N : SetTheory.Structure.{0}, N.Models SetTheory.ZF → N.SatisfiesSentence s) :
+    Project.Derives SetTheory.ZF s := by
+  apply Completeness.strong_completeness membershipSchedule
+  intro M hM
+  have hN := native_zf_of_typed hM
+  exact (FirstOrderSemantics.sentence_correct hN.1 s).mpr (h _ hN)
+
+/-- Original ZFC transfer for the same countable pure-membership signature. -/
 theorem derives_of_native_zfc_models (s : Project.Sentence)
     (h : ∀ N : SetTheory.Structure.{0}, N.Models SetTheory.ZFC → N.SatisfiesSentence s) :
     Project.Derives SetTheory.ZFC s := by

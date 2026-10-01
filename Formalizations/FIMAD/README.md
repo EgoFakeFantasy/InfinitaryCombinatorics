@@ -117,6 +117,15 @@ Pinned dependencies: Lean 4.30.0; mathlib `c5ea00351c28e24afc9f0f84379aa41082b11
 
 The isolated [typed model integration](../../model-integration/README.md) pins Lean 4.33.1 and YesMetaZFC `0e91389178caf34fc916ef40f76f84c3f3733714`. It uses the same `InternalSemantics`, `SetTheorySentence`, `CheckedZFC`, and `PosetRegular` sources and has its own `verify.ps1` and manifest. Its `PosetCompletion` and `NaturalNames` modules construct the YesMetaZFC algebra, prove dense decisions for actual natural-number graph names, and realize any Boolean membership coefficients as a name for a subset of omega. It does not change the main package pins. The Dow combinatorics and the typed graph-name application are still compiled in separate packages; there is not yet a single checked theorem applying the former to arbitrary internal sequence names in the latter. Both audits permit only the same three foundational axioms.
 
+The isolated package now also proves original-kernel object-theory endpoints
+for finite/infinite boundedness, the exact forcing finiteness bridge, generic
+finite-support CCC preservation and iteration existence. Its `DowInternal`,
+`FiniteStems`, and `DowPoset` modules internalize the exact forbidden-stem
+conditions. They construct the actual carrier, strengthening relation and
+maximum condition and prove the CCC in original `Project.Derives ZFC`.
+These results do not yet instantiate the name-level Dow successor rule, prove
+BMZ splitting preservation or bookkeeping, or construct internal FI MAD from CH.
+
 ## Sources and provenance
 
 - Corral and Rodrigues, *Fin-intersecting MAD families*, Filomat 38(7), 2024, 2563-2578, DOI: 10.2298/FIL2407563C.
