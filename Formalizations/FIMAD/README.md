@@ -41,7 +41,7 @@ Here ap and b are actual least cardinals of the respective witness classes, not 
 | Simultaneous splitting and s <= s_omega | `exists_simultaneous_splitter`, `splittingNumber_le_omegaSplittingNumber` | Actual least witness cardinal; existence and the continuum upper bound are proved |
 | Consequences of the BMZ configuration | `consequences_of_bmz_configuration` | Derives the paper's characteristic values and no FI MAD from the stated configuration; does not force the configuration |
 | The known a < s sufficient condition | `exists_fi_mad_of_a_lt_s` | Reuses a minimum MAD family and the small-family FI theorem |
-| BMZ/Dow relative consistency | No Lean declaration | Single-step poset and decision-relation preservation now checked; full forcing-name semantics and iteration not yet formalized |
+| BMZ/Dow relative consistency | No complete Lean endpoint | Internal single-step name tests and conditional forced splitting checked; localization, extension-family coding, iteration and native FI transfer remain |
 | Dow's actual single-step poset | `DowForcing.Condition`, `sigma_centered`, `antichain_countable` | Definition 2, forbidden finite stems; not the simpler Solovay forcing |
 | Dense requirements and weak separation | `DowForcing.hit_dense`, `avoid_dense`, `unionStems_weaklySeparates` | Dense sets are constructed; a directed set meeting them is an explicit input |
 | Dense-stem closure | `DowForcing.reach_all` | The well-founded closure argument underlying Dow's Lemma 1 |
@@ -115,7 +115,7 @@ On Windows, `./verify.ps1` runs the complete source scan, umbrella coverage chec
 
 Pinned dependencies: Lean 4.30.0; mathlib `c5ea00351c28e24afc9f0f84379aa41082b1188f`; YesMetaZFC `bae4fcc31b07b505986b11c6c2f13965ae6cd46d`. YesMetaZFC is a Git dependency; uncommitted files in a developer's separate checkout are not used.
 
-The isolated [typed model integration](../../model-integration/README.md) pins Lean 4.33.1 and YesMetaZFC `0e91389178caf34fc916ef40f76f84c3f3733714`. It uses the same `InternalSemantics`, `SetTheorySentence`, `CheckedZFC`, and `PosetRegular` sources and has its own `verify.ps1` and manifest. Its `PosetCompletion` and `NaturalNames` modules construct the YesMetaZFC algebra, prove dense decisions for actual natural-number graph names, and realize any Boolean membership coefficients as a name for a subset of omega. It does not change the main package pins. The Dow combinatorics and the typed graph-name application are still compiled in separate packages; there is not yet a single checked theorem applying the former to arbitrary internal sequence names in the latter. Both audits permit only the same three foundational axioms.
+The isolated [typed model integration](../../model-integration/README.md) pins Lean 4.33.1 and YesMetaZFC `0e91389178caf34fc916ef40f76f84c3f3733714`. It uses the same `InternalSemantics`, `SetTheorySentence`, `CheckedZFC`, and `PosetRegular` sources and has its own `verify.ps1` and manifest. Its `PosetCompletion` and `NaturalNames` modules construct the YesMetaZFC algebra, prove dense decisions for actual natural-number graph names, and realize any Boolean membership coefficients as a name for a subset of omega. It does not change the main package pins. The host Dow combinatorics and typed graph-name adapter remain separate, but the isolated package now also has its own fully internal Dow name application in one toolchain. It constructs tests for internally countable sets of globally forced unbounded names and proves their conditional forced splitting. It does not yet code every extension countable family or prove the full iteration preservation. Both audits permit only the same three foundational axioms.
 
 The isolated package now also proves original-kernel object-theory endpoints
 for finite/infinite boundedness, the exact forcing finiteness bridge, generic
@@ -123,8 +123,8 @@ finite-support CCC preservation and iteration existence. Its `DowInternal`,
 `FiniteStems`, and `DowPoset` modules internalize the exact forbidden-stem
 conditions. They construct the actual carrier, strengthening relation and
 maximum condition and prove the CCC in original `Project.Derives ZFC`.
-These results do not yet instantiate the name-level Dow successor rule, prove
-BMZ splitting preservation or bookkeeping, or construct internal FI MAD from CH.
+These results do not yet instantiate the BMZ successor rule, prove preservation
+at iteration limits or bookkeeping, or construct internal FI MAD from CH.
 
 The isolated package also proves original ZF dense hitting, finite avoidance,
 directed-set separation, finite same-stem amalgamation and the internal least
@@ -138,8 +138,29 @@ theorem. See the isolated package README for exact assumptions and endpoints.
 `DowTestExistence` further constructs internal countable possible-value tests
 for every finite stem from a monotone internal relation deciding natural values
 on a dense set, with an original `Project.Derives ZFC` endpoint. This does not
-yet instantiate the relation using arbitrary forcing names or prove the full
-countable splitting preservation theorem.
+claim the full countable splitting preservation theorem by itself. The newer
+`DowNameTests` through `DowOmegaSplitting` modules do instantiate relations from
+actual forcing names in arbitrary native ZFC models. They prove original-kernel
+countable name tests, conditional forced splitting and a common splitter supplied
+by an internal omega-splitting family. Their exact scope is globally unbounded
+names in an internally countable ground-model set. These earlier theorems are
+now extended by the modules described below.
+`DowInfiniteNames` connects the manuscript's original forced infinitude to
+the exact unbounded-name formula, using the public canonical omega-name
+theorem. The countable tests can therefore be applied to actual names globally
+forced to be infinite subsets of the model's omega.
+
+`NameNormalization` and `DowConditionalTheorem` handle locally infinite input
+names in the original ZFC kernel. `CountableRealEnumeration` constructs an
+actual internal covering function in original ZF, and `ExtensionFamilyNames`
+codes every internal countable infinite-real family in a generic quotient by
+an internal countable ground set of names. `DowExtensionPreservation` proves
+actual single-step omega-splitting preservation for all extension families;
+`DowPreservationTheorem.derives_dow_omega_splitting_preservation` places its genuine
+forcing assertion in original `Project.Derives ZFC`, using public reflection
+that preserves the same ZFC background and universe. Full BMZ successor policy,
+iteration limits, bookkeeping, native CH/FI construction and the original-kernel
+independence theorem are still unfinished.
 
 ## Sources and provenance
 

@@ -1,13 +1,13 @@
 {
-  "checked_at_utc": "2026-10-01T06:49:46.0077459Z",
+  "checked_at_utc": "2026-10-01T09:03:03.9674613Z",
   "lean_toolchain": "leanprover/lean4:v4.33.1",
   "yesmetazfc_revision": "0e91389178caf34fc916ef40f76f84c3f3733714",
   "yesmetazfc_certificate_patch": "dependency-patches/manifest.json",
   "build": "passed",
   "axiom_audit": "passed",
   "module_coverage": "passed",
-  "declarations": 1477,
-  "theorem_constants": 1185,
+  "declarations": 2079,
+  "theorem_constants": 1696,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
@@ -30,205 +30,313 @@
   "object_ZF_Dow_dense_stem_closure": "actual least closed set constructed and all finite stems reached",
   "object_ZFC_Dow_finite_possible_values": "internal finite elimination and finite-tail argument proved",
   "object_ZFC_Dow_countable_possible_value_tests": "actual internal countable tests constructed for each finite stem from a monotone dense natural-value decision relation",
+  "object_ZFC_Dow_tallness_tests": "one internal countable family controls every stem and natural bound for monotone unbounded decision relations",
+  "object_ZFC_Dow_actual_name_tests": "actual membership decision graphs derived from the translated unbounded-name formula",
+  "object_ZFC_Dow_countable_name_tests": "one internal countable test family for every internally countable family of globally forced unbounded names",
+  "object_ZF_Dow_forced_splitting": "original splitting formula forced from actual test-family splitting; proved through all generic quotients and public reflection criterion",
+  "object_ZFC_Dow_countable_name_preservation": "an internal omega-splitting family supplies one ground splitter whose canonical name is forced to split every input real name",
+  "original_infinite_name_input_bridge": "native and forced original infinitude imply the exact unbounded-name formula; original ZF derivation and actual countable-name application proved",
+  "object_ZFC_infinite_name_normalization": "actual global infinite real name, forced equal to the original wherever that original is forced an infinite real; original ZFC derivation",
+  "object_ZFC_conditional_countable_name_preservation": "arbitrary internally countable ground name sets, with original infinitude required only at the conclusion condition",
+  "object_ZF_countable_real_enumeration": "internal omega-function covering every countable family of infinite reals, including empty and finite cases",
+  "arbitrary_extension_countable_infinite_real_family_coding": "proved using quotient-internal enumeration, original maximum principle, collection and canonical indices",
+  "object_ZFC_Dow_full_single_step_omega_splitting_preservation": "original ZFC derivation of genuine forcing assertion, covering every countable extension family; no abstract preservation certificate",
+  "arbitrary_extension_countable_family_coding_and_localization": "proved for the infinite-real families needed by omega-splitting",
   "BMZ_specific_rule_and_preservation": "not proved",
   "specific_FIMAD_model_truth": "not proved",
   "formal_independence_complete": false,
   "source_hashes": [
     {
-      "sha256": "d9f8e1dcc88e67d1ee9b9bd6323c7dc2f672600847bf60150e51937ff775d2ad",
-      "path": "../Formalizations/FIMAD/BooleanEnumeration.lean"
+      "path": "../Formalizations/FIMAD/BooleanEnumeration.lean",
+      "sha256": "d9f8e1dcc88e67d1ee9b9bd6323c7dc2f672600847bf60150e51937ff775d2ad"
     },
     {
-      "sha256": "f43823205555d4d6ae1974d5eb56511dbb620ce4a771a7916afe1cda9a9a6e78",
-      "path": "../Formalizations/FIMAD/CheckedZFC.lean"
+      "path": "../Formalizations/FIMAD/CheckedZFC.lean",
+      "sha256": "f43823205555d4d6ae1974d5eb56511dbb620ce4a771a7916afe1cda9a9a6e78"
     },
     {
-      "sha256": "158db099afef4175ecb1009fc006d65d80dfec59eed4b852800c71efcf18d90d",
-      "path": "../Formalizations/FIMAD/InternalSemantics.lean"
+      "path": "../Formalizations/FIMAD/InternalSemantics.lean",
+      "sha256": "158db099afef4175ecb1009fc006d65d80dfec59eed4b852800c71efcf18d90d"
     },
     {
-      "sha256": "e021167318b2d904bd83bc59f9c3b6fa7092781cc9ba8d469363a31befa75c28",
-      "path": "../Formalizations/FIMAD/PosetRegular.lean"
+      "path": "../Formalizations/FIMAD/PosetRegular.lean",
+      "sha256": "e021167318b2d904bd83bc59f9c3b6fa7092781cc9ba8d469363a31befa75c28"
     },
     {
-      "sha256": "68ec35055932b1c27cf7ec83196935197148237b14e9ac1baef19369c7d2d018",
-      "path": "../Formalizations/FIMAD/SetTheorySentence.lean"
+      "path": "../Formalizations/FIMAD/SetTheorySentence.lean",
+      "sha256": "68ec35055932b1c27cf7ec83196935197148237b14e9ac1baef19369c7d2d018"
     },
     {
-      "sha256": "b5e8dfa361dc058c36fbffbbf8531ccbdf435c2c24fd995178341a8f81854024",
-      "path": "../Formalizations/FIMAD/UnboundedSyntax.lean"
+      "path": "../Formalizations/FIMAD/UnboundedSyntax.lean",
+      "sha256": "b5e8dfa361dc058c36fbffbbf8531ccbdf435c2c24fd995178341a8f81854024"
     },
     {
-      "sha256": "cff69668c2602ffba6230e8d61c48eaa4a7018240d869ba30c77642466bce43b",
-      "path": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Axioms/Common.lean"
+      "path": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Axioms/Common.lean",
+      "sha256": "cff69668c2602ffba6230e8d61c48eaa4a7018240d869ba30c77642466bce43b"
     },
     {
-      "sha256": "06d0b98c28f30219eb78844c9dc39563644d9308bea62143f02b875296ab2772",
-      "path": "Audit.lean"
+      "path": "Audit.lean",
+      "sha256": "9b273d0385efcc51f7059a2dee19d59c35915adf943750e10135bfcdf5faa77a"
     },
     {
-      "sha256": "03ac4c1ae2652e04164be228c043068895da7a410f03a8a25f45ae1aea29479f",
-      "path": "dependency-patches/kernel-checked-axioms.patch"
+      "path": "dependency-patches/kernel-checked-axioms.patch",
+      "sha256": "03ac4c1ae2652e04164be228c043068895da7a410f03a8a25f45ae1aea29479f"
     },
     {
-      "sha256": "12ef93bec7e53cb4e6880e4e9acc6f29990996d242fc24c83d733e7ab03da9f9",
-      "path": "dependency-patches/manifest.json"
+      "path": "dependency-patches/manifest.json",
+      "sha256": "12ef93bec7e53cb4e6880e4e9acc6f29990996d242fc24c83d733e7ab03da9f9"
     },
     {
-      "sha256": "791d4da655baaa2914ca5c3ee4600243eb0d600342fc11c51ce87739e58afe05",
-      "path": "FIMADModels.lean"
+      "path": "FIMADModels.lean",
+      "sha256": "31f4064a5ebf5c5734b25ab0020e1a17a8a5026be7ba2e36b9102377287637c0"
     },
     {
-      "sha256": "83ee10bed2b33e9be7ad69bbaf34e7e6f86943cef82a2481d281869758f4af4b",
-      "path": "FIMADModels/BooleanQuotient.lean"
+      "path": "FIMADModels/BooleanQuotient.lean",
+      "sha256": "83ee10bed2b33e9be7ad69bbaf34e7e6f86943cef82a2481d281869758f4af4b"
     },
     {
-      "sha256": "47b1ba92d5c652ffa5881eaf829731f9c847975a0a353620b6092e35ff32ddb1",
-      "path": "FIMADModels/CheckedBooleanZFC.lean"
+      "path": "FIMADModels/CheckDecisions.lean",
+      "sha256": "2cc3c07cee0f162b7c2d9231f6843846a6e8d495fc40fbe2e6aa49d309909333"
     },
     {
-      "sha256": "2085e47aef34c8519cd888d7aea8f62a1b3aa4dc968d6a6831bd15e091d98f89",
-      "path": "FIMADModels/DowAmalgamation.lean"
+      "path": "FIMADModels/CheckedBooleanZFC.lean",
+      "sha256": "47b1ba92d5c652ffa5881eaf829731f9c847975a0a353620b6092e35ff32ddb1"
     },
     {
-      "sha256": "09bfcf919d3d42430253077b950b84131e089604d783e4cd4e539d77b0675ad5",
-      "path": "FIMADModels/DowAvoid.lean"
+      "path": "FIMADModels/CountableRealEnumeration.lean",
+      "sha256": "e2227ff12a327697b66529588e3439326fe118b67aa2757348bb57f485fd44a1"
     },
     {
-      "sha256": "df52fc745eef04535a626630f1f30b5d56593d418def2a08918b9418cd95d904",
-      "path": "FIMADModels/DowDense.lean"
+      "path": "FIMADModels/DowAmalgamation.lean",
+      "sha256": "2085e47aef34c8519cd888d7aea8f62a1b3aa4dc968d6a6831bd15e091d98f89"
     },
     {
-      "sha256": "80fc60221e0c964cac2ef2524868e6dbbeae04fb0729ddaf20d56683aa90471b",
-      "path": "FIMADModels/DowExtension.lean"
+      "path": "FIMADModels/DowAvoid.lean",
+      "sha256": "09bfcf919d3d42430253077b950b84131e089604d783e4cd4e539d77b0675ad5"
     },
     {
-      "sha256": "e6a569a21e6c62e334c7b692d53604a6e87f62a4766a399d0b983f9501184184",
-      "path": "FIMADModels/DowFiniteTail.lean"
+      "path": "FIMADModels/DowConditionalPreservation.lean",
+      "sha256": "80f07cb24543dd3df90b6f1610bdf139947f5f40597dd74aceed4e09d79b50f5"
     },
     {
-      "sha256": "02afd5064671ba3fc20ca92bdeb219a2f2a613c74cbca43ba13033375b3a09b7",
-      "path": "FIMADModels/DowGeneric.lean"
+      "path": "FIMADModels/DowConditionalTheorem.lean",
+      "sha256": "0fa722dadf0100b108c010dec79e8a997b96c721aa146d90f8fa8246baac8f23"
     },
     {
-      "sha256": "b85a07a29b9956f18520ec93c1b3f2d5be2f2cca682657abd12b220349b1c740",
-      "path": "FIMADModels/DowInternal.lean"
+      "path": "FIMADModels/DowDense.lean",
+      "sha256": "df52fc745eef04535a626630f1f30b5d56593d418def2a08918b9418cd95d904"
     },
     {
-      "sha256": "3dafb3113abcc02bbcef04ac52adc37cb8ff998d573ec2b3029e7cabb4f11714",
-      "path": "FIMADModels/DowPoset.lean"
+      "path": "FIMADModels/DowExtension.lean",
+      "sha256": "80fc60221e0c964cac2ef2524868e6dbbeae04fb0729ddaf20d56683aa90471b"
     },
     {
-      "sha256": "c6242e4e4ab7f9f5b73d106ecb8185546f9817d84bf735028504404f919ab031",
-      "path": "FIMADModels/DowPossible.lean"
+      "path": "FIMADModels/DowExtensionPreservation.lean",
+      "sha256": "756767aede0b9ebb73ee156eba3b230ac78f442f3ddf87bb8004e6c566fddddb"
     },
     {
-      "sha256": "19f184f6fd2f39c7b06fcf0d8b432b66af09bf6b8c0a068046829436dc9a9858",
-      "path": "FIMADModels/DowReach.lean"
+      "path": "FIMADModels/DowFiniteTail.lean",
+      "sha256": "e6a569a21e6c62e334c7b692d53604a6e87f62a4766a399d0b983f9501184184"
     },
     {
-      "sha256": "d2aec134596460ffb3dceb2bd80a2df51545962433d573be41903279a8730de5",
-      "path": "FIMADModels/DowSeparator.lean"
+      "path": "FIMADModels/DowGeneric.lean",
+      "sha256": "02afd5064671ba3fc20ca92bdeb219a2f2a613c74cbca43ba13033375b3a09b7"
     },
     {
-      "sha256": "c8a2994c0dea941558df61c51fcbbe73a54f3480090e8cb4ee27a6a6f3588ece",
-      "path": "FIMADModels/DowTestAssembly.lean"
+      "path": "FIMADModels/DowInfiniteNames.lean",
+      "sha256": "ce1c9ad2b0a0c217abeda5379f07fadb4d5135192875d49424e3ec10403b39b9"
     },
     {
-      "sha256": "7127141f833c7759461312b976478ef55c8e2b93fc90f8c885be9f5a7fe93968",
-      "path": "FIMADModels/DowTestExistence.lean"
+      "path": "FIMADModels/DowInternal.lean",
+      "sha256": "b85a07a29b9956f18520ec93c1b3f2d5be2f2cca682657abd12b220349b1c740"
     },
     {
-      "sha256": "a4b4bfef352e5192871876cc88e506f620ec485ccbbbba8d2e2e5bdc22f17df3",
-      "path": "FIMADModels/DowTests.lean"
+      "path": "FIMADModels/DowNameExtension.lean",
+      "sha256": "013173a549ea17135f02d2730179dcddb88dedb26a56f010bd0d2f75d0d32d72"
     },
     {
-      "sha256": "b0f163e0c85ca6d09943500271dec56f0752022e6309c3b34f19a0c24a29a524",
-      "path": "FIMADModels/FiniteStems.lean"
+      "path": "FIMADModels/DowNameFamily.lean",
+      "sha256": "47e03f5c4252228c7c667ce7eea24e9c86deaad2715c3cdfe0a26f0ab2cd4709"
     },
     {
-      "sha256": "15abb7529edac32f3e1acbd9a50dce8d3f49d36de2e39253f1d718b147fe845e",
-      "path": "FIMADModels/FiniteUnbounded.lean"
+      "path": "FIMADModels/DowNameFamilyTheorem.lean",
+      "sha256": "e2e07fad598890914cfd04c443cead65ac4b519916b36a0a4c6f722d7b2f699d"
     },
     {
-      "sha256": "e78e5eb3665cfecad894152e3af4a1c814faedd8e25a0a6da1fd58fc41dfb309",
-      "path": "FIMADModels/ForcingFinite.lean"
+      "path": "FIMADModels/DowNameSplitting.lean",
+      "sha256": "600dd1284497516d8c4a20692dd7bad3d9a8646b26e7c25e4035dcf40b9e579e"
     },
     {
-      "sha256": "ac004dcf858b9bad596e4094136762f11fd2f2a55a8036b59ea71efad59d6734",
-      "path": "FIMADModels/InfiniteSplitting.lean"
+      "path": "FIMADModels/DowNameTests.lean",
+      "sha256": "227cfec8d8a6c8441dde001384b28b04f7d064cecc87996914537087c306e8bb"
     },
     {
-      "sha256": "622afb5045fd1a20e9ae14ade1b687a72e9a9f6987690a3b255d5a5c0c0f60fa",
-      "path": "FIMADModels/Iteration.lean"
+      "path": "FIMADModels/DowNameTheorem.lean",
+      "sha256": "ac620c61e72f95098126847b206573b5d5a81d5cb74d3c0c48012d03a1f8c270"
     },
     {
-      "sha256": "fb8b30f5b1de2b28ac181bca034b4cfbb5d8d20b3838dd31b39eee11dbf85c07",
-      "path": "FIMADModels/IterationSchema.lean"
+      "path": "FIMADModels/DowOmegaSplitting.lean",
+      "sha256": "21d38aee1f151080bc8f314edaf39905989402dba3a06605b6fe09ca131815a0"
     },
     {
-      "sha256": "154bba2bf2b584024b0eec8d1072f8a23967e7e10a9c58de70cfe0962fcb8b79",
-      "path": "FIMADModels/NativeFinite.lean"
+      "path": "FIMADModels/DowPoset.lean",
+      "sha256": "3dafb3113abcc02bbcef04ac52adc37cb8ff998d573ec2b3029e7cabb4f11714"
     },
     {
-      "sha256": "11d36a5d02aa5284ff7972b4cfe0be61a259308ff0824cdc6011e0fc1a7756a2",
-      "path": "FIMADModels/NativeZF.lean"
+      "path": "FIMADModels/DowPossible.lean",
+      "sha256": "c6242e4e4ab7f9f5b73d106ecb8185546f9817d84bf735028504404f919ab031"
     },
     {
-      "sha256": "b653b2234a3892ec73803f976611b9dcc546abeaa24fb876e62e5deb30cd74b2",
-      "path": "FIMADModels/NaturalNames.lean"
+      "path": "FIMADModels/DowPreservationTheorem.lean",
+      "sha256": "5ceb1587b1c94f0dcd186384441469baa6d995feb2077ee9653b88496f48d035"
     },
     {
-      "sha256": "fe014ed443d3278f6b21d3b3359b78b45a127465b960eb84b9b7e772f36f1c8c",
-      "path": "FIMADModels/ObjectTheory.lean"
+      "path": "FIMADModels/DowReach.lean",
+      "sha256": "19f184f6fd2f39c7b06fcf0d8b432b66af09bf6b8c0a068046829436dc9a9858"
     },
     {
-      "sha256": "f8bedd93891a7d86096d1cea51afced358d756063c20f2227503b6e70879a017",
-      "path": "FIMADModels/OmegaMinimal.lean"
+      "path": "FIMADModels/DowSeparator.lean",
+      "sha256": "d2aec134596460ffb3dceb2bd80a2df51545962433d573be41903279a8730de5"
     },
     {
-      "sha256": "0bc17263df82171052fdeeeece48b327f063692158a5123fd158716c876a7211",
-      "path": "FIMADModels/PosetCompletion.lean"
+      "path": "FIMADModels/DowSplittingForcing.lean",
+      "sha256": "168fb75f3fcb03ef3f7278c347f19ace7f0cd518f13fd14f062b51cdf2e57b6c"
     },
     {
-      "sha256": "9d14ea00f41af6513514c8288d464066cd297db8891e5186c4f554f4877e0408",
-      "path": "FIMADModels/QuotientSplitting.lean"
+      "path": "FIMADModels/DowSplittingSyntax.lean",
+      "sha256": "fea6f779d26c238f113557403e48f125ad1b2fcc6a764c725a883805730812f6"
     },
     {
-      "sha256": "042cc73d4f2869c0a64b52f458d2b7c62fb00cd49972719787144c9fde1c1507",
-      "path": "FIMADModels/SplittingNames.lean"
+      "path": "FIMADModels/DowTallness.lean",
+      "sha256": "f5665281e18e7d0d6badce6b7a3f02639eb5e325af88f3fc7ab07c30a22d3a62"
     },
     {
-      "sha256": "ff638d90ead3d8a4975078da05e66754ec712ca665f8d564742040f09a062dbe",
-      "path": "FIMADModels/UltrafilterTruth.lean"
+      "path": "FIMADModels/DowTallTests.lean",
+      "sha256": "5cbb6c968a949e1b6c0edfafb55dd6a92541afa57b4bcc9670b223d2dd27bd69"
     },
     {
-      "sha256": "0c3e88c3622b8de4bb76d88e3320c5cf083d5def7b42f8fdcaa083b320c457ce",
-      "path": "FIMADModels/UnboundedNames.lean"
+      "path": "FIMADModels/DowTestAssembly.lean",
+      "sha256": "c8a2994c0dea941558df61c51fcbbe73a54f3480090e8cb4ee27a6a6f3588ece"
     },
     {
-      "sha256": "6bccd3623624d108470700b702049f12056051f3577ce48fcd8e1b9d33ceebf5",
-      "path": "FIMADModels/UnboundedTruth.lean"
+      "path": "FIMADModels/DowTestExistence.lean",
+      "sha256": "7127141f833c7759461312b976478ef55c8e2b93fc90f8c885be9f5a7fe93968"
     },
     {
-      "sha256": "b291670004b057a5d2d68ab0c07bcc2dc07eb0e8697f23edb810658608677c25",
-      "path": "lake-manifest.json"
+      "path": "FIMADModels/DowTests.lean",
+      "sha256": "a4b4bfef352e5192871876cc88e506f620ec485ccbbbba8d2e2e5bdc22f17df3"
     },
     {
-      "sha256": "fa3d57f39e8b2beb1e8363c088235512914eac533bd6d7d3c312fbdc2d810b80",
-      "path": "lakefile.toml"
+      "path": "FIMADModels/DowValueTails.lean",
+      "sha256": "47e7e005d644ff3978bdeed10149976bb1d85a98f28bf51e359c02f76a35f391"
     },
     {
-      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
-      "path": "lean-toolchain"
+      "path": "FIMADModels/ExtensionFamilyNames.lean",
+      "sha256": "abdf08617766b8602397d707d917e502e4e0c9e6981b205a7629b0e1bd76afdc"
     },
     {
-      "sha256": "42e85247cd04059928e94d543c939d5b2b6ce22139400d7c5daada7b07710596",
-      "path": "prepare-dependencies.ps1"
+      "path": "FIMADModels/FiniteStems.lean",
+      "sha256": "b0f163e0c85ca6d09943500271dec56f0752022e6309c3b34f19a0c24a29a524"
     },
     {
-      "sha256": "ec05994bf049ba3fd1a247eae4277a7e4216865edb0d36e9a22b3cf8d51bdce4",
-      "path": "verify.ps1"
+      "path": "FIMADModels/FiniteUnbounded.lean",
+      "sha256": "15abb7529edac32f3e1acbd9a50dce8d3f49d36de2e39253f1d718b147fe845e"
+    },
+    {
+      "path": "FIMADModels/ForcingFinite.lean",
+      "sha256": "e78e5eb3665cfecad894152e3af4a1c814faedd8e25a0a6da1fd58fc41dfb309"
+    },
+    {
+      "path": "FIMADModels/FunctionCanonicalValues.lean",
+      "sha256": "072211d55483ab6cb33c624659b13597dfbae99c1ec9244c244b7c7d1bb8796b"
+    },
+    {
+      "path": "FIMADModels/FunctionValueNames.lean",
+      "sha256": "cb5af95bab06fb0f3311b4a40b8d99065090704ceae2f1740125b49991bd4175"
+    },
+    {
+      "path": "FIMADModels/InfiniteSplitting.lean",
+      "sha256": "ac004dcf858b9bad596e4094136762f11fd2f2a55a8036b59ea71efad59d6734"
+    },
+    {
+      "path": "FIMADModels/Iteration.lean",
+      "sha256": "622afb5045fd1a20e9ae14ade1b687a72e9a9f6987690a3b255d5a5c0c0f60fa"
+    },
+    {
+      "path": "FIMADModels/IterationSchema.lean",
+      "sha256": "fb8b30f5b1de2b28ac181bca034b4cfbb5d8d20b3838dd31b39eee11dbf85c07"
+    },
+    {
+      "path": "FIMADModels/NameNormalization.lean",
+      "sha256": "0ccf879bd4aeae68b9307ce17dc0906f0bd83de59f526b7e257da226e0add667"
+    },
+    {
+      "path": "FIMADModels/NameNormalizationFamily.lean",
+      "sha256": "00a66a84c45c2c0e6dc7ee96d8160f5b81b15d71d0a6f720da00363d3bc20443"
+    },
+    {
+      "path": "FIMADModels/NativeFinite.lean",
+      "sha256": "154bba2bf2b584024b0eec8d1072f8a23967e7e10a9c58de70cfe0962fcb8b79"
+    },
+    {
+      "path": "FIMADModels/NativeZF.lean",
+      "sha256": "11d36a5d02aa5284ff7972b4cfe0be61a259308ff0824cdc6011e0fc1a7756a2"
+    },
+    {
+      "path": "FIMADModels/NaturalNames.lean",
+      "sha256": "b653b2234a3892ec73803f976611b9dcc546abeaa24fb876e62e5deb30cd74b2"
+    },
+    {
+      "path": "FIMADModels/ObjectTheory.lean",
+      "sha256": "fe014ed443d3278f6b21d3b3359b78b45a127465b960eb84b9b7e772f36f1c8c"
+    },
+    {
+      "path": "FIMADModels/OmegaMinimal.lean",
+      "sha256": "f8bedd93891a7d86096d1cea51afced358d756063c20f2227503b6e70879a017"
+    },
+    {
+      "path": "FIMADModels/PosetCompletion.lean",
+      "sha256": "0bc17263df82171052fdeeeece48b327f063692158a5123fd158716c876a7211"
+    },
+    {
+      "path": "FIMADModels/QuotientSplitting.lean",
+      "sha256": "9d14ea00f41af6513514c8288d464066cd297db8891e5186c4f554f4877e0408"
+    },
+    {
+      "path": "FIMADModels/SplittingNames.lean",
+      "sha256": "042cc73d4f2869c0a64b52f458d2b7c62fb00cd49972719787144c9fde1c1507"
+    },
+    {
+      "path": "FIMADModels/UltrafilterTruth.lean",
+      "sha256": "ff638d90ead3d8a4975078da05e66754ec712ca665f8d564742040f09a062dbe"
+    },
+    {
+      "path": "FIMADModels/UnboundedNames.lean",
+      "sha256": "0c3e88c3622b8de4bb76d88e3320c5cf083d5def7b42f8fdcaa083b320c457ce"
+    },
+    {
+      "path": "FIMADModels/UnboundedTruth.lean",
+      "sha256": "6bccd3623624d108470700b702049f12056051f3577ce48fcd8e1b9d33ceebf5"
+    },
+    {
+      "path": "lake-manifest.json",
+      "sha256": "b291670004b057a5d2d68ab0c07bcc2dc07eb0e8697f23edb810658608677c25"
+    },
+    {
+      "path": "lakefile.toml",
+      "sha256": "fa3d57f39e8b2beb1e8363c088235512914eac533bd6d7d3c312fbdc2d810b80"
+    },
+    {
+      "path": "lean-toolchain",
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+    },
+    {
+      "path": "prepare-dependencies.ps1",
+      "sha256": "42e85247cd04059928e94d543c939d5b2b6ce22139400d7c5daada7b07710596"
+    },
+    {
+      "path": "verify.ps1",
+      "sha256": "b1d23038f981e3c536be8b61a334a89a103b63fa348a091778a2f29f9b236969"
     }
   ]
 }

@@ -1,4 +1,3 @@
 warning: YesMetaZFC: repository 'C:\Users\17857\Documents\Codex\2026-07-24\zhe\work\R0-paper-20260919\model-integration\.lake/packages\YesMetaZFC' has local changes
-✔ [490/497] Built FIMADModels.DowExtension (6.0s)
-✔ [496/497] Built FIMADModels (12s)
-Build completed successfully (497 jobs).
+✔ [523/524] Built FIMADModels (27s)
+Build completed successfully (524 jobs).

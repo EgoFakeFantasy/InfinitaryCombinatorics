@@ -20,6 +20,18 @@ try {
     'FIMADModels/DowAmalgamation.lean', 'FIMADModels/DowReach.lean',
     'FIMADModels/DowPossible.lean', 'FIMADModels/DowFiniteTail.lean',
     'FIMADModels/DowTests.lean', 'FIMADModels/DowTestAssembly.lean', 'FIMADModels/DowTestExistence.lean',
+    'FIMADModels/DowValueTails.lean', 'FIMADModels/DowTallTests.lean', 'FIMADModels/DowTallness.lean',
+    'FIMADModels/CheckDecisions.lean', 'FIMADModels/DowNameTests.lean', 'FIMADModels/DowNameTheorem.lean',
+    'FIMADModels/DowNameExtension.lean', 'FIMADModels/DowNameFamily.lean',
+    'FIMADModels/DowNameFamilyTheorem.lean', 'FIMADModels/DowNameSplitting.lean',
+    'FIMADModels/DowSplittingSyntax.lean', 'FIMADModels/DowSplittingForcing.lean',
+    'FIMADModels/DowOmegaSplitting.lean',
+    'FIMADModels/DowInfiniteNames.lean',
+    'FIMADModels/NameNormalization.lean', 'FIMADModels/NameNormalizationFamily.lean',
+    'FIMADModels/DowConditionalPreservation.lean', 'FIMADModels/DowConditionalTheorem.lean',
+    'FIMADModels/CountableRealEnumeration.lean', 'FIMADModels/FunctionValueNames.lean',
+    'FIMADModels/FunctionCanonicalValues.lean', 'FIMADModels/ExtensionFamilyNames.lean',
+    'FIMADModels/DowExtensionPreservation.lean', 'FIMADModels/DowPreservationTheorem.lean',
     'prepare-dependencies.ps1', 'dependency-patches/manifest.json',
     'dependency-patches/kernel-checked-axioms.patch',
     '.lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Axioms/Common.lean',
@@ -108,6 +120,18 @@ try {
     object_ZF_Dow_dense_stem_closure = 'actual least closed set constructed and all finite stems reached'
     object_ZFC_Dow_finite_possible_values = 'internal finite elimination and finite-tail argument proved'
     object_ZFC_Dow_countable_possible_value_tests = 'actual internal countable tests constructed for each finite stem from a monotone dense natural-value decision relation'
+    object_ZFC_Dow_tallness_tests = 'one internal countable family controls every stem and natural bound for monotone unbounded decision relations'
+    object_ZFC_Dow_actual_name_tests = 'actual membership decision graphs derived from the translated unbounded-name formula'
+    object_ZFC_Dow_countable_name_tests = 'one internal countable test family for every internally countable family of globally forced unbounded names'
+    object_ZF_Dow_forced_splitting = 'original splitting formula forced from actual test-family splitting; proved through all generic quotients and public reflection criterion'
+    object_ZFC_Dow_countable_name_preservation = 'an internal omega-splitting family supplies one ground splitter whose canonical name is forced to split every input real name'
+    original_infinite_name_input_bridge = 'native and forced original infinitude imply the exact unbounded-name formula; original ZF derivation and actual countable-name application proved'
+    object_ZFC_infinite_name_normalization = 'actual global infinite real name, forced equal to the original wherever that original is forced an infinite real; original ZFC derivation'
+    object_ZFC_conditional_countable_name_preservation = 'arbitrary internally countable ground name sets, with original infinitude required only at the conclusion condition'
+    object_ZF_countable_real_enumeration = 'internal omega-function covering every countable family of infinite reals, including empty and finite cases'
+    arbitrary_extension_countable_infinite_real_family_coding = 'proved using quotient-internal enumeration, original maximum principle, collection and canonical indices'
+    object_ZFC_Dow_full_single_step_omega_splitting_preservation = 'original ZFC derivation of genuine forcing assertion, covering every countable extension family; no abstract preservation certificate'
+    arbitrary_extension_countable_family_coding_and_localization = 'proved for the infinite-real families needed by omega-splitting'
     BMZ_specific_rule_and_preservation = 'not proved'
     specific_FIMAD_model_truth = 'not proved'
     formal_independence_complete = $false

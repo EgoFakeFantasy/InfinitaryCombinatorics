@@ -159,13 +159,14 @@ strengthening relation, a maximum condition, and the internal CCC proof. The
 forbidden coordinate may be any internal set of finite stems. The carrier and
 relation specifications are conclusions rather than supplied poset hypotheses.
 The CCC argument constructs an internal injection from every antichain into
-the finite-stem space using the same-stem merge. This does not yet supply the
-name-level successor rule or prove the splitting-preservation lemma.
+the finite-stem space using the same-stem merge. The name-level tests and
+conditional forced-splitting endpoints below are now proved in this same
+package; this does not yet supply the BMZ successor rule or limit argument.
 
-The specific internal Dow successor rule, BMZ bookkeeping and splitting
-preservation, and the internal CH construction of FI MAD existence are still
-unproved. The generic iteration schema is not a formal BMZ configuration or a
-complete independence proof.
+The specific internal Dow successor rule, BMZ bookkeeping and preservation
+through the full iteration, and the internal CH construction of FI MAD existence
+are still unproved. The generic iteration schema is not a formal BMZ
+configuration or a complete independence proof.
 
 ## Internal Dow dense sets, generic real and preservation tools
 
@@ -201,9 +202,75 @@ an actual internal decision relation with monotonicity and natural-valued
 decisions on a dense set, and constructs tests for every internal finite stem.
 All selections, test families, countable unions and tail-value sets belong to
 the model. The closure step uses collection/choice and actual internal graphs;
-the least dense-stem closure supplies the induction principle. Applying these
-tests to arbitrary sequence names and proving the full splitting-preservation
-statement still remain separate obligations.
+the least dense-stem closure supplies the induction principle.
+
+`DowValueTails`, `DowTallTests` and `DowTallness` construct tests simultaneously
+for all internal finite stems and natural bounds. `derives_tail_tests` and
+`derives_tall_tests` are original ZFC proofs. The tail restriction is to internal
+natural values, and the restricted decision relation, its dense set, the
+selected families and every possible-value set are actual model sets.
+
+`CheckDecisions` reuses the public check-name member reflection and forced
+equality congruence to extract canonical ground witnesses from bounded forcing
+quantifiers. `DowNameTests` constructs the internal member-decision graph of an
+actual forcing name and proves the monotonicity and unbounded-density hypotheses
+from its translated unbounded-name formula. `DowNameTheorem.derives_name_tall_tests`
+puts this whole application in the original ZFC kernel; it does not take an
+abstract decision-density certificate as input.
+
+`DowNameFamily` and `DowNameFamilyTheorem` construct one internal countable test
+family for every internally countable set of names that are globally forced
+unbounded. The selected relation/test pairs are bounded inside powersets and
+chosen by an actual internal function graph. `derives_countable_name_tests` is
+an original ZFC proof. `DowNameExtension` and `DowNameSplitting` then verify
+infinite intersection and both sides of splitting in the actual generic quotient,
+using its own omega and original injection-based infinitude.
+
+`DowSplittingSyntax` encodes that same splitting predicate in the original
+language. `DowSplittingForcing.derives_forced_splitting` proves in original ZF
+that a ground set splitting the constructed tests forces splitting of the
+corresponding real name. It uses the public finite-parameter generic criterion,
+whose model universe and original ZF background match the proved semantic
+lemma; it does not require an externally countable or well-founded ground model.
+`DowOmegaSplitting.derives_preservation_for_countable_names` proves in original
+ZFC that an internal omega-splitting family supplies one ground splitter for
+every name in the given countable family.
+
+`DowInfiniteNames.derives_infinite_name_unbounded` proves the connection from
+the original injection-based infinitude to the exact name-unboundedness formula
+in original ZF. `globally_forced_infinite_unbounded` combines the public
+canonical omega-name theorem with local forcing implication elimination;
+`countable_infinite_name_tests_exists` therefore accepts names globally forced
+to be infinite subsets of omega in the manuscript's original sense.
+
+`NameNormalization` constructs actual globally infinite real names that agree
+with the inputs wherever those inputs are forced infinite reals. Its original
+ZFC derivation uses the public original-formula maximum principle.
+`NameNormalizationFamily` makes the choices an actual internal graph and
+countable image. `DowConditionalTheorem` consequently removes global infinitude
+from the input-name hypotheses in an original ZFC preservation theorem.
+
+`CountableRealEnumeration.derives_countable_real_enumeration` proves in original
+ZF that every internal countable family of infinite reals has an internal
+omega-function covering it, with omega at unused indices. `FunctionValueNames`
+and `FunctionCanonicalValues` apply the original maximum principle at canonical
+indices. `ExtensionFamilyNames` then covers **every internally countable family
+of infinite reals in an actual generic quotient** by values of an internal
+countable ground set of names. No external sequence of representatives is used.
+
+`DowExtensionPreservation` proves omega-splitting for the canonical image of
+the original family in every native Dow generic quotient, first restricting
+arbitrary test families to their infinite members. Finally,
+`DowPreservationTheorem.derives_dow_omega_splitting_preservation` is an original
+`Project.Derives ZFC` proof of the corresponding genuine forcing assertion.
+The public finite-parameter countable reflection preserves **ZFC**, including
+choice, and the public countable forcing criterion consumes the quotient
+proof. There is no extra abstract preservation or name-coding hypothesis.
+
+Single-step omega-splitting preservation is therefore complete. The BMZ
+successor policy, iteration limit preservation, bookkeeping and final cardinal
+configuration, native CH construction, native FI obstruction and final relative
+consistency proof remain open. The full independence flag remains false.
 
 ## Reproduce
 
