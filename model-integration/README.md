@@ -166,6 +166,45 @@ The specific internal Dow successor rule, BMZ bookkeeping and splitting
 preservation, and the internal CH construction of FI MAD existence are still
 unproved. The generic iteration schema is not a formal BMZ configuration or a
 complete independence proof.
+
+## Internal Dow dense sets, generic real and preservation tools
+
+`DowDense`, `DowAvoid`, and `DowSeparator` prove original `Project.Derives ZF`
+endpoints for the infinite-hitting and finite-avoidance extensions and the
+directed-set separator theorem. The last theorem explicitly assumes a directed
+internal set meeting the requirements; it does not assert such a set exists in
+the ground model.
+
+`DowGeneric` constructs an actual internal weighted name for the union of
+generic stems, proves its exact quotient membership equation, and uses separated
+internal dense sets to prove the generic meets both kinds of requirement.
+`DowExtension.dow_extension_exists` constructs a genuine ZFC extension of an
+enumerated ground model, with an injective, member-covering canonical embedding
+and a real weakly separating the images of the specified orthogonal families.
+Its finite and infinite intersection assertions use the extension's original
+injection-based definitions. No external well-foundedness or standard omega is
+assumed. This model construction is an intermediate semantic result; it does
+not by itself prove the final independence statement in the original kernel.
+
+`DowAmalgamation` proves original ZF finite same-stem amalgamation by internal
+finite-set insertion induction. `DowReach` constructs the internal least
+dense-stem closure and proves that every finite stem belongs to it, in original
+ZF. `DowPossible` and `DowFiniteTail` prove original ZFC finite impossible-value
+elimination and the finite-tail possible-value argument. Selection uses a
+model-internal graph obtained from collection and choice, and its internally
+finite range is amalgamated. These are preservation tools for an actual
+internal decision relation.
+
+`DowTests`, `DowTestAssembly` and `DowTestExistence` then construct the countable
+test families: `derives_countable_tests` is an original ZFC proof. It assumes
+an actual internal decision relation with monotonicity and natural-valued
+decisions on a dense set, and constructs tests for every internal finite stem.
+All selections, test families, countable unions and tail-value sets belong to
+the model. The closure step uses collection/choice and actual internal graphs;
+the least dense-stem closure supplies the induction principle. Applying these
+tests to arbitrary sequence names and proving the full splitting-preservation
+statement still remain separate obligations.
+
 ## Reproduce
 
 From this directory, with elan installed:

@@ -126,6 +126,21 @@ maximum condition and prove the CCC in original `Project.Derives ZFC`.
 These results do not yet instantiate the name-level Dow successor rule, prove
 BMZ splitting preservation or bookkeeping, or construct internal FI MAD from CH.
 
+The isolated package also proves original ZF dense hitting, finite avoidance,
+directed-set separation, finite same-stem amalgamation and the internal least
+dense-stem closure. It proves original ZFC finite impossible-value elimination
+and the finite-tail argument. `DowGeneric` and `DowExtension` go beyond the
+directed-set hypotheses: an actual internal name and a genuine generic ZFC
+extension weakly separating the two given families are constructed for
+enumerated ground models. These semantic intermediate results do not complete
+the BMZ preservation/iteration argument or the original-kernel independence
+theorem. See the isolated package README for exact assumptions and endpoints.
+`DowTestExistence` further constructs internal countable possible-value tests
+for every finite stem from a monotone internal relation deciding natural values
+on a dense set, with an original `Project.Derives ZFC` endpoint. This does not
+yet instantiate the relation using arbitrary forcing names or prove the full
+countable splitting preservation theorem.
+
 ## Sources and provenance
 
 - Corral and Rodrigues, *Fin-intersecting MAD families*, Filomat 38(7), 2024, 2563-2578, DOI: 10.2298/FIL2407563C.

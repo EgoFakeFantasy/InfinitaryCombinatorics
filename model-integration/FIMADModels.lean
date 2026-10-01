@@ -5,6 +5,8 @@ import FIMADModels.ObjectTheory
 import FIMADModels.ForcingFinite
 import FIMADModels.IterationSchema
 import FIMADModels.DowPoset
+import FIMADModels.DowExtension
+import FIMADModels.DowTestExistence
 import YesMetaZFC.Model.SetTheory.ProjectSemantics
 
 /-! The actual FI MAD sentence in the public typed kernel and Boolean name model.

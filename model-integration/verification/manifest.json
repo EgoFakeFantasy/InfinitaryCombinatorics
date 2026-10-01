@@ -1,12 +1,13 @@
 {
-  "checked_at_utc": "2026-10-01T04:40:44.4743412Z",
+  "checked_at_utc": "2026-10-01T06:49:46.0077459Z",
   "lean_toolchain": "leanprover/lean4:v4.33.1",
   "yesmetazfc_revision": "0e91389178caf34fc916ef40f76f84c3f3733714",
   "yesmetazfc_certificate_patch": "dependency-patches/manifest.json",
   "build": "passed",
   "axiom_audit": "passed",
-  "declarations": 959,
-  "theorem_constants": 748,
+  "module_coverage": "passed",
+  "declarations": 1477,
+  "theorem_constants": 1185,
   "permitted_axioms": [
     "propext",
     "Classical.choice",
@@ -22,6 +23,13 @@
   "object_ZF_Dow_same_stem_merge": "proved for exact internal forbidden-stem conditions",
   "object_ZFC_countable_finite_stems": "proved with internal finite-set enumeration and injection",
   "object_ZFC_Dow_poset_CCC": "exact carrier, strengthening relation, maximum condition and CCC constructed",
+  "object_ZF_Dow_dense_requirements": "both hitting and finite-avoidance extensions proved in original Project.Derives",
+  "object_ZF_Dow_directed_separator": "proved with explicit directed-set and meeting hypotheses",
+  "native_ZFC_Dow_generic_extension": "actual internal union-of-stems name, exact quotient value and weak separator for enumerated ground models",
+  "object_ZF_Dow_finite_amalgamation": "internally finite same-stem families merged by original finite-set induction",
+  "object_ZF_Dow_dense_stem_closure": "actual least closed set constructed and all finite stems reached",
+  "object_ZFC_Dow_finite_possible_values": "internal finite elimination and finite-tail argument proved",
+  "object_ZFC_Dow_countable_possible_value_tests": "actual internal countable tests constructed for each finite stem from a monotone dense natural-value decision relation",
   "BMZ_specific_rule_and_preservation": "not proved",
   "specific_FIMAD_model_truth": "not proved",
   "formal_independence_complete": false,
@@ -55,7 +63,7 @@
       "path": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Axioms/Common.lean"
     },
     {
-      "sha256": "75b1b32950d39c5420af0e5764406316ea396664071631c7fb10e8c90d011cb0",
+      "sha256": "06d0b98c28f30219eb78844c9dc39563644d9308bea62143f02b875296ab2772",
       "path": "Audit.lean"
     },
     {
@@ -67,7 +75,7 @@
       "path": "dependency-patches/manifest.json"
     },
     {
-      "sha256": "f4a183fa234ebf05e5b3980fd25b48edecafd556e52ab5df400e0138ed70660c",
+      "sha256": "791d4da655baaa2914ca5c3ee4600243eb0d600342fc11c51ce87739e58afe05",
       "path": "FIMADModels.lean"
     },
     {
@@ -79,12 +87,60 @@
       "path": "FIMADModels/CheckedBooleanZFC.lean"
     },
     {
+      "sha256": "2085e47aef34c8519cd888d7aea8f62a1b3aa4dc968d6a6831bd15e091d98f89",
+      "path": "FIMADModels/DowAmalgamation.lean"
+    },
+    {
+      "sha256": "09bfcf919d3d42430253077b950b84131e089604d783e4cd4e539d77b0675ad5",
+      "path": "FIMADModels/DowAvoid.lean"
+    },
+    {
+      "sha256": "df52fc745eef04535a626630f1f30b5d56593d418def2a08918b9418cd95d904",
+      "path": "FIMADModels/DowDense.lean"
+    },
+    {
+      "sha256": "80fc60221e0c964cac2ef2524868e6dbbeae04fb0729ddaf20d56683aa90471b",
+      "path": "FIMADModels/DowExtension.lean"
+    },
+    {
+      "sha256": "e6a569a21e6c62e334c7b692d53604a6e87f62a4766a399d0b983f9501184184",
+      "path": "FIMADModels/DowFiniteTail.lean"
+    },
+    {
+      "sha256": "02afd5064671ba3fc20ca92bdeb219a2f2a613c74cbca43ba13033375b3a09b7",
+      "path": "FIMADModels/DowGeneric.lean"
+    },
+    {
       "sha256": "b85a07a29b9956f18520ec93c1b3f2d5be2f2cca682657abd12b220349b1c740",
       "path": "FIMADModels/DowInternal.lean"
     },
     {
       "sha256": "3dafb3113abcc02bbcef04ac52adc37cb8ff998d573ec2b3029e7cabb4f11714",
       "path": "FIMADModels/DowPoset.lean"
+    },
+    {
+      "sha256": "c6242e4e4ab7f9f5b73d106ecb8185546f9817d84bf735028504404f919ab031",
+      "path": "FIMADModels/DowPossible.lean"
+    },
+    {
+      "sha256": "19f184f6fd2f39c7b06fcf0d8b432b66af09bf6b8c0a068046829436dc9a9858",
+      "path": "FIMADModels/DowReach.lean"
+    },
+    {
+      "sha256": "d2aec134596460ffb3dceb2bd80a2df51545962433d573be41903279a8730de5",
+      "path": "FIMADModels/DowSeparator.lean"
+    },
+    {
+      "sha256": "c8a2994c0dea941558df61c51fcbbe73a54f3480090e8cb4ee27a6a6f3588ece",
+      "path": "FIMADModels/DowTestAssembly.lean"
+    },
+    {
+      "sha256": "7127141f833c7759461312b976478ef55c8e2b93fc90f8c885be9f5a7fe93968",
+      "path": "FIMADModels/DowTestExistence.lean"
+    },
+    {
+      "sha256": "a4b4bfef352e5192871876cc88e506f620ec485ccbbbba8d2e2e5bdc22f17df3",
+      "path": "FIMADModels/DowTests.lean"
     },
     {
       "sha256": "b0f163e0c85ca6d09943500271dec56f0752022e6309c3b34f19a0c24a29a524",
@@ -171,7 +227,7 @@
       "path": "prepare-dependencies.ps1"
     },
     {
-      "sha256": "a21c01a774363b01d5af8ccbc20873baee2c5c754aac909a28d4b0688098a404",
+      "sha256": "ec05994bf049ba3fd1a247eae4277a7e4216865edb0d36e9a22b3cf8d51bdce4",
       "path": "verify.ps1"
     }
   ]

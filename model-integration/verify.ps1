@@ -15,6 +15,11 @@ try {
     'FIMADModels/ObjectTheory.lean', 'FIMADModels/ForcingFinite.lean', 'FIMADModels/Iteration.lean',
     'FIMADModels/IterationSchema.lean',
     'FIMADModels/DowInternal.lean', 'FIMADModels/FiniteStems.lean', 'FIMADModels/DowPoset.lean',
+    'FIMADModels/DowDense.lean', 'FIMADModels/DowAvoid.lean', 'FIMADModels/DowSeparator.lean',
+    'FIMADModels/DowGeneric.lean', 'FIMADModels/DowExtension.lean',
+    'FIMADModels/DowAmalgamation.lean', 'FIMADModels/DowReach.lean',
+    'FIMADModels/DowPossible.lean', 'FIMADModels/DowFiniteTail.lean',
+    'FIMADModels/DowTests.lean', 'FIMADModels/DowTestAssembly.lean', 'FIMADModels/DowTestExistence.lean',
     'prepare-dependencies.ps1', 'dependency-patches/manifest.json',
     'dependency-patches/kernel-checked-axioms.patch',
     '.lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Axioms/Common.lean',
@@ -36,6 +41,28 @@ try {
         throw "Whitespace or merge marker in $fmFile"
       }
     }
+  }
+  # Every local typed module must be hash-checked and reachable from the audited umbrella.
+  $fmModules = @{'FIMADModels' = 'FIMADModels.lean'}
+  foreach ($fmSource in Get-ChildItem -LiteralPath 'FIMADModels' -Filter '*.lean' -Recurse) {
+    $fmRelative = $fmSource.FullName.Substring($PSScriptRoot.Length + 1).Replace('\','/')
+    if ($fmRelative -notin $fmFiles) { throw "Unhashed typed module: $fmRelative" }
+    $fmModules[$fmRelative.Replace('/','.').Replace('.lean','')] = $fmRelative
+  }
+  $fmQueue = [Collections.Generic.Queue[string]]::new()
+  $fmSeen = [Collections.Generic.HashSet[string]]::new()
+  $fmQueue.Enqueue('FIMADModels')
+  while ($fmQueue.Count -gt 0) {
+    $fmModule = $fmQueue.Dequeue()
+    if (-not $fmSeen.Add($fmModule)) { continue }
+    $fmText = Get-Content -LiteralPath $fmModules[$fmModule] -Raw
+    foreach ($fmMatch in [regex]::Matches($fmText, '(?m)^import\s+([A-Za-z0-9_.]+)\s*$')) {
+      $fmImport = $fmMatch.Groups[1].Value
+      if ($fmModules.ContainsKey($fmImport)) { $fmQueue.Enqueue($fmImport) }
+    }
+  }
+  foreach ($fmModule in $fmModules.Keys) {
+    if (-not $fmSeen.Contains($fmModule)) { throw "Unaudited typed module: $fmModule" }
   }
   & lake build 2>&1 | Tee-Object -FilePath 'verification/build.log'
   if ($LASTEXITCODE -ne 0) { throw 'Typed model build failed' }
@@ -60,6 +87,7 @@ try {
     yesmetazfc_certificate_patch = 'dependency-patches/manifest.json'
     build = 'passed'
     axiom_audit = 'passed'
+    module_coverage = 'passed'
     declarations = $fmDeclarations
     theorem_constants = $fmTheorems
     permitted_axioms = @('propext', 'Classical.choice', 'Quot.sound')
@@ -73,6 +101,13 @@ try {
     object_ZF_Dow_same_stem_merge = 'proved for exact internal forbidden-stem conditions'
     object_ZFC_countable_finite_stems = 'proved with internal finite-set enumeration and injection'
     object_ZFC_Dow_poset_CCC = 'exact carrier, strengthening relation, maximum condition and CCC constructed'
+    object_ZF_Dow_dense_requirements = 'both hitting and finite-avoidance extensions proved in original Project.Derives'
+    object_ZF_Dow_directed_separator = 'proved with explicit directed-set and meeting hypotheses'
+    native_ZFC_Dow_generic_extension = 'actual internal union-of-stems name, exact quotient value and weak separator for enumerated ground models'
+    object_ZF_Dow_finite_amalgamation = 'internally finite same-stem families merged by original finite-set induction'
+    object_ZF_Dow_dense_stem_closure = 'actual least closed set constructed and all finite stems reached'
+    object_ZFC_Dow_finite_possible_values = 'internal finite elimination and finite-tail argument proved'
+    object_ZFC_Dow_countable_possible_value_tests = 'actual internal countable tests constructed for each finite stem from a monotone dense natural-value decision relation'
     BMZ_specific_rule_and_preservation = 'not proved'
     specific_FIMAD_model_truth = 'not proved'
     formal_independence_complete = $false
