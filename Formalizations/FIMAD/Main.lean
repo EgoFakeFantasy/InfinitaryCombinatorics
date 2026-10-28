@@ -5,6 +5,9 @@ import Formalizations.FIMAD.MemberwiseSemantics
 import Formalizations.FIMAD.ModelInterface
 import Formalizations.FIMAD.OmegaSplitting
 
+/-! Public entry point of the FI MAD project, including the paper-facing cutoff under `s < ap`
+alone. -/
+
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 
 /-- The paper's exact cutoff under its stated hypothesis alone. -/

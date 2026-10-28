@@ -1,5 +1,8 @@
 import InfinitaryCombinatorics.Ideal
 
+/-! Finitely intersecting (FI) families: closure under subfamilies, upward preservation of non-FI,
+and the two-trace obstruction to FI. -/
+
 namespace InfinitaryCombinatorics
 open Set
 universe u

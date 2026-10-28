@@ -1,5 +1,7 @@
 import Formalizations.R0.CountableTransfer
 
+/-! The placement number and the exact placement formula (paper Proposition 6.4). -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 variable {X : Type}

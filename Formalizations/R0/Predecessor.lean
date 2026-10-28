@@ -1,6 +1,9 @@
 import Formalizations.R0.CountableTransfer
 import Formalizations.R0.BinarySplitting
 
+/-! The predecessor construction on `ℕ × ℕ`: columns, cell-finite sets and predecessor graphs, with
+the resulting completion bounds. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 

@@ -1,5 +1,8 @@
 import Formalizations.R0.CountableCompletion
 
+/-! `ℵ₀ < a`, and cell-finite relative completion on countably infinite ground sets (paper Lemma
+8.1). -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 

@@ -2,6 +2,9 @@ import Formalizations.FIMAD.IdealCover
 import Mathlib.SetTheory.Cardinal.Ordinal
 import Mathlib.SetTheory.Cardinal.Continuum
 
+/-! The CH construction: a well-founded recursion along `ω₁` producing an infinite FI MAD family on
+`ℕ` of size `ℵ₁`. -/
+
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 open Set
 open InfinitaryCombinatorics.Formalizations.R0 (blocksOver)

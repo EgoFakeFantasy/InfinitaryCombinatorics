@@ -1,6 +1,9 @@
 import Formalizations.FIMAD.TraceCoding
 import InfinitaryCombinatorics.Characteristics
 
+/-! Cardinal definitions, weak separation, paired splitting labels, and the finite-error
+contradiction. -/
+
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 open Set Cardinal
 

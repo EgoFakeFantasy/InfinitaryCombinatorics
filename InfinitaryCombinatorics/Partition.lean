@@ -1,6 +1,9 @@
 import InfinitaryCombinatorics.PairColoring
 import Mathlib.SetTheory.Cardinal.Pigeonhole
 
+/-! Cardinal pair partition relations, cliques from infinite monochromatic sets, a pigeonhole
+principle below the cofinality, and cardinal-valued chromatic numbers. -/
+
 namespace InfinitaryCombinatorics
 open Set Cardinal
 universe u v

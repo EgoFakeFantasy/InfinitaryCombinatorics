@@ -1,6 +1,9 @@
 import Formalizations
 import Lean
 
+/-! Axiom audit: checks that every project declaration depends only on `propext`, `Classical.choice`
+and `Quot.sound`, and that the paper-facing theorems are present. -/
+
 open Lean Elab Command in
 run_elab do
   let env ← getEnv

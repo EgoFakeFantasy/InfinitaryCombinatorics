@@ -1,5 +1,7 @@
 import Formalizations.R0.Selectors
 
+/-! The explicit triangle construction. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 open _root_.R0

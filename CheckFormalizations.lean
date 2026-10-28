@@ -1,5 +1,8 @@
 import Formalizations
 
+/-! Statement checks: restates the main formalization results with their definitions unfolded, so
+the checked meaning does not rest on project abbreviations. -/
+
 open Set Cardinal R0
 
 /-- Existence on the actual natural numbers, with the predicates unfolded.

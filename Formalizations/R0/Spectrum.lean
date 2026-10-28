@@ -1,5 +1,8 @@
 import Formalizations.R0.UniformMAD
 
+/-! The size spectrum: an infinite AD family that is not FI can have size `κ` exactly when
+`s ≤ κ ≤ c`. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 open _root_.R0

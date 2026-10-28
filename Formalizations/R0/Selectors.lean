@@ -1,5 +1,8 @@
 import Formalizations.R0.BinaryCoding
 
+/-! Blockwise selectors: injective choices with prescribed traces, and the selector form of the
+exact trace lemma. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 open _root_.R0

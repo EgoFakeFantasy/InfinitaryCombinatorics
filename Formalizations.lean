@@ -3,3 +3,5 @@ import Formalizations.A1.Check
 import Formalizations.R0.Paper
 import Formalizations.A2.Paper
 import Formalizations.FIMAD.Main
+
+/-! Umbrella import for all formalization projects built on the base library. -/

@@ -1,5 +1,8 @@
 import Formalizations.R0.UniformMAD
 
+/-! Finite-difference pairing, the actual cardinal `a`, and supporting lemmas for countable
+families. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 variable {X : Type}

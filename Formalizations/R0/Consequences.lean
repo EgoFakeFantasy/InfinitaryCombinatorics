@@ -1,5 +1,7 @@
 import Formalizations.R0.Triangle
 
+/-! The first-differing-bit threshold of Appendix A and the singleton-block obstruction. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 open _root_.R0

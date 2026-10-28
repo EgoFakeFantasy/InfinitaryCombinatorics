@@ -1,5 +1,7 @@
 import Formalizations.R0.Local
 
+/-! Finite splitting, the trace-set criterion, and its obstruction. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 variable {X : Type}

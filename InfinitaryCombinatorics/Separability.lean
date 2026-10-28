@@ -1,5 +1,8 @@
 import InfinitaryCombinatorics.FinIntersection
 
+/-! Positive finite families, the SS and almost strongly separable properties, the easy implication
+between them, and preservation under non-FI MAD extensions. -/
+
 namespace InfinitaryCombinatorics
 open Set
 universe u

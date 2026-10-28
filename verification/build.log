@@ -1,4 +1,4 @@
-ℹ [1044/1069] Replayed Formalizations.A1.Check
+ℹ [1044/1087] Replayed Formalizations.A1.Check
 info: Formalizations/A1/Check.lean:91:0: 'InfinitaryCombinatorics.Formalizations.A1.cantorPair_closedForm' depends on axioms: [propext, Quot.sound]
 info: Formalizations/A1/Check.lean:92:0: 'InfinitaryCombinatorics.Formalizations.A1.countable_convex_partition' depends on axioms: [propext,
  Classical.choice,
@@ -19,10 +19,23 @@ info: Formalizations/A1/Check.lean:97:0: 'InfinitaryCombinatorics.Formalizations
 info: Formalizations/A1/Check.lean:98:0: 'InfinitaryCombinatorics.Formalizations.A1.KA_implies_KAomegaOne' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
-✔ [1159/1165] Built Formalizations.FIMAD.SetTheorySentence (3.6s)
-✔ [1160/1165] Built Formalizations.FIMAD.CHConstruction (5.5s)
-✔ [1161/1165] Built Formalizations.FIMAD.FirstOrderSemantics (1.9s)
-✔ [1162/1165] Built Formalizations.FIMAD.ModelInterface (2.1s)
-✔ [1163/1165] Built Formalizations.FIMAD.Main (2.0s)
-✔ [1164/1165] Built Formalizations (2.0s)
+✔ [1146/1165] Built Formalizations.R0.CountableCompletion (3.9s)
+✔ [1147/1165] Built Formalizations.R0.Spectrum (3.0s)
+✔ [1148/1165] Built Formalizations.FIMAD.TraceCoding (4.1s)
+✔ [1149/1165] Built Formalizations.R0.CountableTransfer (3.1s)
+✔ [1150/1165] Built Formalizations.R0.CellFinite (3.3s)
+✔ [1151/1165] Built Formalizations.FIMAD.Obstruction (3.3s)
+✔ [1152/1165] Built Formalizations.R0.Placement (3.0s)
+✔ [1153/1165] Built Formalizations.FIMAD.SeparationBounding (3.4s)
+✔ [1154/1165] Built Formalizations.R0.Predecessor (4.0s)
+✔ [1155/1165] Built Formalizations.FIMAD.Nonexistence (2.9s)
+✔ [1156/1165] Built Formalizations.R0.Paper (2.8s)
+✔ [1157/1165] Built Formalizations.FIMAD.SeparationCardinal (3.1s)
+✔ [1158/1165] Built Formalizations.FIMAD.PositiveExtension (3.4s)
+✔ [1159/1165] Built Formalizations.FIMAD.DowCardinal (2.4s)
+✔ [1160/1165] Built Formalizations.FIMAD.IdealCover (2.7s)
+✔ [1161/1165] Built Formalizations.FIMAD.OmegaSplitting (3.0s)
+✔ [1162/1165] Built Formalizations.FIMAD.CHConstruction (4.6s)
+✔ [1163/1165] Built Formalizations.FIMAD.Main (2.7s)
+✔ [1164/1165] Built Formalizations (2.6s)
 Build completed successfully (1165 jobs).

@@ -2,6 +2,8 @@ import Formalizations.FIMAD.Obstruction
 import Formalizations.R0.UniformMAD
 import Mathlib.Order.Iterate
 
+/-! `ap ≤ b`, via countable domination and a binary-branch argument. -/
+
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 open Set Cardinal
 open _root_.R0 (Node node wordPrefix node_injective nodeEquivNat)

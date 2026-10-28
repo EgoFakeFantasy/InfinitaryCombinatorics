@@ -1,5 +1,8 @@
 import Formalizations.R0.CountableParts
 
+/-! Completion of a countable AD family to a maximal family of size at most `a`
+(paper Lemma 6.1). -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 

@@ -1,5 +1,7 @@
 import Formalizations.R0.Local
 
+/-! The actual minimum extension remainder family and its cost. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 variable {X : Type}

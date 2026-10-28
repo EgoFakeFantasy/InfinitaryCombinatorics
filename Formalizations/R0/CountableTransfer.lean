@@ -1,6 +1,8 @@
 import Formalizations.R0.CountableCompletion
 import Formalizations.R0.LocalGlobal
 
+/-! Transfer along countable incidence that keeps the original sets. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 variable {X : Type}
