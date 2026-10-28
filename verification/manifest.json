@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-09-29T09:03:08.6945157Z",
+  "checked_at_utc": "2026-10-28T14:10:27.4615132Z",
   "lean_toolchain": "leanprover/lean4:v4.30.0",
   "mathlib_revision": "c5ea00351c28e24afc9f0f84379aa41082b1188f",
   "build": "passed",
@@ -142,7 +142,7 @@
     },
     {
       "path": "Formalizations/FIMAD/CHConstruction.lean",
-      "sha256": "80d392cf11aa4f7f76683bc933d87b3fd4ace2716fce93ce2deb05eb82ba1b7f"
+      "sha256": "0d694e9f041c927a52af113b05de15f11611574ac273b21680ab83069c734e6a"
     },
     {
       "path": "Formalizations/FIMAD/CheckedZFC.lean",
@@ -206,7 +206,7 @@
     },
     {
       "path": "Formalizations/FIMAD/SetTheorySentence.lean",
-      "sha256": "26a2deb2b98c3d909629f9f70c221dccea4eeaa2fb675a83373791ff76f4d0d5"
+      "sha256": "c4fa5e5eafffbefd605044e8f7dafe64aeb95ee5177bec1c22adcd57874c2f1b"
     },
     {
       "path": "Formalizations/FIMAD/TraceCoding.lean",

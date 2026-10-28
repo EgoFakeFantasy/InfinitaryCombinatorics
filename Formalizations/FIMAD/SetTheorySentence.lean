@@ -28,9 +28,7 @@ def SubsetFormula {depth : Nat} (a b : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_SubsetFormula (a b : Term depth) (ha : a.freeSupport = []) (hb : b.freeSupport = []) :
     (SubsetFormula a b : Formula 1 depth).FreeClosed := by
   simp only [SubsetFormula, Definitional.Formula.FreeClosed, Definitional.Term.freeSupport_weaken,
-    Definitional.Term.freeSupport_bound, ha, hb]
-  all_goals simp only [and_self]
-  all_goals trivial
+    Definitional.Term.freeSupport_bound, ha, hb, and_self]
 
 def EmptyFormula {depth : Nat} (a : Term depth) : Formula 1 depth :=
   (.forallE (.neg (.mem (.bound 0) (a.weaken))))
@@ -45,9 +43,7 @@ def EmptyFormula {depth : Nat} (a : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_EmptyFormula (a : Term depth) (ha : a.freeSupport = []) :
     (EmptyFormula a : Formula 1 depth).FreeClosed := by
   simp only [EmptyFormula, Definitional.Formula.FreeClosed, Definitional.Term.freeSupport_weaken,
-    Definitional.Term.freeSupport_bound, ha]
-  all_goals simp only [and_self]
-  all_goals trivial
+    Definitional.Term.freeSupport_bound, ha, and_self]
 
 def NonemptyFormula {depth : Nat} (a : Term depth) : Formula 1 depth :=
   (.existsE (.mem (.bound 0) (a.weaken)))
@@ -62,9 +58,7 @@ def NonemptyFormula {depth : Nat} (a : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_NonemptyFormula (a : Term depth) (ha : a.freeSupport = []) :
     (NonemptyFormula a : Formula 1 depth).FreeClosed := by
   simp only [NonemptyFormula, Definitional.Formula.FreeClosed, Definitional.Term.freeSupport_weaken,
-    Definitional.Term.freeSupport_bound, ha]
-  all_goals simp only [and_self]
-  all_goals trivial
+    Definitional.Term.freeSupport_bound, ha, and_self]
 
 def InterFormula {depth : Nat} (d a b : Term depth) : Formula 1 depth :=
   (.forallE (.iff (.mem (.bound 0) (d.weaken)) (.conj (.mem (.bound 0) (a.weaken)) (.mem (.bound 0) (b.weaken)))))
@@ -79,9 +73,7 @@ def InterFormula {depth : Nat} (d a b : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_InterFormula (d a b : Term depth) (hd : d.freeSupport = []) (ha : a.freeSupport = []) (hb : b.freeSupport = []) :
     (InterFormula d a b : Formula 1 depth).FreeClosed := by
   simp only [InterFormula, Definitional.Formula.FreeClosed, Definitional.Term.freeSupport_weaken,
-    Definitional.Term.freeSupport_bound, hd, ha, hb]
-  all_goals simp only [and_self]
-  all_goals trivial
+    Definitional.Term.freeSupport_bound, hd, ha, hb, and_self]
 
 def SuccFormula {depth : Nat} (b a : Term depth) : Formula 1 depth :=
   (.forallE (.iff (.mem (.bound 0) (b.weaken)) (.disj (.mem (.bound 0) (a.weaken)) (Formula.extensionalEq (.bound 0) (a.weaken)))))
@@ -96,9 +88,7 @@ def SuccFormula {depth : Nat} (b a : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_SuccFormula (b a : Term depth) (hb : b.freeSupport = []) (ha : a.freeSupport = []) :
     (SuccFormula b a : Formula 1 depth).FreeClosed := by
   simp only [SuccFormula, Definitional.Formula.FreeClosed, Formula.extensionalEq_freeClosed_iff,
-    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hb, ha]
-  all_goals simp only [and_self]
-  all_goals trivial
+    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hb, ha, and_self]
 
 def InductiveFormula {depth : Nat} (a : Term depth) : Formula 1 depth :=
   (.conj (.existsE (.conj (EmptyFormula (.bound 0)) (.mem (.bound 0) (a.weaken)))) (.forallE (.imp (.mem (.bound 0) (a.weaken)) (.existsE (.conj (SuccFormula (.bound 0) (.bound 1)) (.mem (.bound 0) (a.weaken.weaken)))))))
@@ -114,8 +104,7 @@ def InductiveFormula {depth : Nat} (a : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_InductiveFormula (a : Term depth) (ha : a.freeSupport = []) :
     (InductiveFormula a : Formula 1 depth).FreeClosed := by
   simp only [InductiveFormula, Definitional.Formula.FreeClosed, closed_EmptyFormula, closed_SuccFormula,
-    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, ha]
-  all_goals simp only [and_self]
+    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, ha, and_self]
 
 def OmegaFormula {depth : Nat} (w : Term depth) : Formula 1 depth :=
   (.conj (InductiveFormula (w)) (.forallE (.imp (InductiveFormula (.bound 0)) (SubsetFormula (w.weaken) (.bound 0)))))
@@ -130,8 +119,7 @@ def OmegaFormula {depth : Nat} (w : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_OmegaFormula (w : Term depth) (hw : w.freeSupport = []) :
     (OmegaFormula w : Formula 1 depth).FreeClosed := by
   simp only [OmegaFormula, Definitional.Formula.FreeClosed, closed_InductiveFormula, closed_SubsetFormula,
-    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hw]
-  all_goals simp only [and_self]
+    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hw, and_self]
 
 def SingletonFormula {depth : Nat} (s a : Term depth) : Formula 1 depth :=
   (.forallE (.iff (.mem (.bound 0) (s.weaken)) (Formula.extensionalEq (.bound 0) (a.weaken))))
@@ -146,9 +134,7 @@ def SingletonFormula {depth : Nat} (s a : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_SingletonFormula (s a : Term depth) (hs : s.freeSupport = []) (ha : a.freeSupport = []) :
     (SingletonFormula s a : Formula 1 depth).FreeClosed := by
   simp only [SingletonFormula, Definitional.Formula.FreeClosed, Formula.extensionalEq_freeClosed_iff,
-    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hs, ha]
-  all_goals simp only [and_self]
-  all_goals trivial
+    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hs, ha, and_self]
 
 def UnorderedPairFormula {depth : Nat} (s a b : Term depth) : Formula 1 depth :=
   (.forallE (.iff (.mem (.bound 0) (s.weaken)) (.disj (Formula.extensionalEq (.bound 0) (a.weaken)) (Formula.extensionalEq (.bound 0) (b.weaken)))))
@@ -163,9 +149,7 @@ def UnorderedPairFormula {depth : Nat} (s a b : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_UnorderedPairFormula (s a b : Term depth) (hs : s.freeSupport = []) (ha : a.freeSupport = []) (hb : b.freeSupport = []) :
     (UnorderedPairFormula s a b : Formula 1 depth).FreeClosed := by
   simp only [UnorderedPairFormula, Definitional.Formula.FreeClosed, Formula.extensionalEq_freeClosed_iff,
-    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hs, ha, hb]
-  all_goals simp only [and_self]
-  all_goals trivial
+    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hs, ha, hb, and_self]
 
 def PairFormula {depth : Nat} (p a b : Term depth) : Formula 1 depth :=
   (.existsE (.existsE (.conj (SingletonFormula (.bound 1) (a.weaken.weaken)) (.conj (UnorderedPairFormula (.bound 0) (a.weaken.weaken) (b.weaken.weaken)) (UnorderedPairFormula (p.weaken.weaken) (.bound 1) (.bound 0))))))
@@ -181,8 +165,7 @@ def PairFormula {depth : Nat} (p a b : Term depth) : Formula 1 depth :=
     (PairFormula p a b : Formula 1 depth).FreeClosed := by
   simp only [PairFormula, Definitional.Formula.FreeClosed, closed_SingletonFormula,
     closed_UnorderedPairFormula, Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound,
-    hp, ha, hb]
-  all_goals simp only [and_self]
+    hp, ha, hb, and_self]
 
 def ValueFormula {depth : Nat} (f a b : Term depth) : Formula 1 depth :=
   (.existsE (.conj (.mem (.bound 0) (f.weaken)) (PairFormula (.bound 0) (a.weaken) (b.weaken))))
@@ -197,8 +180,7 @@ def ValueFormula {depth : Nat} (f a b : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_ValueFormula (f a b : Term depth) (hf : f.freeSupport = []) (ha : a.freeSupport = []) (hb : b.freeSupport = []) :
     (ValueFormula f a b : Formula 1 depth).FreeClosed := by
   simp only [ValueFormula, Definitional.Formula.FreeClosed, closed_PairFormula,
-    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hf, ha, hb]
-  all_goals simp only [and_self]
+    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hf, ha, hb, and_self]
 
 def FunctionOnFormula {depth : Nat} (f a : Term depth) : Formula 1 depth :=
   (.conj (.forallE (.imp (.mem (.bound 0) (f.weaken)) (.existsE (.existsE (.conj (.mem (.bound 1) (a.weaken.weaken.weaken)) (PairFormula (.bound 2) (.bound 1) (.bound 0))))))) (.forallE (.imp (.mem (.bound 0) (a.weaken)) (.existsE (.conj (ValueFormula (f.weaken.weaken) (.bound 1) (.bound 0)) (.forallE (.imp (ValueFormula (f.weaken.weaken.weaken) (.bound 2) (.bound 0)) (Formula.extensionalEq (.bound 0) (.bound 1)))))))))
@@ -215,8 +197,7 @@ def FunctionOnFormula {depth : Nat} (f a : Term depth) : Formula 1 depth :=
     (FunctionOnFormula f a : Formula 1 depth).FreeClosed := by
   simp only [FunctionOnFormula, Definitional.Formula.FreeClosed, Formula.extensionalEq_freeClosed_iff,
     closed_PairFormula, closed_ValueFormula, Definitional.Term.freeSupport_weaken,
-    Definitional.Term.freeSupport_bound, hf, ha]
-  all_goals simp only [and_self]
+    Definitional.Term.freeSupport_bound, hf, ha, and_self]
 
 def InjectionFormula {depth : Nat} (f a b : Term depth) : Formula 1 depth :=
   (.conj (FunctionOnFormula (f) (a)) (.conj (.forallE (.forallE (.imp (ValueFormula (f.weaken.weaken) (.bound 1) (.bound 0)) (.mem (.bound 0) (b.weaken.weaken))))) (.forallE (.forallE (.forallE (.imp (ValueFormula (f.weaken.weaken.weaken) (.bound 2) (.bound 0)) (.imp (ValueFormula (f.weaken.weaken.weaken) (.bound 1) (.bound 0)) (Formula.extensionalEq (.bound 2) (.bound 1)))))))))
@@ -233,8 +214,7 @@ def InjectionFormula {depth : Nat} (f a b : Term depth) : Formula 1 depth :=
     (InjectionFormula f a b : Formula 1 depth).FreeClosed := by
   simp only [InjectionFormula, Definitional.Formula.FreeClosed, Formula.extensionalEq_freeClosed_iff,
     closed_FunctionOnFormula, closed_ValueFormula, Definitional.Term.freeSupport_weaken,
-    Definitional.Term.freeSupport_bound, hf, ha, hb]
-  all_goals simp only [and_self]
+    Definitional.Term.freeSupport_bound, hf, ha, hb, and_self]
 
 def FiniteFormula {depth : Nat} (w a : Term depth) : Formula 1 depth :=
   (.existsE (.conj (.mem (.bound 0) (w.weaken)) (.existsE (InjectionFormula (.bound 0) (a.weaken.weaken) (.bound 1)))))
@@ -249,8 +229,7 @@ def FiniteFormula {depth : Nat} (w a : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_FiniteFormula (w a : Term depth) (hw : w.freeSupport = []) (ha : a.freeSupport = []) :
     (FiniteFormula w a : Formula 1 depth).FreeClosed := by
   simp only [FiniteFormula, Definitional.Formula.FreeClosed, closed_InjectionFormula,
-    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hw, ha]
-  all_goals simp only [and_self]
+    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hw, ha, and_self]
 
 def InfiniteFormula {depth : Nat} (w a : Term depth) : Formula 1 depth :=
   (.neg (FiniteFormula (w) (a)))
@@ -264,7 +243,6 @@ def InfiniteFormula {depth : Nat} (w a : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_InfiniteFormula (w a : Term depth) (hw : w.freeSupport = []) (ha : a.freeSupport = []) :
     (InfiniteFormula w a : Formula 1 depth).FreeClosed := by
   simp only [InfiniteFormula, Definitional.Formula.FreeClosed, closed_FiniteFormula, hw, ha]
-  all_goals simp only [and_self, true_and, and_true]
 
 def InfiniteInterFormula {depth : Nat} (w a b : Term depth) : Formula 1 depth :=
   (.existsE (.conj (InterFormula (.bound 0) (a.weaken) (b.weaken)) (InfiniteFormula (w.weaken) (.bound 0))))
@@ -280,8 +258,7 @@ def InfiniteInterFormula {depth : Nat} (w a b : Term depth) : Formula 1 depth :=
     (InfiniteInterFormula w a b : Formula 1 depth).FreeClosed := by
   simp only [InfiniteInterFormula, Definitional.Formula.FreeClosed, closed_InterFormula,
     closed_InfiniteFormula, Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hw,
-    ha, hb]
-  all_goals simp only [and_self]
+    ha, hb, and_self]
 
 def ADFormula {depth : Nat} (w A : Term depth) : Formula 1 depth :=
   (.conj (InfiniteFormula (w) (A)) (.conj (.forallE (.imp (.mem (.bound 0) (A.weaken)) (.conj (SubsetFormula (.bound 0) (w.weaken)) (InfiniteFormula (w.weaken) (.bound 0))))) (.forallE (.forallE (.imp (.mem (.bound 1) (A.weaken.weaken)) (.imp (.mem (.bound 0) (A.weaken.weaken)) (.imp (.neg (Formula.extensionalEq (.bound 1) (.bound 0))) (.existsE (.conj (InterFormula (.bound 0) (.bound 2) (.bound 1)) (FiniteFormula (w.weaken.weaken.weaken) (.bound 0)))))))))))
@@ -299,8 +276,7 @@ def ADFormula {depth : Nat} (w A : Term depth) : Formula 1 depth :=
     (ADFormula w A : Formula 1 depth).FreeClosed := by
   simp only [ADFormula, Definitional.Formula.FreeClosed, Formula.extensionalEq_freeClosed_iff,
     closed_InfiniteFormula, closed_SubsetFormula, closed_InterFormula, closed_FiniteFormula,
-    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hw, hA]
-  all_goals simp only [and_self]
+    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hw, hA, and_self]
 
 def MADFormula {depth : Nat} (w A : Term depth) : Formula 1 depth :=
   (.conj (ADFormula (w) (A)) (.forallE (.imp (SubsetFormula (.bound 0) (w.weaken)) (.imp (InfiniteFormula (w.weaken) (.bound 0)) (.existsE (.conj (.mem (.bound 0) (A.weaken.weaken)) (InfiniteInterFormula (w.weaken.weaken) (.bound 1) (.bound 0))))))))
@@ -317,8 +293,7 @@ def MADFormula {depth : Nat} (w A : Term depth) : Formula 1 depth :=
     (MADFormula w A : Formula 1 depth).FreeClosed := by
   simp only [MADFormula, Definitional.Formula.FreeClosed, closed_ADFormula, closed_SubsetFormula,
     closed_InfiniteFormula, closed_InfiniteInterFormula, Definitional.Term.freeSupport_weaken,
-    Definitional.Term.freeSupport_bound, hw, hA]
-  all_goals simp only [and_self]
+    Definitional.Term.freeSupport_bound, hw, hA, and_self]
 
 def FinSequenceFormula {depth : Nat} (w C : Term depth) : Formula 1 depth :=
   (.conj (FunctionOnFormula (C) (w)) (.conj (.forallE (.forallE (.imp (.mem (.bound 1) (w.weaken.weaken)) (.imp (ValueFormula (C.weaken.weaken) (.bound 1) (.bound 0)) (.conj (SubsetFormula (.bound 0) (w.weaken.weaken)) (.conj (FiniteFormula (w.weaken.weaken) (.bound 0)) (NonemptyFormula (.bound 0)))))))) (.forallE (.forallE (.forallE (.forallE (.imp (.mem (.bound 3) (w.weaken.weaken.weaken.weaken)) (.imp (.mem (.bound 2) (w.weaken.weaken.weaken.weaken)) (.imp (.neg (Formula.extensionalEq (.bound 3) (.bound 2))) (.imp (ValueFormula (C.weaken.weaken.weaken.weaken) (.bound 3) (.bound 1)) (.imp (ValueFormula (C.weaken.weaken.weaken.weaken) (.bound 2) (.bound 0)) (.neg (.existsE (.conj (.mem (.bound 0) (.bound 2)) (.mem (.bound 0) (.bound 1))))))))))))))))
@@ -337,8 +312,7 @@ def FinSequenceFormula {depth : Nat} (w C : Term depth) : Formula 1 depth :=
   simp only [FinSequenceFormula, Definitional.Formula.FreeClosed, Formula.extensionalEq_freeClosed_iff,
     closed_FunctionOnFormula, closed_ValueFormula, closed_SubsetFormula, closed_FiniteFormula,
     closed_NonemptyFormula, Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hw,
-    hC]
-  all_goals simp only [and_self]
+    hC, and_self]
 
 def TraceAtFormula {depth : Nat} (C a n : Term depth) : Formula 1 depth :=
   (.existsE (.conj (ValueFormula (C.weaken) (n.weaken) (.bound 0)) (.existsE (.conj (.mem (.bound 0) (a.weaken.weaken)) (.mem (.bound 0) (.bound 1))))))
@@ -353,8 +327,7 @@ def TraceAtFormula {depth : Nat} (C a n : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_TraceAtFormula (C a n : Term depth) (hC : C.freeSupport = []) (ha : a.freeSupport = []) (hn : n.freeSupport = []) :
     (TraceAtFormula C a n : Formula 1 depth).FreeClosed := by
   simp only [TraceAtFormula, Definitional.Formula.FreeClosed, closed_ValueFormula,
-    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hC, ha, hn]
-  all_goals simp only [and_self]
+    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hC, ha, hn, and_self]
 
 def RestrictedTraceFormula {depth : Nat} (t C I a : Term depth) : Formula 1 depth :=
   (.forallE (.iff (.mem (.bound 0) (t.weaken)) (.conj (.mem (.bound 0) (I.weaken)) (TraceAtFormula (C.weaken) (a.weaken) (.bound 0)))))
@@ -369,8 +342,7 @@ def RestrictedTraceFormula {depth : Nat} (t C I a : Term depth) : Formula 1 dept
 @[simp] theorem closed_RestrictedTraceFormula (t C I a : Term depth) (ht : t.freeSupport = []) (hC : C.freeSupport = []) (hI : I.freeSupport = []) (ha : a.freeSupport = []) :
     (RestrictedTraceFormula t C I a : Formula 1 depth).FreeClosed := by
   simp only [RestrictedTraceFormula, Definitional.Formula.FreeClosed, closed_TraceAtFormula,
-    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, ht, hC, hI, ha]
-  all_goals simp only [and_self]
+    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, ht, hC, hI, ha, and_self]
 
 def RetainedFormula {depth : Nat} (w C I a : Term depth) : Formula 1 depth :=
   (.existsE (.conj (RestrictedTraceFormula (.bound 0) (C.weaken) (I.weaken) (a.weaken)) (InfiniteFormula (w.weaken) (.bound 0))))
@@ -386,8 +358,7 @@ def RetainedFormula {depth : Nat} (w C I a : Term depth) : Formula 1 depth :=
     (RetainedFormula w C I a : Formula 1 depth).FreeClosed := by
   simp only [RetainedFormula, Definitional.Formula.FreeClosed, closed_RestrictedTraceFormula,
     closed_InfiniteFormula, Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, hw,
-    hC, hI, ha]
-  all_goals simp only [and_self]
+    hC, hI, ha, and_self]
 
 def CommonTraceFormula {depth : Nat} (t C I F : Term depth) : Formula 1 depth :=
   (.forallE (.iff (.mem (.bound 0) (t.weaken)) (.conj (.mem (.bound 0) (I.weaken)) (.forallE (.imp (.mem (.bound 0) (F.weaken.weaken)) (TraceAtFormula (C.weaken.weaken) (.bound 0) (.bound 1)))))))
@@ -402,8 +373,7 @@ def CommonTraceFormula {depth : Nat} (t C I F : Term depth) : Formula 1 depth :=
 @[simp] theorem closed_CommonTraceFormula (t C I F : Term depth) (ht : t.freeSupport = []) (hC : C.freeSupport = []) (hI : I.freeSupport = []) (hF : F.freeSupport = []) :
     (CommonTraceFormula t C I F : Formula 1 depth).FreeClosed := by
   simp only [CommonTraceFormula, Definitional.Formula.FreeClosed, closed_TraceAtFormula,
-    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, ht, hC, hI, hF]
-  all_goals simp only [and_self]
+    Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound, ht, hC, hI, hF, and_self]
 
 def FIFormula {depth : Nat} (w A : Term depth) : Formula 1 depth :=
   (.forallE (.imp (FinSequenceFormula (w.weaken) (.bound 0)) (.existsE (.conj (SubsetFormula (.bound 0) (w.weaken.weaken)) (.conj (InfiniteFormula (w.weaken.weaken) (.bound 0)) (.forallE (.imp (SubsetFormula (.bound 0) (A.weaken.weaken.weaken)) (.imp (FiniteFormula (w.weaken.weaken.weaken) (.bound 0)) (.imp (NonemptyFormula (.bound 0)) (.imp (.forallE (.imp (.mem (.bound 0) (.bound 1)) (RetainedFormula (w.weaken.weaken.weaken.weaken) (.bound 3) (.bound 2) (.bound 0)))) (.existsE (.conj (CommonTraceFormula (.bound 0) (.bound 3) (.bound 2) (.bound 1)) (InfiniteFormula (w.weaken.weaken.weaken.weaken) (.bound 0))))))))))))))
@@ -422,8 +392,7 @@ def FIFormula {depth : Nat} (w A : Term depth) : Formula 1 depth :=
   simp only [FIFormula, Definitional.Formula.FreeClosed, closed_FinSequenceFormula, closed_SubsetFormula,
     closed_InfiniteFormula, closed_FiniteFormula, closed_NonemptyFormula, closed_RetainedFormula,
     closed_CommonTraceFormula, Definitional.Term.freeSupport_weaken, Definitional.Term.freeSupport_bound,
-    hw, hA]
-  all_goals simp only [and_self]
+    hw, hA, and_self]
 
 def ExistsFIMADFormula {depth : Nat} : Formula 1 depth :=
   (.existsE (.existsE (.conj (OmegaFormula (.bound 1)) (.conj (MADFormula (.bound 1) (.bound 0)) (FIFormula (.bound 1) (.bound 0))))))
@@ -438,8 +407,7 @@ def ExistsFIMADFormula {depth : Nat} : Formula 1 depth :=
 @[simp] theorem closed_ExistsFIMADFormula  :
     (ExistsFIMADFormula  : Formula 1 depth).FreeClosed := by
   simp only [ExistsFIMADFormula, Definitional.Formula.FreeClosed, closed_OmegaFormula, closed_MADFormula,
-    closed_FIFormula, Definitional.Term.freeSupport_bound]
-  all_goals simp only [and_self]
+    closed_FIFormula, Definitional.Term.freeSupport_bound, and_self]
 
 def sentence : Sentence :=
   Sentence.ofFormula (ExistsFIMADFormula (depth := 0)) (closed_ExistsFIMADFormula)
