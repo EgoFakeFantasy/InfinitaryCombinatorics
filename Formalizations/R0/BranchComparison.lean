@@ -1,6 +1,8 @@
 import Formalizations.R0.UniformMAD
 import Formalizations.R0.Remainder
 
+/-! Comparison of extension costs along branches. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 open _root_.R0

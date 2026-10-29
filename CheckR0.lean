@@ -1,5 +1,7 @@
 import R0
 
+/-! Statement checks for the bundled R0 snapshot, with the definitions unfolded. -/
+
 open Set Cardinal R0
 
 /-- Existence on the actual natural numbers, with the predicates unfolded.

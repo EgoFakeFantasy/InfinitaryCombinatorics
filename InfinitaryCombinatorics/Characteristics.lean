@@ -1,6 +1,9 @@
 import InfinitaryCombinatorics.CountableSplitting
 import InfinitaryCombinatorics.FinIntersection
 
+/-! Cardinal characteristics: every countable family is finitely intersecting, and `ℵ₁ ≤ 𝔰 ≤ 𝔠` for
+the splitting number. -/
+
 namespace InfinitaryCombinatorics
 open Set Cardinal
 

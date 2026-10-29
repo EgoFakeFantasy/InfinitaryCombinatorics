@@ -1,5 +1,7 @@
 import Formalizations.R0.BinarySplitting
 
+/-! A uniform construction of a non-FI MAD family of size `c`. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 open _root_.R0

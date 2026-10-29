@@ -2,6 +2,9 @@ import Formalizations.FIMAD.IdealCover
 import Mathlib.SetTheory.Cardinal.Ordinal
 import Mathlib.SetTheory.Cardinal.Continuum
 
+/-! The CH construction: a well-founded recursion along `ω₁` producing an infinite FI MAD family on
+`ℕ` of size `ℵ₁`. -/
+
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 open Set
 open InfinitaryCombinatorics.Formalizations.R0 (blocksOver)
@@ -54,11 +57,7 @@ lemma stage_exists (C : ι → R0.FinSequence ℕ) (X : ι → Set ℕ)
     (hcA.image _)
   have hcR : (requirements C X B x p I).Countable := by
     apply Set.Countable.insert
-    have hic : (Set.Iic x).Countable := (hx.insert x).mono (by
-      intro y hy
-      rcases lt_or_eq_of_le hy with h | h
-      · exact Or.inr h
-      · exact Or.inl h)
+    have hic : (Set.Iic x).Countable := Set.Iio_insert (a := x) ▸ hx.insert x
     exact hic.biUnion fun γ _ => (Set.countable_setOf_finite_subset hcA).biUnion fun F _ => countable_singleton _
   obtain ⟨a, ha, haA, haR⟩ := countable_positive_extension hA hcA
     (hcR.mono (inter_subset_left : requirements C X B x p I ∩ {Y | ¬ InIdeal (oldFamily B x p) Y} ⊆ _))

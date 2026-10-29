@@ -13,3 +13,5 @@ import InfinitaryCombinatorics.Partition
 import InfinitaryCombinatorics.Transport
 import InfinitaryCombinatorics.CountableSplitting
 import InfinitaryCombinatorics.Characteristics
+
+/-! Umbrella import for the base infinitary combinatorics library. -/

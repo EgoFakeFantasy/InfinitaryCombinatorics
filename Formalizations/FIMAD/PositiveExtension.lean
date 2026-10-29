@@ -1,6 +1,8 @@
 import Formalizations.FIMAD.Nonexistence
 import InfinitaryCombinatorics.CountableSplitting
 
+/-! Simultaneous hitting of countably many positive sets, and the ideal maximality criterion. -/
+
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 open Set
 

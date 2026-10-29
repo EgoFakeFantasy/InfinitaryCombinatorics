@@ -1,6 +1,9 @@
 import Formalizations.FIMAD.SeparationBounding
 import Formalizations.R0.CountableCompletion
 
+/-! Diagonal non-maximality, `b ≤ a`, the consequences excluding infinite FI MAD families, and
+arbitrary labels below `ap`. -/
+
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 open Set Cardinal
 open InfinitaryCombinatorics.Formalizations.R0 (partitionPart partitionOwner partitionPart_almostEqual partitionPart_infinite almostDisjointnessNumber exists_minimum_mad_nat)

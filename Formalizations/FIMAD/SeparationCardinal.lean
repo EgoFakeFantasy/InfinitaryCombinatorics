@@ -1,6 +1,8 @@
 import Formalizations.FIMAD.Nonexistence
 import Formalizations.R0.UniformMAD
 
+/-! Existence of a minimum non-separable AD cardinal. -/
+
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 open Set Cardinal
 

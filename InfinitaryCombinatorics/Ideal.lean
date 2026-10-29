@@ -1,6 +1,9 @@
 import InfinitaryCombinatorics.AlmostContainment
 import R0.Main
 
+/-! Almost disjoint (AD) families, the ideal they generate together with the finite sets, MAD and
+nowhere MAD families, and properness of the ideal of an infinite AD family. -/
+
 namespace InfinitaryCombinatorics
 open Set
 universe u

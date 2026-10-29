@@ -2,6 +2,10 @@ import Mathlib.Combinatorics.Digraph.Basic
 import Mathlib.SetTheory.Cardinal.Order
 import Lean.Elab.Tactic.Omega
 
+/-! Directed graphs: injectively enumerated cycles, acyclicity and short cycles, pullbacks along
+embeddings, dicolorings and their colour-fibre characterization, and a cardinal-valued dichromatic
+number. -/
+
 namespace InfinitaryCombinatorics
 universe u v
 namespace Directed

@@ -3,6 +3,10 @@ import InfinitaryCombinatorics.PairColoring
 import Mathlib.SetTheory.Ordinal.Arithmetic
 import Mathlib.SetTheory.Cardinal.Cofinality.Club
 
+/-! Ordinal framework: ω-ladders and C-sequences, uniform tail bounds for finite sets, type
+guessing, bounded type depth versus bounded width, stationarity relative to clubs, and the
+Hajnal–Máté and regressive uncolourability conditions. -/
+
 namespace InfinitaryCombinatorics
 open Set
 universe u

@@ -1,5 +1,7 @@
 import Formalizations.FIMAD.PositiveExtension
 
+/-! Homogeneous thinning, the ideal cover witness, and the step from blocks to traces. -/
+
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 open Set
 open InfinitaryCombinatorics.Formalizations.R0 (blocksOver finite_trace_of_finite)

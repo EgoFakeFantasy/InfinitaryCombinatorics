@@ -2,6 +2,8 @@ import Formalizations.R0.UniformMAD
 import Mathlib.Data.Nat.Log
 import Mathlib.Data.Fintype.EquivFin
 
+/-! Explicit big-endian binary codes used by the trace realization. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 

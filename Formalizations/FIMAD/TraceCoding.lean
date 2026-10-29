@@ -1,6 +1,8 @@
 import InfinitaryCombinatorics.FinIntersection
 import Mathlib.Data.Finset.Max
 
+/-! Eventual domination and equality, and the block construction for finite-trace coding. -/
+
 namespace InfinitaryCombinatorics.Formalizations.FIMAD
 open Set
 

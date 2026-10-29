@@ -1,5 +1,7 @@
 import Formalizations.R0.Remainder
 
+/-! Local-to-global bounds for extension costs. -/
+
 namespace InfinitaryCombinatorics.Formalizations.R0
 open Set Cardinal
 variable {X : Type}
